@@ -1,11 +1,16 @@
 ---
 layout: article
-title: ResilientDB - A High-throughput yielding Permissioned Blockchain Fabric.
+title: About Us
 key: page-about
 ---
 
 
-> ResilientDB aims at Making Permissioned Blockchain Systems *Fast Again*.
+<p style="text-align:center;">
+    <img src="/assets/expolab-icon.png" width="70%" height="70%" alt="Functions" style="background-color:#000;"/>
+    <br>
+</p>
+
+> The Exploratory System Laboratory aims at Making Permissioned Blockchain Systems *Fast Again*.
 
 ResilientDB makes system-centric design decisions by adopting a multi-thread architecture that encompasses deep-pipelines. Further, we separate the ordering of client transactions from their execution, which allows us to perform out-of-order processing of messages.
 
