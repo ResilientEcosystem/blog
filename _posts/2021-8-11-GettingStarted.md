@@ -10,7 +10,7 @@ article_header:
   theme: dark
   background_color: '#000000'
   background_image:
-    gradient: 'linear-gradient(135deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
+    gradient: 'linear-gradient(135deg, rgba(0, 204, 154 , .2), rgba(51, 154, 154, .2))'
     src: /assets/images/resdb-gettingstarted/diving-start.jpg
 
 ---
@@ -325,7 +325,7 @@ Remember this is just the basics on your journey of developing on ResilientDB. B
 
 - [Message Passing in ResilientDB](/2021/08/18/MessagePassing.html)
 
-- ??
+- [ResilientDB - PBFT Commit Algorithm](/2021/08/21/PBFT_Commit.html)
 
 - ?? 
 
