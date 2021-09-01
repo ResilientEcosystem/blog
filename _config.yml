@@ -16,11 +16,11 @@
 
 ## => Site Settings
 ##############################
-text_skin: ocean # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
-highlight_theme: tomorrow # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
+text_skin: expolab # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
+highlight_theme: tomorrow-night-eighties # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
-title   : ResilientDB
+title   : ExpoBlog
 description: > # this means to ignore newlines until "Language & timezone"
   Documentation for the high-throughput yielding distributed ledger built upon scale-centric design principles to democratize and decentralize computation.
 
@@ -35,7 +35,7 @@ timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for
 ##############################
 author:
   type      : organization # "person" (default), "organization"
-  name      : ExpoLab
+  name      : Exploratory Systems Lab
   url       :
   avatar    : https://resilientdb.com/img/team_img/mo.jpeg # path or url of avatar image (square)
   bio       : I am an amazing person.
@@ -55,8 +55,8 @@ author:
 
 ## => GitHub Repository (if the site is hosted by GitHub)
 ##############################
-repository: user_name/repo_name
-repository_tree: master
+repository: resilientdb/blog
+repository_tree: main
 
 
 ## => Paths
