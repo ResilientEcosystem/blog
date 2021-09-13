@@ -2,7 +2,7 @@
 layout: article
 title: ResilientDB - Getting Started 
 author: alex
-tags: Walkthrough
+tags: Walkthrough ResilentDB
 aside:
     toc: true
 article_header:

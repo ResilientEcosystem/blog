@@ -3,7 +3,7 @@ layout: article
 title: ResilientDB - PBFT Commit Algorithm
 author:
   Alejandro Armas
-tags: Programming ReslientDB Consensus
+tags: Programming ResilentDB Consensus
 aside:
     toc: true
 article_header:
