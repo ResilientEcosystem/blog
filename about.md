@@ -6,7 +6,7 @@ key: page-about
 
 
 <p style="text-align:center;">
-    <img src="/assets/expolab-icon.png" width="70%" height="70%" alt="Functions" style="background-color:#000;"/>
+    <img src="{{ site.baseurl }}/assets/expolab-icon.png" width="70%" height="70%" alt="Functions" style="background-color:#000;"/>
     <br>
 </p>
 

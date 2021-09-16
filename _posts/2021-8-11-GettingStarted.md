@@ -2,7 +2,7 @@
 layout: article
 title: ResilientDB - Getting Started 
 author: alex
-tags: Walkthrough
+tags: Walkthrough ResilentDB
 aside:
     toc: true
 article_header:
@@ -52,7 +52,7 @@ To quickly and clearly understand messaging across nodes, we advise developers t
 
 
 <p>
-    <img src="/assets/images/resdb-gettingstarted/SplitTerminal.png" alt="Cover photo"/>
+    <img src="{{ site.baseurl }}/assets/images/resdb-gettingstarted/SplitTerminal.png" alt="Cover photo"/>
     <br>
     <em>Figure 1. Recommended Developement Scheme. 
     </em>
