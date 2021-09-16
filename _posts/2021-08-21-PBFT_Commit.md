@@ -30,7 +30,7 @@ Since any BFT protocol employs cryptographic constructs to prevent malicious rep
 ## Practical Byzantine Fault Tolerance Consensus
 
 <p style="text-align:center;">
-    <img src="/assets/images/PbftCommit/High-Level-Commit-Algorithm.png" width="70%" height="70%" alt="Functions"/>
+    <img src="{{ site.baseurl }}/assets/images/PbftCommit/High-Level-Commit-Algorithm.png" width="70%" height="70%" alt="Functions"/>
     <br>
 </p>
 > Figure 1.
