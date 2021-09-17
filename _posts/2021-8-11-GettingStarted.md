@@ -28,7 +28,7 @@ First we **strongly** recommend installing `docker` and `docker-compose`. These 
 
 1. Install [Docker-CE](https://docs.docker.com/engine/install/) and [Docker-Compose](https://docs.docker.com/get-docker/)
 
-2. Now run the bootstrapping script `sudo ./resilientDB-docker -d`. 
+2. Now run the bootstrapping script `sudo ./resilientDB-docker -d` in your linux terminal environment. 
 
 In order to give you a better understand the process, heres a flow of what's happening:
 
@@ -321,14 +321,14 @@ Lastly, ResilientDB prints summary statistics for each client and replica to the
 
 Remember this is just the basics on your journey of developing on ResilientDB. Before you go on your way to contributing more to the platform remember, your next steps may be to lookover the following resources at your own pace.
 
-- [ResilientDB - PBFT Commit Algorithm](/2021/08/21/PBFT_Commit.html)
+- [ResilientDB - PBFT Commit Algorithm]({{ site.baseurl }}/2021/08/21/PBFT_Commit.html)
 
 - ResilientDB File Structure
   
 - ResilientDB System Architecture
 
-- [Message Passing in ResilientDB](/2021/08/18/MessagePassing.html)
- 
+- [Message Passing in ResilientDB]({{ site.baseurl }}/2021/08/18/MessagePassing.html)
+
 
 #### Acknowledgement 
 
