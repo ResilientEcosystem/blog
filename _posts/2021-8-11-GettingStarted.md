@@ -16,7 +16,9 @@ article_header:
 ---
 
 
-ResilientDB is a permissioned blockchain fabric developed by the developers at the Exploratory Systems Lab at UC Davis. It makes use of the **Practical Byzantine Fault Tolerant Consensus Protocol (PBFT)** and as a result follows a primary-backup model where each participant identity is known a priori. Clients are to send their requests to the designated primary replica $P$, which upon recieving a request, initiates the consensus protocol which ensures all client transactions are executed in the same order for all replicas in the system $\mathcal{R}$.  
+This is the first installment of the ResilientDB tutorial series. ResilientDB is a permissioned blockchain fabric developed by the developers at the Exploratory Systems Lab at UC Davis. We are a group of researchers on a mission led by Prof. Mohammad Sadoghi to pioneer a resilient data platform at scale. 
+
+ResilientDB makes use of the **Practical Byzantine Fault Tolerant Consensus Protocol (PBFT)**[^1], which follows a primary-backup model where each participant identity is known a priori. Clients are to send their requests to the designated primary replica $P$, which upon recieving a request, initiates the consensus protocol which ensures all client transactions are executed in the same order for all replicas in the system.  
 
 Written entirely in C++, the real power of ResilientDB lies in its ability for developers to implement and test any BFT protocol using its performant-centric system arcitecture. 
 
@@ -24,13 +26,11 @@ Written entirely in C++, the real power of ResilientDB lies in its ability for d
 
 First we **strongly** recommend installing `docker` and `docker-compose`. These are neccesary to run the dockerized deployment of nodes.
 
-- Install [Docker-CE](https://docs.docker.com/engine/install/)
+1. Install [Docker-CE](https://docs.docker.com/engine/install/) and [Docker-Compose](https://docs.docker.com/get-docker/)
 
-- Install [Docker-Compose](https://docs.docker.com/get-docker/)
+2. Now run the bootstrapping script `sudo ./resilientDB-docker -d` in your linux terminal environment. 
 
-Now run the bootstrapping script `sudo ./resilientDB-docker -d`. 
-
-Here are a few things that are happening here:
+In order to give you a better understand the process, heres a flow of what's happening:
 
 > 1. A Docker Compose file `docker-compose.yml` is generated since we use a dockerized deployement of several nodes that require running a multi-container Docker application and configure its services. These containers are subsequently started (via `docker-compose up -d`). 
 >
@@ -48,11 +48,11 @@ Congratulations you've now ran a consensus workload! Let's delve deeper.
 
 ### Recommended Development Scheme
 
-To quickly and clearly understand messaging across nodes, we advise developers to make use of a terminal splitting feature which you could find from the [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/get-started) running [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10). 
+To quickly and clearly understand messaging across nodes, the developement team strongly advises students and practicioners to make use of a terminal splitting feature, which you could find from the [Windows Terminal](https://docs.microsoft.com/en-us/windows/terminal/get-started) running [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install-win10). We choose to have 5 windows since that is the most basic setup.
 
 
 <p>
-    <img src="/assets/images/resdb-gettingstarted/SplitTerminal.png" alt="Cover photo"/>
+    <img src="{{ site.baseurl }}/assets/images/resdb-gettingstarted/SplitTerminal.png" alt="Cover photo"/>
     <br>
     <em>Figure 1. Recommended Developement Scheme. 
     </em>
@@ -60,7 +60,7 @@ To quickly and clearly understand messaging across nodes, we advise developers t
 > In Windows Terminal use `ctrl + shift + '+'` and `ctrl + shift + '-'` to split your terminal horizontally and vertically respectively. `alt + arrow-key` allows you to change between terminals and `ctrl + shift + arrow-key` helps resize each.  
 
 
-To run ResilientDB, it follows that we require `g_node_cnt` (the number of replicas) to be a multiple of $3f + 1$ in our system, where $f$ is the maximum number of byzantine replicas we could reliably persist through. In our example we are running 4 replicas $\therefore$ `g_node_cnt = 4` meaning we could tolerate a single faulty node. Similarily we only require atleast one client, where the parameter for number of clients is `g_client_node_cnt`. Replicas have consecutive identifiers `g_node_id` starting from $0$ and Clients proceed those (ex. $ \{ 0 , 1, 2, 3, 4 \}$).
+To run ResilientDB, it follows that we require `g_node_cnt` (the number of replicas) to be a multiple of $3f + 1$ in our system, where $f$ is the maximum number of byzantine replicas we could reliably persist through. In our example we are running 4 replicas $\therefore$ `g_node_cnt = 4` meaning we could tolerate a single faulty node. Similarily we only require atleast one client, where the parameter for number of clients is `g_client_node_cnt`. Replicas have consecutive identifiers `g_node_id` starting from $0$, (ex. $ \{ 0 , 1, 2, 3, 4 \}$) and clients proceed those identifiers. 
 
 
 > In each respective terminal simply type:
@@ -79,7 +79,7 @@ To run ResilientDB, it follows that we require `g_node_cnt` (the number of repli
 
 
 
-Since sockets facilitate communication among clients and replicas, sometimes you may run into port issues when you resume development and split your terminals once again. The simple fix is to reset the containers.
+Since sockets facilitate communication among clients and replicas, sometimes you may resolve port issues when you resume development and split your terminals once again. The simple fix is to reset the containers.
 
 ```bash
 sudo docker-compose stop
@@ -91,7 +91,7 @@ sudo bash scripts/docker-ifconfig.sh
 
 If you have not yet peered into the algorithms that compose the protocol of PBFT we'd recommend you do so; either way, this is a good exercise for intuition into the protocol. 
 
-Lets get into the code! The program entry point for replicas in the system is via their `main` routine in the `system/main.cpp` file. Since the architecture is mulithreaded and pipelined we're going to skip a lot of details for now. Just know that worker threads are spawned in `main` and their tasks is to disseminate messages via their `run()` member function:
+Lets get into the code! The program entry point for replicas in the system is via their `main` routine in the `system/main.cpp` file. Since the architecture is mulithreaded and pipelined we're going to skip a lot of details for now. Just know that worker threads are spawned in `main` and their tasks are to disseminate messages via their `run()` member function:
 
 ```c++
 void *run_thread(void *id)
@@ -107,15 +107,15 @@ void *run_thread(void *id)
 
 Your task is to uncomment the lines printing to standard out within each of the following routines defined in `system/worker_thread_pbft.cpp`:
 
-- `WorkerThread::process_client_batch` corresponding to the processing of a client request. The primary will propose transactions through broadcasting its `BatchRequests` message, an aggregation of transactions, to all the other replicas representing initiation of the consensus protocol. This is the **Pre-Prepare phase**.
+- In the the **Pre-Prepare phase** we see the routine `WorkerThread::process_client_batch` process client requests. Afterwards, the primary will propose transactions by broadcasting its `BatchRequests` message, an aggregation of transactions, to all the other replicas representing initiation of the consensus protocol.
 
 
-- `WorkerThread::process_batch` corresponding to the **Prepare Phase** where each replica $\mathcal{R} \in R$ immediately broadcast Prepare messages of type `PBFTPrepMessage` to all replicas; to ensure a prepared state for a single message $m$, a replica awaits for $g$ identical Prepare messages. 
+- In the **Prepare Phase** which corresponds to `WorkerThread::process_batch`, each replica $\mathcal{R} \in R$ immediately broadcasts Prepare messages of type `PBFTPrepMessage` to all replicas; to ensure a prepared state for a single message $m$, a replica awaits for $g$ identical Prepare messages. 
 
 
-- `WorkerThread::process_pbft_prep_msg` corresponds to the **Commit Phase** where once a replica is sufficiently prepared it may now broadcast `PBFTCommitMessage` messages. 
+- The **Commit Phase** routine `WorkerThread::process_pbft_prep_msg` is where once a replica is sufficiently prepared, it may now broadcast `PBFTCommitMessage` messages. 
 
-- `WorkerThread::process_pbft_commit_msg` corresponding to the **Execute Phase** where all transactions $\tau$ are correspondingly scheduled to be executed as the $\rho -th$ in sequence.   
+- In the **Execute Phase** which corresponds to `WorkerThread::process_pbft_commit_msg`, all transactions $\tau$ are scheduled to be executed as the $\rho -th$ in sequence.   
 
 Once you have done so, rebuild the executables and let's run all our nodes and walk through everything!
 
@@ -319,13 +319,21 @@ Lastly, ResilientDB prints summary statistics for each client and replica to the
 
 ### Whats Next
 
-Remember this is just the basics on your journey of developing on ResilientDB. Before you go on your way to contributing more to the platform remember to check out the following series on ResilientDB and make sure to check out the resources.
+Remember this is just the basics on your journey of developing on ResilientDB. Before you go on your way to contributing more to the platform remember, your next steps may be to lookover the following resources at your own pace.
 
+- [ResilientDB - PBFT Commit Algorithm]({{ site.baseurl }}/2021/08/21/PBFT_Commit.html)
+
+- ResilientDB File Structure
+  
 - ResilientDB System Architecture
 
-- [Message Passing in ResilientDB](/2021/08/18/MessagePassing.html)
+- [Message Passing in ResilientDB]({{ site.baseurl }}/2021/08/18/MessagePassing.html)
 
-- [ResilientDB - PBFT Commit Algorithm](/2021/08/21/PBFT_Commit.html)
 
-- ?? 
+#### Acknowledgement 
 
+Special thank you to my colleagues Sajjad Rahnama and Prof. Mohammad Sadoghi, aswell as Kevin Sitz at the UC Davis Writing Support Center for their feedback and editing on this article. 
+
+### References 
+
+[^1]: **Gupta S, Hellings J ,Sadoghi M. (2021). *Fault-Tolerant Distributed Transactions on Blockchain*, Synthesis Lectures on Data Management, February 2021, Vol. 16, No. 1 , Pages 1-268 [(https://doi.org/10.2200/S01068ED1V01Y202012DTM065)](https://doi.org/10.2200/S01068ED1V01Y202012DTM065).** 
