@@ -14,6 +14,8 @@ key: page-about
 
 ResilientDB makes system-centric design decisions by adopting a multi-thread architecture that encompasses deep-pipelines. Further, we separate the ordering of client transactions from their execution, which allows us to perform out-of-order processing of messages.
 
+### Journey
+<iframe width="100%" height="500px" src="http://www.youtube.com/embed/whgGTSQttds" frameborder="0" allowfullscreen></iframe>
 
 # Director/Principle Investigator
 
