@@ -21,6 +21,9 @@ Allow this article to be a comprehensive introduction into the **Practical Byzan
 
 The true power of this protocol becomes evident quite quick; it enables a democratic (i.e. through consensus) and decentralized (i.e. through replication) computational model! 
 
+### Hands on Tutorial
+<iframe width="100%" height="500px" src="http://www.youtube.com/embed/cBn142Uz_J0" frameborder="0" allowfullscreen></iframe>
+
 ### Blockchain Consensus 
 
 The aim of a BFT consensus protocol for the application of blockchain is to ensure that all *non-faulty* replicas, that is replicas acting in bad faith, have the **same lineariazability guarantee**; where they assign the **same** order for a given client transaction[^1]. This is a tolerance more resilient than achieving consensus in the presence of benign *crash-faults*, which Paxos[^2] and Viewstamped Replication[^3] can **only** sustain.
