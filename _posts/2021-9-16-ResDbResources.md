@@ -18,7 +18,7 @@ Research Paper by S. Gupta, S. Rahnama, J. Hellings, M. Sadoghi presented at PVL
 <a class="button outline--primary button--rounded button--xl" href="{{ site.baseurl }}/assets/ppt-slides/GeoBFT-VLDB20.pdf">Slides</a>
 
 
-#### Scalable, Resilient and Configurable Permissioned Blockchain Fabric.   
+### Scalable, Resilient and Configurable Permissioned Blockchain Fabric.   
 
 Demo Paper by S. Rahnama, S. Gupta, T. Qadah, J. Hellings, M. Sadoghi presented at PVLDB 2020.
 <iframe width="100%" height="500px" src="http://www.youtube.com/embed/By4Ga1Lemm4" frameborder="0" allowfullscreen></iframe>
@@ -31,7 +31,7 @@ Demo Paper by S. Rahnama, S. Gupta, T. Qadah, J. Hellings, M. Sadoghi presented 
 
 Tutorial by S. Gupta, S. Rahnama, J. Hellings, Mohammad Sadoghi presented at PVLDB 2020.
 
-<iframe width="100%" height="500px" src="http://www.youtube.com/embed/By4Ga1Lemm4" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="500px" src="http://www.youtube.com/embed/Jj6hVs1SF3E" frameborder="0" allowfullscreen></iframe>
 
 <a class="button button--primary button--rounded button--xl" href="http://www.vldb.org/pvldb/vol13/p3441-gupta.pdf">Paper</a>
 <a class="button outline--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/papers/Tutorial%20-%20Theory%20-%20VLDB%202020.pdf">Theory Slides</a>
@@ -51,8 +51,6 @@ Architecture by S. Gupta, S. Rahnama, Mohammad Sadoghi presented at ICDCS 2020.
 
 ResilientDB Fabric Website, Journey, Vision/Slides, Bitcoin Radio, Code, Hands-on, Wiki.
 
-### Journey
-<iframe width="100%" height="500px" src="http://www.youtube.com/embed/whgGTSQttds" frameborder="0" allowfullscreen></iframe>
 
 ### Vision
 <iframe width="100%" height="500px" src="http://www.youtube.com/embed/frXpHYf_kSI" frameborder="0" allowfullscreen></iframe>
@@ -61,8 +59,6 @@ ResilientDB Fabric Website, Journey, Vision/Slides, Bitcoin Radio, Code, Hands-o
 ### Bitcoin Radio
 <iframe width="100%" height="500px" src="http://www.youtube.com/embed/jSDv4IXqsAA" frameborder="0" allowfullscreen></iframe>
 
-### Hands on Tutorial
-<iframe width="100%" height="500px" src="http://www.youtube.com/embed/cBn142Uz_J0" frameborder="0" allowfullscreen></iframe>
 
 
 
