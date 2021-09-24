@@ -192,7 +192,7 @@ ResilientDB makes system-centric design decisions by adopting a multi-thread arc
       <h4>Alejandro Armas</h4>
     </div>
     <div class="item__description">
-      <p>Alejandro is an undergraduate student at the University of California, Davis interested in distributed systems and their corresponding architecture; as well as use of learning systems, which understand data with minimal human supervision to model human intelligence.</p>
+      <p>Alejandro is an undergraduate student at the University of California, Davis interested in distributed systems and their corresponding architecture; as well as use of learning systems, which understand data with minimal human supervision to model human intelligence. </p>
     </div>
   </div>
 </div>
@@ -205,7 +205,7 @@ ResilientDB makes system-centric design decisions by adopting a multi-thread arc
     <div class="item__description">
       <p>Previously, a Postdoc Scholar in the Exploratory Systems Lab, Prof. Jelle Hellings is now an Assistant Professor at McMaster University. His research centers around novel directions for high-performance large-scale data management systems. His research has a strong theoretical component (e.g., lower bound results, finite model theory, dependency theory) and a strong algorithmic component (e.g., external-memory algorithms, distributed algorithms, join algorithms). Currently, his focus is on the development of scalable resilient systems that can manage data and processing complex transactions, while providing strong guarantees toward users in the presence of faulty behavior (e.g., hardware failures, software failures, and malicious attacks).</p>
     </div>
-  </div>
+  </div>  
   <a href="https://jhellings.nl/">
       <div class="item__image">
         <img class="image card card--clickable image--lg" src="https://resilientdb.com/img/team_img/dakai.jpg"/>
