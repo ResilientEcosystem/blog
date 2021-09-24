@@ -34,7 +34,7 @@ Tutorial by S. Gupta, S. Rahnama, J. Hellings, Mohammad Sadoghi presented at PVL
 <iframe width="100%" height="500px" src="http://www.youtube.com/embed/Jj6hVs1SF3E" frameborder="0" allowfullscreen></iframe>
 
 <a class="button button--primary button--rounded button--xl" href="http://www.vldb.org/pvldb/vol13/p3441-gupta.pdf">Paper</a>
-<a class="button outline--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/papers/Tutorial%20-%20Theory%20-%20VLDB%202020.pdf">Theory Slides</a>
+<a class="button outline--primary button--rounded button--xl" href="https://expolab.org/papers/Tutorial-Theory-VLDB2020.pdf">Theory Slides</a>
 <a class="button outline--primary button--rounded button--xl" href="{{site.baseurl}}/assets/ppt-slides/Tutorial - System - VLDB 2020.pdf">System Slides</a>
 
 
@@ -44,7 +44,7 @@ Architecture by S. Gupta, S. Rahnama, Mohammad Sadoghi presented at ICDCS 2020.
 
 <iframe width="100%" height="500px" src="http://www.youtube.com/embed/lvftXtpxEEc" frameborder="0" allowfullscreen></iframe>
 
-<a class="button button--primary button--rounded button--xl" href="https://arxiv.org/abs/1911.09208">Paper</a>
+<a class="button button--primary button--rounded button--xl" href="https://arxiv.org/pdf/1911.09208.pdf">Paper</a>
 <a class="button outline--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/papers/EvalPaper-FAB20.pdf">Slides</a>
 
 ## Others Resources
