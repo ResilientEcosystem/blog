@@ -28,7 +28,7 @@ The true power of this protocol becomes evident quite quick; it enables a democr
 
 The aim of a BFT consensus protocol for the application of blockchain is to ensure that all *non-faulty* replicas, that is replicas acting in bad faith, have the **same lineariazability guarantee**; where they assign the **same** order for a given client transaction[^1]. This is a tolerance more resilient than achieving consensus in the presence of benign *crash-faults*, which Paxos[^2] and Viewstamped Replication[^3] can **only** sustain.
 
-Since any BFT protocol employs cryptographic constructs to prevent malicious replicas from impersonating non-faulty replicas via **validity** of message senders, we will assume the use of those same constructs for authenticated communication in PBFT.
+Since any BFT protocol employs [cryptographic constructs]({{ site.baseurl }}/2021/09/22/RESDBcryptography.html) to prevent malicious replicas from impersonating non-faulty replicas via **validity** of message senders, we will assume the use of those same constructs for authenticated communication in PBFT.
 
 ## Practical Byzantine Fault Tolerance Consensus
 
