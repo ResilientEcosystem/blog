@@ -3,7 +3,7 @@ layout: article
 title: ResilientDB - PBFT Commit Algorithm
 author:
   alex
-tags: Programming ResilentDB Consensus
+tags: Protocol ResilentDB Consensus
 aside:
     toc: true
 article_header:
@@ -16,6 +16,8 @@ article_header:
   
 ---
 
+This is an installment of the ResilientDB tutorial series. ResilientDB is a permissioned blockchain fabric developed by the developers at the Exploratory Systems Lab at UC Davis. We are a group of researchers on a mission led by Prof. Mohammad Sadoghi to pioneer a resilient data platform at scale. 
+{:.info}
 
 Allow this article to be a comprehensive introduction into the **Practical Byzantine Fault Tolerance Consensus Protocol (PBFT)** through the lens of the ResilientDB codebase. We will detail the sequences and algorithms which encompass the protocol and encourage the readers to explore the rigorous math proofs afterwards.
 

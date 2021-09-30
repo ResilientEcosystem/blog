@@ -9,16 +9,13 @@ aside:
 ---
 
 
-ECS-198F was a unique open-source blockchain course at the University of California, Davis created in parternship with Blockchain Accelaration Foundation and Blockchain at Davis that offered:
-
-1. introduction to concepts of distributed transactions
-
-2. overview of emerging blockchain fabrics and ecosystems. 
+ECS-198F was a unique open-source blockchain course at the University of California, Davis created in parternship with [Blockchain Accelaration Foundation](https://blockchainacceleration.org/about) and Blockchain at Davis that offered concepts of **distributed transactions** and an overview of emerging **blockchain fabrics and ecosystems**:
+{:.info}
 
 It was offered in the Fall of 2020 and covered the foundations of distributed ledger technologies and topics such as distributed transaction processing, resilient consensus protocols, consistency models, secure storage architecture, blockchain technologies, smart contracts, blockchains digital assets and payment systems, and recent developments in the blockchain industry.
 
 
-Here are the lectures presented as is. Enjoy :)
+> Here are the lectures presented as is... Enjoy :blush:
 
 ## Blockchain at ExpoLab: Our Resilient Journey, Vision, Bitcoin Radio
 

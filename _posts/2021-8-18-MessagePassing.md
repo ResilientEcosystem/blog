@@ -2,14 +2,15 @@
 layout: article
 title: ResilientDB - Passing Custom Messages
 author: alex
-tags: Protocol
+tags: Protocol ResilentDB
 aside:
     toc: true
 ---
 
+This is an installment of the ResilientDB tutorial series. ResilientDB is a permissioned blockchain fabric developed by the developers at the Exploratory Systems Lab at UC Davis. We are a group of researchers on a mission led by Prof. Mohammad Sadoghi to pioneer a resilient data platform at scale. 
+{:.info}
 
-
-If you are interested in sending new types of messages from replica -> replica, then do this:
+Message passing forms the basis in distributed computing protocols, and is no different than what is found in ResilientDB. It relies on supporting infrastructure to invoke processes, subroutines, or functions. If you are interested in sending new types of messages from node to node in ResilientDB, then let's get started.
 
 ### Defining Your Message
 

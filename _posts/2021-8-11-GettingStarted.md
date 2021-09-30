@@ -17,6 +17,7 @@ article_header:
 
 
 This is the first installment of the ResilientDB tutorial series. ResilientDB is a permissioned blockchain fabric developed by the developers at the Exploratory Systems Lab at UC Davis. We are a group of researchers on a mission led by Prof. Mohammad Sadoghi to pioneer a resilient data platform at scale. 
+{:.info}
 
 ResilientDB makes use of the **Practical Byzantine Fault Tolerant Consensus Protocol (PBFT)**[^1], which follows a primary-backup model where each participant identity is known a priori. Clients are to send their requests to the designated primary replica $P$, which upon recieving a request, initiates the consensus protocol which ensures all client transactions are executed in the same order for all replicas in the system.  
 
