@@ -2,7 +2,7 @@
 layout: article
 title: ResilientDB - Resources
 author: alex
-tags: Walkthrough ResilentDB
+tags: Speaker ResilentDB
 aside:
     toc: true
 
