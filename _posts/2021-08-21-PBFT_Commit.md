@@ -2,8 +2,8 @@
 layout: article
 title: ResilientDB - PBFT Commit Algorithm
 author:
-  Alejandro Armas
-tags: Programming ResilentDB Consensus
+  alex
+tags: Protocol ResilentDB Consensus
 aside:
     toc: true
 article_header:
@@ -16,16 +16,21 @@ article_header:
   
 ---
 
+This is an installment of the ResilientDB tutorial series. ResilientDB is a permissioned blockchain fabric developed by the developers at the Exploratory Systems Lab at UC Davis. We are a group of researchers on a mission led by Prof. Mohammad Sadoghi to pioneer a resilient data platform at scale. 
+{:.info}
 
 Allow this article to be a comprehensive introduction into the **Practical Byzantine Fault Tolerance Consensus Protocol (PBFT)** through the lens of the ResilientDB codebase. We will detail the sequences and algorithms which encompass the protocol and encourage the readers to explore the rigorous math proofs afterwards.
 
 The true power of this protocol becomes evident quite quick; it enables a democratic (i.e. through consensus) and decentralized (i.e. through replication) computational model! 
 
+### Hands on Tutorial
+<iframe width="100%" height="500px" src="http://www.youtube.com/embed/cBn142Uz_J0" frameborder="0" allowfullscreen></iframe>
+
 ### Blockchain Consensus 
 
 The aim of a BFT consensus protocol for the application of blockchain is to ensure that all *non-faulty* replicas, that is replicas acting in bad faith, have the **same lineariazability guarantee**; where they assign the **same** order for a given client transaction[^1]. This is a tolerance more resilient than achieving consensus in the presence of benign *crash-faults*, which Paxos[^2] and Viewstamped Replication[^3] can **only** sustain.
 
-Since any BFT protocol employs cryptographic constructs to prevent malicious replicas from impersonating non-faulty replicas via **validity** of message senders, we will assume the use of those same constructs for authenticated communication in PBFT.
+Since any BFT protocol employs [cryptographic constructs]({{ site.baseurl }}/2021/09/22/RESDBcryptography.html) to prevent malicious replicas from impersonating non-faulty replicas via **validity** of message senders, we will assume the use of those same constructs for authenticated communication in PBFT.
 
 ## Practical Byzantine Fault Tolerance Consensus
 
