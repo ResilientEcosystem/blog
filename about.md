@@ -43,7 +43,7 @@ A unique promising outlook for everyone at ExpoLab is rooted in creativity, curi
       <h4>Suyash Gupta</h4>
     </div>
     <div class="item__description">
-      <p>I am a PhD Candidate and Research Assistant at Department of Computer Science, University of California, Davis. He is also the Lead Architect at ResilientDB, and I am associated with Exploratory Systems Lab. I am on job market and open to research opportunities in both industry and academia.</p>
+      <p>Is a PhD Candidate and Research Assistant at Department of Computer Science, University of California, Davis. He is also the Lead Architect at ResilientDB, and I am associated with Exploratory Systems Lab. He is on job market and open to research opportunities in both industry and academia.</p>
     </div>
   </div>
    <a href="https://gupta-suyash.github.io/">
