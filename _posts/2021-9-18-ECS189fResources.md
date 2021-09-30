@@ -9,7 +9,6 @@ aside:
 ---
 
 
-##### DESCRIPTION
 ECS-198F was a unique open-source blockchain course at the University of California, Davis created in parternship with Blockchain Accelaration Foundation and Blockchain at Davis that offered:
 
 1. introduction to concepts of distributed transactions
@@ -23,7 +22,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Blockchain at ExpoLab: Our Resilient Journey, Vision, Bitcoin Radio
 
-> Date Presented: OCT 1, 2020
+`Date Presented: OCT 1, 2020`
 
 ###### Speaker 
 
@@ -55,7 +54,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Principle Foundations of Bitcoin
 
-> Date Presented: OCT 8, 2020
+`Date Presented: OCT 8, 2020`
 
 ###### Speaker 
 
@@ -85,7 +84,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ##  How Ethereum Works 
 
-> Date Presented: OCT 9, 2020
+`Date Presented: OCT 9, 2020`
 
 ###### Speaker 
 
@@ -109,14 +108,14 @@ Here are the lectures presented as is. Enjoy :)
 
 ##### Lecture Recording 
  
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/jx8ql7IwaEM" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="500px" src="https://www.youtube.com/embed/itJl0T2l81E" frameborder="0" allowfullscreen></iframe>
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/How Ethereum Works.pdf">Slides</a>
 
 
 ## Innovating With Bitcoin
 
-> Date Presented: OCT 13, 2020
+`Date Presented: OCT 13, 2020`
 
 ###### Speaker 
 
@@ -146,7 +145,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Principle Foundations of Ethereum
 
-> Date Presented: OCT 15, 2020
+`Date Presented: OCT 15, 2020`
 
 ###### Speaker 
 
@@ -176,7 +175,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ##  Introduction into Decentralized Applications
 
-> Date Presented: OCT 20, 2020
+`Date Presented: OCT 20, 2020`
 
 ###### Speaker 
 
@@ -207,7 +206,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ##  Developing Decentralized Applications
 
-> Date Presented: OCT 22, 2020
+`Date Presented: OCT 22, 2020`
 
 ###### Speaker 
 
@@ -238,7 +237,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ##  Ethereum 2.0: Serenity
 
-> Date Presented: OCT 27, 2020
+`Date Presented: OCT 27, 2020`
 
 ###### Speaker 
 
@@ -266,7 +265,10 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Why Only Permissioned Blockchains Matter: A Realist's Perspective 
 
-> Date Presented: OCT 29, 2020
+**Computer Science Distinguished Lecture**.
+{:.info}
+
+`Date Presented: OCT 29, 2020`
 
 ###### Speaker 
 
@@ -298,7 +300,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Principle Foundations of the Hyperledger Fabric  
 
-> Date Presented: NOV 3, 2020
+`Date Presented: NOV 3, 2020`
 
 ###### Speaker
 
@@ -328,7 +330,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Principle Foundations of LedgerDB
 
-> Date Presented: NOV 5, 2020
+`Date Presented: NOV 5, 2020`
 
 ###### Speaker 
 
@@ -360,7 +362,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ##  Principle Foundations of R3 Corda
 
-> Date Presented: NOV 10, 2020
+`Date Presented: NOV 10, 2020`
 
 ###### Speaker 
 
@@ -391,7 +393,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Intro to Zero-Knowledge Proofs 
 
-> Date Presented: NOV 12, 2020
+`Date Presented: NOV 12, 2020`
 
 ###### Speaker 
 
@@ -421,7 +423,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Principle Foundations of Radix
 
-> Date Presented: NOV 13, 2020
+`Date Presented: NOV 13, 2020`
 
 ###### Speaker 
 
@@ -452,7 +454,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Principle Foundations of Hedera Hashgraph
 
-> Date Presented: NOV 17, 2020
+`Date Presented: NOV 17, 2020`
 
 ###### Speaker 
 
@@ -483,16 +485,11 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Principle Foundations of Near: Sharding Revisited
 
-> Date Presented: NOV 19, 2020
+`Date Presented: NOV 19, 2020`
 
 ###### Speakers 
 
 <div class="item">
-  <a href="https://www.linkedin.com/in/peterdepaulo/">
-    <div class="item__image">
-      <img class="image card card--clickable image--md" src="https://expolab.org/ecs189f-fall-2020/images/speaker-depaulo.jpeg"/>
-    </div>
-  </a>
   <div class="item__content">
     <div class="item__header">
       <h4>Peter Depaulo, Near</h4>
@@ -501,6 +498,11 @@ Here are the lectures presented as is. Enjoy :)
       <p>Peter DePaulo is a repeat founder and currently a core contributor as well as head of the developer community at NEAR. He's written code that's shipped to millions, worked on deep learning models applied to pharmaceutical oncology data, and drafted the non-fungible-token standard at NEAR protocol.</p>
     </div>
   </div>
+  <a href="https://www.linkedin.com/in/peterdepaulo/">
+    <div class="item__image">
+      <img class="image card card--clickable image--md" src="https://expolab.org/ecs189f-fall-2020/images/speaker-depaulo.jpeg"/>
+    </div>
+  </a>
 </div>
 
 <div class="item">
@@ -527,7 +529,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Economics of Proof of Stake & Sharding in Polkadot 
 
-> Date Presented: NOV 20, 2020
+`Date Presented: NOV 20, 2020`
 
 ###### Speaker 
 
@@ -556,16 +558,11 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Solving the Blockchain Trilemma   
 
-> Date Presented: NOV 24, 2020
+`Date Presented: NOV 24, 2020`
 
 ###### Speaker
 
 <div class="item">
-  <a href="https://www.linkedin.com/in/tal-rabin-8408a520/">
-    <div class="item__image">
-      <img class="image card card--clickable image--md" src="https://expolab.org/ecs189f-fall-2020/images/speaker-tal.jpg"/>
-    </div>
-  </a>
   <div class="item__content">
     <div class="item__header">
       <h4>Tal Rabin, Algorand Foundation</h4>
@@ -574,6 +571,11 @@ Here are the lectures presented as is. Enjoy :)
       <p>Tal Rabin is a researcher whose general area focuses on cryptography and, more specifically, on secure multiparty computation, threshold cryptography, and proactive security. Her works have been instrumental in forming these areas. She is a professor at the University of Pennsylvania, Computer Science Dept and a consultant at the Algorand Foundation. Prior to joining UPenn she has been the head of research at the Algorand Foundation and prior to that she had been at IBM Research for 23 years as a Distinguished Research Staff Member. She has a PhD from the Hebrew University. Rabin is an ACM Fellow, an IACR Fellow and member of the American Academy of Arts and Sciences. She is the 2019 recipient of the RSA Award for Excellence in the Field of Mathematics. She was named by Forbes in 2018 as one of the Top 50 Women in Tech in the world. In 2014 Tal won the Anita Borg Women of Vision Award winner for Innovation and was ranked by Business Insider as the #4 on the 22 Most Powerful Women Engineers. Tal has served as the Program and General Chair of the leading cryptography conferences and is an editor of the Journal of Cryptology. She has served as a member of the SIGACT Executive Board and a council member of the Computing Community Consortium.</p>
     </div>
   </div>
+  <a href="https://www.linkedin.com/in/tal-rabin-8408a520/">
+    <div class="item__image">
+      <img class="image card card--clickable image--md" src="https://expolab.org/ecs189f-fall-2020/images/speaker-tal.jpg"/>
+    </div>
+  </a>
 </div>
 
 <div class="item">
@@ -603,7 +605,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Mechanism Design 
 
-> Date Presented: DEC 1, 2020
+`Date Presented: DEC 1, 2020`
 
 ###### Speaker 
 
@@ -633,7 +635,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Decentralized Governance 
 
-> Date Presented: DEC 1, 2020
+`Date Presented: DEC 1, 2020`
 
 **Note**: this talk begins about minute 38:50.
 
@@ -664,7 +666,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Stablecoins & Payments  
 
-> Date Presented: DEC 3, 2020
+`Date Presented: DEC 3, 2020`
 
 ###### Speaker 
 
@@ -693,7 +695,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Raising Money & Gitcoin Grants  
 
-> Date Presented: DEC 4, 2020
+`Date Presented: DEC 4, 2020`
 
 ###### Speaker 
 
@@ -722,7 +724,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Blockchain Investment 
 
-> Date Presented: DEC 4, 2020
+`Date Presented: DEC 4, 2020`
 
 **Note**: Video begins at minute 24:11
 
@@ -753,7 +755,7 @@ Here are the lectures presented as is. Enjoy :)
 
 ## Introduction to Decentralized Finance  
 
-> Date Presented: DEC 8, 2020
+`Date Presented: DEC 8, 2020`
 
 ###### Speaker 
 
@@ -780,9 +782,12 @@ Here are the lectures presented as is. Enjoy :)
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Intro%20to%20Decentralized%20Finance.pdf">Slides</a>
 
-## Principle Foundations of Libra  
+## Principle Foundations of Libra/Diem
 
-> Date Presented: DEC 10, 2020
+**Computer Science Distinguished Lecture**.
+{:.info}
+
+`Date Presented: DEC 10, 2020`
 
 ###### Speaker 
 
@@ -807,7 +812,7 @@ Here are the lectures presented as is. Enjoy :)
 
 <iframe width="100%" height="500px" src="https://www.youtube.com/embed/WR7K3adIqbI" frameborder="0" allowfullscreen></iframe>
 
-<a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Economics%20of%20Proof%20of%20Stake%20&%20Sharding%20in%20Polkadot.pdf">Slides</a>
+<a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Malkhi%20Flyer.jpg">Slides</a>
 
 
 ### Acknowledgement 
