@@ -173,7 +173,7 @@ Since 2015, He has been serving the research community as a reviewer for top-tie
       <h4>Haojun (Howard) Zhu</h4> 
     </div>
     <div class="item__description">
-      <p>Haojun (Howard) Zhu is a M.Sc. Candidate leading the design and development of Reconfigurable BFT protocols, probably one of the most important practical aspects that is entirely missing from the literature. </p>
+      <p>Haojun (Howard) Zhu is a M.Sc. Candidate at the Department of Computer Science of the University of California, Davis. His current interests focuses on the design and development of Reconfigurable BFT protocols as well as their incorperation into PBFT and GeoBFT, which is a very important practical aspect that is currently almost entirely missing from the literature. </p>
     </div>
   </div>
   <a href="https://www.linkedin.com/in/haojun-zhu-89ab9419b/">
