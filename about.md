@@ -15,7 +15,9 @@ key: page-about
 A unique promising outlook for everyone at ExpoLab is rooted in creativity, curiosity, passion, humbleness, kindness... reaching the ultimate ideal of "science for the sake of science" to the betterment of humanity, attaining a noble society. 
 
 ### Journey
-<iframe width="100%" height="500px" src="http://www.youtube.com/embed/whgGTSQttds" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="http://www.youtube.com/embed/whgGTSQttds" frameborder="0" allowfullscreen></iframe> -->
+
+{%- include extensions/youtube.html id='whgGTSQttds' -%}
 
 # Director/Principle Investigator
 
