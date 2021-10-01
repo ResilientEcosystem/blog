@@ -140,36 +140,6 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Introduction to Decentralized Applications.pdf">Slides</a>
 
-## Principle Foundations of Ethereum
-
-`Date Presented: OCT 15, 2020`
-
-###### Speaker 
-
-<div class="item">
-  <a href="https://www.linkedin.com/in/alireza-rafiei/">
-    <div class="item__image">
-      <img class="image card card--clickable image--md" src="https://expolab.org/ecs189f-fall-2020/images/speaker-alireza.jpg"/>
-    </div>
-  </a>
-  <div class="item__content">
-    <div class="item__header">
-      <h4>Alireza Rafiei, Coinbase</h4>
-    </div>
-    <div class="item__description">
-      <p>Alireza Rafiei is part of the Crypto engineering team at Coinbase, inc. and is the Technical Lead at the Blockchain Acceleration Foundation (BAF), 501(c)3. He has research and engineering experience in Blockchain systems. His interests include Algebraic structures, Set theory, as well as the intersection of Cryptography and Distributed systems.</p>
-    </div>
-  </div>
-</div>
-
-
-
-##### Lecture Recording
-
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/pwleVAEkdDk" frameborder="0" allowfullscreen></iframe>
-
-<a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Introduction to Decentralized Applications.pdf">Slides</a>
-
 ##  Introduction into Decentralized Applications
 
 `Date Presented: OCT 20, 2020`
