@@ -17,9 +17,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 > Here are the lectures presented as is... Enjoy :blush:
 
-## Blockchain at ExpoLab: Our Resilient Journey, Vision, Bitcoin Radio
+## Blockchain at ExpoLab: Our Resilient Journey
 
-`Date Presented: OCT 1, 2020`
+`Date Presented: MAY 18, 2020`
 
 ###### Speaker 
 

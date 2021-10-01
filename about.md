@@ -207,7 +207,7 @@ Since 2015, He has been serving the research community as a reviewer for top-tie
       <h4>Kang Dakai</h4> 
     </div>
     <div class="item__description">
-      <p>Kang Dakai is B.Sc. Candidate part of the Global Research Experience In Advanced Technologies (GREAT Program) where he is working on View-change-less Protocols.</p>
+      <p>Kang Dakai is an undergraduate student of the Department of Computer Science of Zhejiang University. He participated the Global Research Experience In Advanced Technology (GREAT Program) of the University of California, Davis. He has successfully ported Resilient Concurrent Consensus (RCC) from ExpoDB-BC to ResilientDB. Now, he is working on View-change-less protocols, trying to implement Hotstuff and a derived protocol in ResilientDB.</p>
     </div>
   </div>  
   <a href="https://jhellings.nl/">
