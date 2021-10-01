@@ -57,22 +57,24 @@ Architecture by S. Gupta, S. Rahnama, Mohammad Sadoghi presented at ICDCS 2020.
 <a class="button button--primary button--rounded button--xl" href="https://arxiv.org/pdf/1911.09208.pdf">Paper</a>
 <a class="button outline--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/papers/EvalPaper-FAB20.pdf">Slides</a>
 
-## Others Resources
-
-ResilientDB Fabric Website, Journey, Vision/Slides, Bitcoin Radio, Code, Hands-on, Wiki.
-
+## Others Resources - ResilientDB: Vision, Panel on Blockchain, Bitcoin Radio
 
 ### Vision
 <!-- <iframe width="100%" height="500px" src="http://www.youtube.com/embed/frXpHYf_kSI" frameborder="0" allowfullscreen></iframe> -->
 {%- include extensions/youtube.html id='frXpHYf_kSI' -%}
-<a class="button but
-ton--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/papers/ResilientDB.pdf">Paper</a>
+
+<a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/papers/ResilientDB.pdf">Paper</a>
+
+### Panel on Blockchain
+
+<!-- <iframe width="100%" height="500px" src="http://www.youtube.com/embed/jSDv4IXqsAA" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='zUqW8Rb_1lo' -%}
+
+<a class="button button--primary button--rounded button--xl" href="https://expolab.org/papers/sigmod-2021-panel.pdf">Paper</a>
 
 ### Bitcoin Radio
 <!-- <iframe width="100%" height="500px" src="http://www.youtube.com/embed/jSDv4IXqsAA" frameborder="0" allowfullscreen></iframe> -->
 {%- include extensions/youtube.html id='jSDv4IXqsAA' -%}
-
-
 
 
 
