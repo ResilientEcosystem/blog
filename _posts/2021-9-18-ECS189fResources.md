@@ -9,7 +9,7 @@ aside:
 ---
 
 
-ECS-198F was a unique open-source blockchain course at the University of California, Davis created in parternship with [Blockchain Accelaration Foundation](https://blockchainacceleration.org/about) and Blockchain at Davis that offered concepts of **distributed transactions** and an overview of emerging **blockchain fabrics and ecosystems**:
+ECS-198F was a unique open-source blockchain course at the University of California, Davis that offered concepts of **distributed transactions** and an overview of emerging **blockchain fabrics and ecosystems**:
 {:.info}
 
 It was offered in the Fall of 2020 and covered the foundations of distributed ledger technologies and topics such as distributed transaction processing, resilient consensus protocols, consistency models, secure storage architecture, blockchain technologies, smart contracts, blockchains digital assets and payment systems, and recent developments in the blockchain industry.
@@ -43,7 +43,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording 
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/frXpHYf_kSI" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/frXpHYf_kSI" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='frXpHYf_kSI' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/intro-consensus.pdf">Slides</a>
 
@@ -75,7 +77,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording 
  
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/itJl0T2l81E" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/itJl0T2l81E" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='itJl0T2l81E' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Foundations of Bitcoin - HackMD.pdf">Slides</a>
 
@@ -105,7 +109,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording 
  
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/itJl0T2l81E" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/itJl0T2l81E" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='itJl0T2l81E' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/How Ethereum Works.pdf">Slides</a>
 
@@ -136,7 +142,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/pwleVAEkdDk" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/pwleVAEkdDk" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='pwleVAEkdDk' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Introduction to Decentralized Applications.pdf">Slides</a>
 
@@ -166,7 +174,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/yaS1mmwn4WQ" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/yaS1mmwn4WQ" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='yaS1mmwn4WQ' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Introduction to Decentralized Applications.pdf">Slides</a>
 
@@ -197,7 +207,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/oi-enuuCOjY" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/oi-enuuCOjY" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='oi-enuuCOjY' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Developing Decentralized Applications.pdf">Slides</a>
 
@@ -226,7 +238,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/nnnB5P0oQCc" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/nnnB5P0oQCc" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='nnnB5P0oQCc' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Developing Decentralized Applications.pdf">Slides</a>
 
@@ -261,7 +275,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/EDbAFV1wXPw" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/EDbAFV1wXPw" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='EDbAFV1wXPw' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Why%20Only%20Permissioned%20Blockchains%20Matter.pdf">Slides</a>
 
@@ -291,7 +307,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/XkrUL1NF9-8" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/XkrUL1NF9-8" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='XkrUL1NF9-8' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Why%20Only%20Permissioned%20Blockchains%20Matter.pdf">Slides</a>
 
@@ -321,7 +339,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording 
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/1qX8hNOUI2Q" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/1qX8hNOUI2Q" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='1qX8hNOUI2Q' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Principle%20Foundations%20of%20LedgerDB.pdf">Slides</a>
 
@@ -353,7 +373,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording 
  
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/_yaAIAfWq88" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/_yaAIAfWq88" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='_yaAIAfWq88' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Principle%20Foundations%20of%20R3%20Corda.pdf">Slides</a>
 
@@ -384,7 +406,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/aNgKrFVjQiI" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/aNgKrFVjQiI" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='aNgKrFVjQiI' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Intro%20to%20Zero-Knowledge%20Proofs.pdf">Slides</a>
 
@@ -414,7 +438,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/BSGfqNITWvU" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/BSGfqNITWvU" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='BSGfqNITWvU' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Principle%20Foundations%20of%20Radix.pdf">Slides</a>
 
@@ -445,7 +471,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/inWWIQWcrn0" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/inWWIQWcrn0" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='inWWIQWcrn0' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Principle%20Foundations%20of%20Hedera%20Hashgraph.pdf">Slides</a>
 
@@ -490,7 +518,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/RX7-qbvb1bc" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/RX7-qbvb1bc" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='RX7-qbvb1bc' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Principle%20Foundations%20of%20NEAR%20-%20Sharding%20Revisited.pdf">Slides</a>
 
@@ -519,7 +549,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/7Ch3fXEVq7U" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/7Ch3fXEVq7U" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='7Ch3fXEVq7U' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Economics%20of%20Proof%20of%20Stake%20&%20Sharding%20in%20Polkadot.pdf">Slides</a>
 
@@ -565,7 +597,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/yTAKc4uG7cM" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/yTAKc4uG7cM" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='yTAKc4uG7cM' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Solving%20the%20Blockchain%20Trilemma.pdf">Slides</a>
 
@@ -595,7 +629,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/zyaynn1dxds" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/zyaynn1dxds" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='zyaynn1dxds' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Mechanism%20Design.pdf">Slides</a>
 
@@ -627,7 +663,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/zyaynn1dxds?t=2330" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/zyaynn1dxds?t=2330" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='zyaynn1dxds?t=2330' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Decentralized%20Governance.pdf">Slides</a>
 
@@ -656,7 +694,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/ySCummMiG8s" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/ySCummMiG8s" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='ySCummMiG8s' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Stablecoins%20and%20Payments.pdf">Slides</a>
 
@@ -685,7 +725,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/WRetHWTn2u8" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/WRetHWTn2u8" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='WRetHWTn2u8' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Economics%20of%20Proof%20of%20Stake%20&%20Sharding%20in%20Polkadot.pdf">Slides</a>
 
@@ -716,7 +758,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/WRetHWTn2u8?t=1451" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/WRetHWTn2u8?t=1451" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='WRetHWTn2u8?t=1451' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Blockchain%20Investment.pdf">Slides</a>
 
@@ -745,7 +789,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/IA0cwrlSVxU" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/IA0cwrlSVxU" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='IA0cwrlSVxU' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Intro%20to%20Decentralized%20Finance.pdf">Slides</a>
 
@@ -777,7 +823,9 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 
 ##### Lecture Recording
 
-<iframe width="100%" height="500px" src="https://www.youtube.com/embed/WR7K3adIqbI" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/WR7K3adIqbI" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='WR7K3adIqbI' -%}
+
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Malkhi%20Flyer.jpg">Slides</a>
 
