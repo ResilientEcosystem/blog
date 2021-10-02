@@ -63,14 +63,14 @@ Architecture by S. Gupta, S. Rahnama, Mohammad Sadoghi presented at ICDCS 2020.
 <!-- <iframe width="100%" height="500px" src="http://www.youtube.com/embed/frXpHYf_kSI" frameborder="0" allowfullscreen></iframe> -->
 {%- include extensions/youtube.html id='frXpHYf_kSI' -%}
 
-<a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/papers/ResilientDB.pdf">Paper</a>
+<a class="button button--primary button--rounded button--xl" href="https://expolab.org/papers/ResilientDB.pdf">Slides</a>
 
 ### Panel on Blockchain
 
 <!-- <iframe width="100%" height="500px" src="http://www.youtube.com/embed/jSDv4IXqsAA" frameborder="0" allowfullscreen></iframe> -->
 {%- include extensions/youtube.html id='zUqW8Rb_1lo' -%}
 
-<a class="button button--primary button--rounded button--xl" href="https://expolab.org/papers/sigmod-2021-panel.pdf">Paper</a>
+<a class="button button--primary button--rounded button--xl" href="https://expolab.org/papers/sigmod-2021-panel.pdf">Slides</a>
 
 ### Bitcoin Radio
 <!-- <iframe width="100%" height="500px" src="http://www.youtube.com/embed/jSDv4IXqsAA" frameborder="0" allowfullscreen></iframe> -->
