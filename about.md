@@ -196,7 +196,7 @@ Since 2015, He has been serving the research community as a reviewer for top-tie
       <h4>Alejandro Armas</h4>
     </div>
     <div class="item__description">
-      <p>As a NSF LSAMP/CAMP and AvenueE/VIP Research Scholar, Alejandro is a B.Sc. Candidate at the University of California, Davis. Previously an intern at the MIT Summer Research Program and Interdisciplinary and Quantitative Biology REU at the Universidad de Puerto Rico, Rio Piedras; he now is leading effort to make ResilientDB, our blockchain fabric, more accessible and consumable for students, practitioners, and researchers at UCD and beyond by extending its toolkit and developing core documentation. He is interested in distributed systems and their corresponding architecture and has passion for performant systems and optimization. When he is not studying, he does weight-training at the Davis' ARC. </p>
+      <p>As a NSF LSAMP/CAMP and AvenueE/VIP Research Scholar, Alejandro is a B.Sc. Candidate at the University of California, Davis. Previously an intern at both the MIT Summer Research Program and Interdisciplinary and Quantitative Biology REU at the Universidad de Puerto Rico, Rio Piedras; he now is leading effort to make ResilientDB, our blockchain fabric, more accessible and consumable for students, practitioners, and researchers at UCD and beyond by extending its toolkit and developing core documentation. He is interested in distributed systems and their corresponding architecture and has passion for performant systems and optimization. When he is not studying, he does weight-training at the Davis' ARC. </p>
     </div>
   </div>
 </div>
