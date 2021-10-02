@@ -24,7 +24,9 @@ Allow this article to be a comprehensive introduction into the **Practical Byzan
 The true power of this protocol becomes evident quite quick; it enables a democratic (i.e. through consensus) and decentralized (i.e. through replication) computational model! 
 
 ### Hands on Tutorial
-<iframe width="100%" height="500px" src="http://www.youtube.com/embed/cBn142Uz_J0" frameborder="0" allowfullscreen></iframe>
+<!-- <iframe width="100%" height="500px" src="http://www.youtube.com/embed/cBn142Uz_J0" frameborder="0" allowfullscreen></iframe> -->
+{%- include extensions/youtube.html id='cBn142Uz_J0' -%}
+
 
 ### Blockchain Consensus 
 
