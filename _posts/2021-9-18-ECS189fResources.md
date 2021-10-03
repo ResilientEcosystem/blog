@@ -78,8 +78,7 @@ It was offered in the Fall of 2020 and covered the foundations of distributed le
 ##### Lecture Recording 
  
 <!-- <iframe width="100%" height="500px" src="https://www.youtube.com/embed/itJl0T2l81E" frameborder="0" allowfullscreen></iframe> -->
-{%- include extensions/youtube.html id='itJl0T2l81E' -%}
-
+{%- include extensions/youtube.html id='jx8ql7IwaEM' -%}
 
 <a class="button button--primary button--rounded button--xl" href="https://expolab.org/ecs189f-fall-2020/handouts/Foundations of Bitcoin - HackMD.pdf">Slides</a>
 
