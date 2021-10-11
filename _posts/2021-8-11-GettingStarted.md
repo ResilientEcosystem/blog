@@ -239,7 +239,7 @@ Port ID:  0, 1 -> 3 : 17016
 ```
 
 
-###### Miscilanous Things
+###### Miscellaneous Things
 
 Here we see the neccesary infastructure setup to actually process and manage transactions as well as the propigation of them throughout the system. 
 
