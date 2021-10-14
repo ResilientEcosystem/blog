@@ -232,73 +232,12 @@ Let's present an overview of what each file is responsible for. We are going to 
 
 ### ResilientDB Lines of Code
 
-ResilientDB is currently under 20K lines of code (17108 to be exact). 
-
-<div class="grid">
-  <div class="cell cell--4"></div>
-  <div class="cell cell--4">
-
-    <table>
-    <tr>
-        <th>File/Directory</th>
-        <th>Lines of Code</th>
-    </tr>
-    <tr>
-        <td>resilientDB-docker</td>
-        <td>149</td>
-    </tr>
-    <tr>
-        <td>config.h</td>
-        <td>201</td>
-    </tr>
-    <tr>
-        <td>benchmarks/</td>
-        <td>331</td>
-    </tr>
-    <tr>
-        <td>blockchain/</td>
-        <td>583</td>
-    </tr>
-    <tr>
-        <td>client/</td>
-        <td>528</td>
-    </tr>
-    <tr>
-        <td>data_structures/</td>
-        <td>190</td>
-    </tr>
-    <tr>
-        <td>db/</td>
-        <td>338</td>
-    </tr>
-    <tr>
-        <td>scripts/</td>
-        <td>1170</td>
-    </tr>
-    <tr>
-        <td>smart_contracts/</td>
-        <td>206</td>
-    </tr>
-    <tr>
-        <td>statistics/</td>
-        <td>1484</td>
-    </tr>
-    <tr>
-        <td>system/</td>
-        <td>7585</td>
-    </tr>
-    <tr>
-        <td>transport/</td>
-        <td>4258</td>
-    </tr>
-    <tr>
-        <td>Makefile</td>
-        <td>85</td>
-    </tr>
-    </table>
+Core components of ResilientDB are highly optimized to be under 20,000 lines of code (17,108 to be exact).
 
 
-  </div>
-  <div class="cell cell--4"></div>
-</div>
+<p style="text-align:center;">
+    <img src="{{ site.baseurl }}/assets/images/fileStructure/loc.png" width="100%" height="100%" alt="Lines of Code"/>
+    <br>
+</p>
+> Figure 1.
 
