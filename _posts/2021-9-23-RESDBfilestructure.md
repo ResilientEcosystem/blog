@@ -193,31 +193,112 @@ resilientdb
 ```
 
 
-### File Overview
+## File Overview
 
 
 Let's present an overview of what each file is responsible for. We are going to exclude some files neccessary for the github repository; namely `CHANGELOG.md`, `CODE_OF_CONDUCT.md`, `LICENSE.md`, `README.md`:
 
-| File/Directory | Description | Lines of Code |
-| -------------- | ----------- | -- |
-| :floppy_disk: `resilientDB-docker`  | A bash script responsible for bootstrapping the programming environment. Since we wish to use a dockerized deployement of several nodes, a multi-container Docker application and its services are configured through the generation of a Docker Compose file `docker-compose.yml`. These containers are subsequently started (via `docker-compose up -d`).          | 149 |
-| :floppy_disk: `runcl`               | Client node executable. These generate and request transaction to be executed. | N/A |
-| :floppy_disk: `rundb`               | Replica node executable. These perform consensus. | N/A |
-| :scroll:      `res.out`             | The standard out from `scripts/result.sh` is piped into this file via `resilientDB-docker`.   | N/A |
-| :scroll:      `Makefile`            | ResilientDB is compiled by invoking `make` in the main working directory (`resilientdb/`) | 85 |
-| :scroll:      `config.h`            | Configuration file. Comprised of preprocessor constants where the generation of which are embedded via metaprogramming from the `scripts/make_config.sh` bash script. `config.cpp` merely imports all these symbols so that an object file can be compiled later. | 201 |
-| :scroll:      `docker-compose.yml`  | Docker Compose file and configuration for its respective services.        | N/A |
-| :scroll:      `ifconfig.txt`        | Created by `scripts/docker-ifconfig.sh` during the `resilientDB-docker` script.         | N/A |
-| :file_folder: `benchmarks/`         | Class definitions for abstractions relating to transactions (TXs) (`ycsb_request` and `YCSBQuery`) as well as the generation of synthetic TXs (`YCSBQueryGenerator`) in `yscb_query.h` and their corresponding workload managers found in `ycsb.h`.         | 331 |
-| :file_folder: `blockchain/`         | Class definitions for blocks (`BChainStruct`) and the chain of blocks (`BChain`) in `chain.h` as well as encryption constructs for signing messages in `crypto.h`.        | 583 |
-| :file_folder: `client/`             | Client entry point `client_main.cpp` as well as class definitions for `Client_query_queue`.  | 528 |
-| :file_folder: `data_structures/`    | Class definitions for data structures with concurrent access via locks.      | 190 |
-| :file_folder: `db/`                 | Class definitions for the `DataBase` interface, which connects to an InMemoryDB or sqlite instance. | 338 |
-| :file_folder: `deps/`               | Import location for statically built libraries, which consists of routines that are compiled and linked directly into `runcl` and `rundb` via the `Makefile`.         | N/A |
-| :file_folder: `obj/`                | Directory where all the object files are compiled and organized into for later linking. | N/A |
-| :file_folder: `results/`            | Results from the workload are piped into `.out` files into this directory. | N/A |
-| :file_folder: `scripts/`            | Bash scripts for things such as bootstrapping programming environment ( `docker-ifconfig.sh`, `make_config.sh`), collecting workload statistics (latency, memory usage, transaction throughput, idle times) from pipe indirection operator (via stdout and `result.sh` script), as well as others relating to running experiments on cloud compute (`scp_results.sh`, `set_ulimit.sh`, `vcloud_cmd.sh`, and `vcloud_deploy.sh`)        | 1484 |
-| :file_folder: `smart_contracts/`    | Class definitions for types inherited from `SmartContract` for smart contract workloads. | 206 |
-| :file_folder: `statistics/`         | Class definition for structures relating to accumulation of system statistics (Transactions, execution, worker threads, I/O).         | 1484 |
-| :file_folder: `system/`             | **Bulk** of class definitions of ResilientDB are found here such as `WorkerThread` and `ClientThread` which relate to performing consensus.         | 7585 |
-| :file_folder: `transport/`          | Class definitions for structures relating to the infrastructure of message communication such as `Socket`, `Message`, `MessageThread`.         | 4258 |
+### Core Functionality  
+
+| File/Directory | Description | 
+| -------------- | ----------- | 
+| :floppy_disk: `resilientDB-docker`  | A bash script responsible for bootstrapping the programming environment. Since we wish to use a dockerized deployement of several nodes, a multi-container Docker application and its services are configured through the generation of a Docker Compose file `docker-compose.yml`. These containers are subsequently started (via `docker-compose up -d`).          | 
+| :floppy_disk: `runcl`               | Client node executable. These generate and request transaction to be executed. |
+| :floppy_disk: `rundb`               | Replica node executable. These perform consensus. |
+| :scroll:      `res.out`             | The standard out from `scripts/result.sh` is piped into this file via `resilientDB-docker`.   |
+| :scroll:      `Makefile`            | ResilientDB is compiled by invoking `make` in the main working directory (`resilientdb/`) |
+| :scroll:      `config.h`            | Configuration file. Comprised of preprocessor constants where the generation of which are embedded via metaprogramming from the `scripts/make_config.sh` bash script. `config.cpp` merely imports all these symbols so that an object file can be compiled later. | 
+| :scroll:      `docker-compose.yml`  | Docker Compose file and configuration for its respective services.        |
+| :scroll:      `ifconfig.txt`        | Created by `scripts/docker-ifconfig.sh` during the `resilientDB-docker` script.         |
+| :file_folder: `benchmarks/`         | Class definitions for abstractions relating to transactions (TXs) (`ycsb_request` and `YCSBQuery`) as well as the generation of synthetic TXs (`YCSBQueryGenerator`) in `yscb_query.h` and their corresponding workload managers found in `ycsb.h`.         | 
+| :file_folder: `blockchain/`         | Class definitions for blocks (`BChainStruct`) and the chain of blocks (`BChain`) in `chain.h` as well as encryption constructs for signing messages in `crypto.h`.        | 
+| :file_folder: `client/`             | Client entry point `client_main.cpp` as well as class definitions for `Client_query_queue`.  |
+| :file_folder: `data_structures/`    | Class definitions for data structures with concurrent access via locks.      | 
+| :file_folder: `db/`                 | Class definitions for the `DataBase` interface, which connects to an InMemoryDB or sqlite instance. | 
+| :file_folder: `obj/`                | Directory where all the object files are compiled and organized into for later linking. |
+| :file_folder: `results/`            | Results from the workload are piped into `.out` files into this directory. |
+| :file_folder: `scripts/`            | Bash scripts for things such as bootstrapping programming environment ( `docker-ifconfig.sh`, `make_config.sh`), collecting workload statistics (latency, memory usage, transaction throughput, idle times) from pipe indirection operator (via stdout and `result.sh` script), as well as others relating to running experiments on cloud compute (`scp_results.sh`, `set_ulimit.sh`, `vcloud_cmd.sh`, and `vcloud_deploy.sh`)        |
+| :file_folder: `smart_contracts/`    | Class definitions for types inherited from `SmartContract` for smart contract workloads. | 
+| :file_folder: `statistics/`         | Class definition for structures relating to accumulation of system statistics (Transactions, execution, worker threads, I/O).         |
+| :file_folder: `system/`             | **Bulk** of class definitions of ResilientDB are found here such as `WorkerThread` and `ClientThread` which relate to performing consensus.         |
+| :file_folder: `transport/`          | Class definitions for structures relating to the infrastructure of message communication such as `Socket`, `Message`, `MessageThread`.         | 
+
+
+### External  
+   
+| File/Directory | Description | 
+| -------------- | ----------- | 
+| :file_folder: `deps/`               | Import location for statically built libraries, which consists of routines that are compiled and linked directly into `runcl` and `rundb` via the `Makefile`.         | 
+
+### ResilientDB Lines of Code
+
+ResilientDB is currently under 20K lines of code (17108 to be exact). 
+
+<div class="grid">
+  <div class="cell cell--4"></div>
+  <div class="cell cell--4">
+
+    <table>
+    <tr>
+        <th>File/Directory</th>
+        <th>Lines of Code</th>
+    </tr>
+    <tr>
+        <td>resilientDB-docker</td>
+        <td>149</td>
+    </tr>
+    <tr>
+        <td>config.h</td>
+        <td>201</td>
+    </tr>
+    <tr>
+        <td>benchmarks/</td>
+        <td>331</td>
+    </tr>
+    <tr>
+        <td>blockchain/</td>
+        <td>583</td>
+    </tr>
+    <tr>
+        <td>client/</td>
+        <td>528</td>
+    </tr>
+    <tr>
+        <td>data_structures/</td>
+        <td>190</td>
+    </tr>
+    <tr>
+        <td>db/</td>
+        <td>338</td>
+    </tr>
+    <tr>
+        <td>scripts/</td>
+        <td>1170</td>
+    </tr>
+    <tr>
+        <td>smart_contracts/</td>
+        <td>206</td>
+    </tr>
+    <tr>
+        <td>statistics/</td>
+        <td>1484</td>
+    </tr>
+    <tr>
+        <td>system/</td>
+        <td>7585</td>
+    </tr>
+    <tr>
+        <td>transport/</td>
+        <td>4258</td>
+    </tr>
+    <tr>
+        <td>Makefile</td>
+        <td>85</td>
+    </tr>
+    </table>
+
+
+  </div>
+  <div class="cell cell--4"></div>
+</div>
+
