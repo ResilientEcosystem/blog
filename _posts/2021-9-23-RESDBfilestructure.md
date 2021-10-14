@@ -223,6 +223,13 @@ Let's present an overview of what each file is responsible for. We are going to 
 | :file_folder: `system/`             | **Bulk** of class definitions of ResilientDB are found here such as `WorkerThread` and `ClientThread` which relate to performing consensus.         |
 | :file_folder: `transport/`          | Class definitions for structures relating to the infrastructure of message communication such as `Socket`, `Message`, `MessageThread`.         | 
 
+<p style="text-align:center;">
+    <img src="{{ site.baseurl }}/assets/images/fileStructure/loc.png" width="100%" height="100%" alt="Lines of Code"/>
+    <br>
+</p>
+
+Core components of ResilientDB are highly optimized to be under 20,000 lines of code (17,108 to be exact).
+
 
 ### External  
    
@@ -230,14 +237,7 @@ Let's present an overview of what each file is responsible for. We are going to 
 | -------------- | ----------- | 
 | :file_folder: `deps/`               | Import location for statically built libraries, which consists of routines that are compiled and linked directly into `runcl` and `rundb` via the `Makefile`.         | 
 
-### ResilientDB Lines of Code
-
-Core components of ResilientDB are highly optimized to be under 20,000 lines of code (17,108 to be exact).
 
 
-<p style="text-align:center;">
-    <img src="{{ site.baseurl }}/assets/images/fileStructure/loc.png" width="100%" height="100%" alt="Lines of Code"/>
-    <br>
-</p>
-> Figure 1.
+
 
