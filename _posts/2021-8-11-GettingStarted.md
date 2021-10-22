@@ -94,6 +94,9 @@ If you have not yet peered into the algorithms that compose the protocol of PBFT
 
 Lets get into the code! The program entry point for replicas in the system is via their `main` routine in the `system/main.cpp` file. Since the architecture is mulithreaded and pipelined we're going to skip a lot of details for now. Just know that worker threads are spawned in `main` and their tasks are to disseminate messages via their `run()` member function:
 
+As of **V0.3**, you *may* need to extend the warmup timer value found in `scripts/make_config.sh`. Change the following line to this: `echo -e "#define WARMUP_TIMER  60 * BILLION" >> config.h`
+{:.info}
+
 ```c++
 void *run_thread(void *id)
 {
