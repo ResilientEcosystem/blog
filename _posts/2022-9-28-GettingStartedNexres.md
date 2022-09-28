@@ -1,8 +1,8 @@
 ---
 layout: article
-title: Running Nexres With KV Server 
+title: Running NexRes With KV Server 
 author: Junchao Chen
-tags: Nexres
+tags: NexRes
 aside:
     toc: true
 article_header:
@@ -15,10 +15,10 @@ article_header:
 
 ---
 
-Here we illustrate how to run Nexres with its builtin application: KV Server. We provide steps by steps tutorial to set up Nexres locally with 4 nodes and using the builtin KV Server to set and get a key-value pair.
+Here we illustrate how to run NexRes with its builtin application: KV Server. We provide steps by steps tutorial to set up NexRes locally with 4 nodes and using the builtin KV Server to set and get a key-value pair.
 
 # Before you begin
-Nexres is only able to be run in Ubuntu 20.04 with ubuntu host. Please make sure you installed the right version.
+NexRes is only able to be run in Ubuntu 20.04 with ubuntu host. Please make sure you installed the right version.
 
 ### Linux
 If you are using Linux, please install Ubuntu 20.04. The default user will be ubuntu.
@@ -43,7 +43,7 @@ Login to the container and swith to the ubuntu user:
   > su - ubuntu
 
 # Installation
-Now it is time to install Nexres.
+Now it is time to install NexRes.
 Clone the repo from github and go to its folder:
   > git clone https://github.com/resilientdb/resilientdb.git
   > cd resilientdb/
@@ -89,7 +89,7 @@ We do couples of things in this [script](https://github.com/resilientdb/resilien
 3. Run a client server to receive the client requests:
   > nohup bazel-bin/kv_server/kv_server example/kv_config.config cert/node5.key.pri cert/cert_5.cert > client.log &
 
-In Nexres, each server should be assigned a certificate by its own private key. This certificate includes some node information, such as its node ip/port, its node type: server or client. If you are using a wrong certificate or running in a wrong node, the server could not be started. 
+In NexRes, each server should be assigned a certificate by its own private key. This certificate includes some node information, such as its node ip/port, its node type: server or client. If you are using a wrong certificate or running in a wrong node, the server could not be started. 
 
 ### Run more nodes
 Before running more nodes, you need to generate some new certificates first because we only provide 5 certificates with 4 server types and 1 client type. We have already provided tools to help you generate these certificates.
