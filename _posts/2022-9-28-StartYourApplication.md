@@ -2,7 +2,7 @@
 layout: article
 title: Start your Application
 author: Junchao Chen
-tags: Nexres
+tags: NexRes
 aside:
     toc: true
 article_header:
@@ -15,7 +15,7 @@ article_header:
 
 ---
 
-Here we illustrate how to write application using Nexres. We use our KV Server as an example to provide steps by steps tutorial. More details can be seen from the code base [kv_client](https://github.com/resilientdb/resilientdb/tree/nexres/kv_client), [kv_server](https://github.com/resilientdb/resilientdb/tree/nexres/kv_server), [proto](https://github.com/resilientdb/resilientdb/blob/nexres/proto/kv_server.proto), and [client sdk](https://github.com/resilientdb/resilientdb/blob/nexres/example/kv_server_tools.cpp).
+Here we illustrate how to write application using NexRes. We use our KV Server as an example to provide steps by steps tutorial. More details can be seen from the code base [kv_client](https://github.com/resilientdb/resilientdb/tree/nexres/kv_client), [kv_server](https://github.com/resilientdb/resilientdb/tree/nexres/kv_server), [proto](https://github.com/resilientdb/resilientdb/blob/nexres/proto/kv_server.proto), and [client sdk](https://github.com/resilientdb/resilientdb/blob/nexres/example/kv_server_tools.cpp).
 
 ### Write our own proto messages
 First step is to define the proto messages of your application. It includes what kind of interfaces you are going to provide and what the requests and responses are. Here we define two interfaces: Set and Get.For the request, we only need a key and a value which is used for Set request. We write the messages in kv_server.proto.
@@ -61,9 +61,9 @@ cc_proto_library(
 
 ### Write Interface Implementations
 Now we are ready to write your own server. Create a KVServerExecutor which is inherited from TransactionExecutorImpl.
-TransactionExecutorImpl will deliver every transaction once it is committed. Nexres guarantees that the delivery
+TransactionExecutorImpl will deliver every transaction once it is committed. NexRes guarantees that the delivery
 is running in one thread and all the transactions are in the same order as when they are committed and executed in the 
-Consensus Layer. Nexres also guarantees all the nodes will have the same execution ordering.
+Consensus Layer. NexRes also guarantees all the nodes will have the same execution ordering.
 
 Then over-write the ExecuteData function to provide your own execution for each request data.
 ```
@@ -202,7 +202,7 @@ cc_binary(
 
 
 ### Build the Client
-Nexres provides a basic client **ResDBUserClient** to help developers send out messages to the server nodes.
+NexRes provides a basic client **ResDBUserClient** to help developers send out messages to the server nodes.
 Now we create our own client class **ResDBKVClient** and implement the two interfaces we defined before.
 ```
 #include "client/resdb_user_client.h"
@@ -246,7 +246,7 @@ std::unique_ptr<std::string> ResDBKVClient::Get(const std::string& key) {
 
 ### Build Client Library
 Next write a BUILD to the client library. We also need to include the proto dependency we defined and the user client
-Nexres has provided.
+NexRes has provided.
 
 ```
 cc_library(
@@ -305,4 +305,4 @@ cc_binary(
 )
 ```
 
-Then we can test it by following the steps [here](/blog/2022/09/28/GettingStartedNexres.html#running-kv-server).
+Then we can test it by following the steps [here](/blog/2022/09/28/GettingStartedNexRes.html#running-kv-server).
