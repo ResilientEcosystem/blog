@@ -44,7 +44,7 @@ message KVResponse {
 
 ### Write a BUILD file to compile the proto message
 In order to compile the proto file and generate the c++ library, we need to provide a BUILD file.
-Inside the BUILD, there are two part, first part is to compile the proto file which will generate some metadata information.
+Inside the BUILD, there are two parts, first part is to compile the proto file which will generate some metadata information.
 Then we need to indicate to generate the c++ library for the messages by specifying cc_proto_library. If you want to generate
 a python library, py_proto_library can be used.
 
@@ -60,7 +60,7 @@ cc_proto_library(
 ```
 
 ### Write Interface Implementations
-Now we can ready to write your own server. Create a KVServerExecutor which is inherited from TransactionExecutorImpl.
+Now we are ready to write your own server. Create a KVServerExecutor which is inherited from TransactionExecutorImpl.
 TransactionExecutorImpl will deliver every transaction once it is committed. Nexres guarantees that the delivery
 is running in one thread and all the transactions are in the same order as when they are committed and executed in the 
 Consensus Layer. Nexres also guarantees all the nodes will have the same execution ordering.
