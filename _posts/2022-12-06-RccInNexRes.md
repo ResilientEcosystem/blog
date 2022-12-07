@@ -15,7 +15,7 @@ article_header:
 
 ---
 
-Here we illustrate the why and how to implement RCC in NexRes, compare the RCC implementations in ResDB and NexRes 
+Here we illustrate why and how to implement RCC in NexRes, compare the RCC implementations in ResDB and NexRes 
 and show the experiment results we got for RCC in NexRes. 
 
 ### The bottleneck in primary-backup BFT protocols
@@ -31,7 +31,7 @@ In traditional primary-backup protocols like PBFT[^1], a single primary broadcas
 
 ### Resilient Concurrent Consensus (RCC)
 
-The Resilient Concurrent Consensus paradigm RCC has been presented to turn any primary-backup consensus protocol into concurrent consensus by running multiple instances concurrently. RCC is designed with performance in mind and ensures increased resilience against failures[^2]. 
+The Resilient Concurrent Consensus paradigm RCC has been proposed to turn any primary-backup consensus protocol into concurrent consensus by running multiple instances concurrently. RCC is designed with performance in mind and ensures increased resilience against failures[^2]. 
 
 RCC runs multiple primary-backup consensus instances concurrently, distributing the overhead of broadcasting client requests to other replicas and overcoming the performance bottleneck caused by the primary's outgoing performance. As the following figure shows, in theory, running concurrent instances has an impressionable positive impact on system throughput.
 
@@ -131,7 +131,7 @@ The experiments used up to 96 replicas and 4 clients.
 
 The first experiment is designed to compare the best-case throughput and outgoing bandwidth of RCC and PBFT of different replicas. The throughput and outgoing bandwidth of RCC and PBFT with different numbers of replicas are recorded. The replica number is set to 4, 16, 32, 64, and 96. The batch size is set to 400 and 800. 
 
-As the system scales, throughput decreases. And RCC 800 outperforms all others when there are 96 replicas. From the right figure we can see that PBFT-400 and PBFT-800 are bottlenecked by outgoing bandwidth. And the reason why RCC-400 has a lower performance than RCC-800 is that RCC-400 processes double number of consensus messages. And we found that RCC-400 was bottlenecked by computing capability by monitoring its CPU utilization while running.
+As the system scales, throughput decreases. And RCC 800 outperforms all others when there are 96 replicas. From the right figure, we can see that PBFT-400 and PBFT-800 are bottlenecked by outgoing bandwidth. And the reason why RCC-400 has a lower performance than RCC-800 is that RCC-400 processes a double number of consensus messages. And we found that RCC-400 was bottlenecked by computing capability by monitoring its CPU utilization while running.
 
 <p>
     <img src="{{ site.baseurl }}/assets/images/rcc/exp1.png" alt="Cover photo" style="width: 90%"/>
