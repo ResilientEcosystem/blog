@@ -131,7 +131,7 @@ The experiments used up to 96 replicas and 4 clients.
 
 The first experiment is designed to compare the best-case throughput and outgoing bandwidth of RCC and PBFT of different replicas. The throughput and outgoing bandwidth of RCC and PBFT with different numbers of replicas are recorded. The replica number is set to 4, 16, 32, 64, and 96. The batch size is set to 400 and 800. 
 
-As the system scales, throughput decreases. And RCC 800 outperforms all others when there are 96 replicas. From the right figure, we can see that PBFT-400 and PBFT-800 are bottlenecked by outgoing bandwidth. And the reason why RCC-400 has a lower performance than RCC-800 is that RCC-400 processes a double number of consensus messages. And we found that RCC-400 was bottlenecked by computing capability by monitoring its CPU utilization while running.
+We denote RCC with batchsize B by RCC-B, so does PBFT. As the system scales, throughput decreases. RCC-800 outperforms RCC-400, PBFT-800 and PBFT-400, when there are 96 replicas. From the right figure, we can see that PBFT-400 and PBFT-800 are bottlenecked by outgoing bandwidth. And the reason why RCC-400 has a lower performance than RCC-800 is that RCC-400 processes a double number of consensus messages. Though RCC-400 gets rid of the bandwidth bottleneck, we've found RCC-400 happens to be bottlenecked by computing capability when there are 96 replicas by monitoring its CPU utilization, which is close to the maximal value 800%.
 
 <p>
     <img src="{{ site.baseurl }}/assets/images/rcc/exp1.png" alt="Cover photo" style="width: 90%"/>
@@ -154,16 +154,16 @@ Experiment results show that increasing batch size benefits PBFT and RCC through
     </em>
 </p>
 
-#### Experiment 3 - Concurrency
+#### Experiment 3 - Concurrent Consensus
 
 This experiment tests and records the throughput and outgoing bandwidth of RCC with 64 or 96 replicas with different numbers of instances and the batch size is set to 400 and 800.
 
-In RCC, when the number of instances is more than one, increasing instances shows no obvious relevance with throughput. However, as the instance number increases, the outgoing bandwidth decreases. Therefore, as long as we overcome the bandwidth bottleneck, RCC gains higher performance than PBFT combined with the experiment 2 result.
+In RCC, after we increase the number of concurrent instances to 4, which has overcome the primary bandwidth bottleneck, increasing number of instances has little influence on throughput. We draw the conclusion that as long as we overcome the bandwidth bottleneck, increasing the number of instances shows inobvious effect since the system is bottlenecked by other factors such as computional capabilty and execution.
 
 <p>
     <img src="{{ site.baseurl }}/assets/images/rcc/exp3.png" alt="Cover photo" style="width: 90%"/>
     <br>
-    <em>Figure 5. RCC Concurrency
+    <em>Figure 5. Effect of Concurrent Consensus on RCC
     </em>
 </p>
 
