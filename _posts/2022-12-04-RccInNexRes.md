@@ -114,7 +114,7 @@ if ((uint32_t)(request->sender_id()) != request->instance() ||
 Before executing committed client requests, RCC orders the committed requests between different instances in the same round. So we need a mechanism to determine the execution order of committed transactions in one round. Now we adopt the simplest one, ordering transactions in the same round based on instance id, from the lowest instance to the highest one.
 
 
-# Experiment and Results
+### Experiment and Results
 
 #### Experiment Setup
 
@@ -141,7 +141,7 @@ As the system scales, throughput decreases. And RCC 800 outperforms all others w
 </p>
 
 
-### Experiment 2 - Batching
+#### Experiment 2 - Batching
 
 This experiment aims to test and record the throughput and outgoing bandwidth usage of PBFT and RCC with 64 or 96 replicas with different batch sizes. The batch size is set to 50, 100, 200, 400, and 800.
 
@@ -154,7 +154,7 @@ Experiment results show that increasing batch size benefits PBFT and RCC through
     </em>
 </p>
 
-### Experiment 3 - Concurrency
+#### Experiment 3 - Concurrency
 
 This experiment tests and records the throughput and outgoing bandwidth of RCC with 64 or 96 replicas with different numbers of instances and the batch size is set to 400 and 800.
 
@@ -167,7 +167,7 @@ In RCC, when the number of instances is more than one, increasing instances show
     </em>
 </p>
 
-## References
+### References
 
 [^1]: **Castro, Miguel, and Barbara Liskov. "*Practical byzantine fault tolerance.*" OsDI. Vol. 99. No. 1999. 1999.** 
 
