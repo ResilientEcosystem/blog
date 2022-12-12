@@ -156,7 +156,7 @@ Experiment results show that increasing batch size benefits PBFT and RCC through
 
 #### Experiment 3 - Concurrent Consensus
 
-This experiment tests and records the throughput and outgoing bandwidth of RCC with 64 or 96 replicas with different numbers of instances and the batch size is set to 400 and 800.
+This experiment tests and records the throughput and outgoing bandwidth of RCC with 64 or 96 replicas with different numbers of instances. The batch size is set to 400 and 800.
 
 In RCC, after we increase the number of concurrent instances to 4, which has overcome the primary bandwidth bottleneck, increasing number of instances has little influence on throughput. We draw the conclusion that as long as we overcome the bandwidth bottleneck, increasing the number of instances shows inobvious effect since the system is bottlenecked by other factors such as computional capabilty and execution.
 
@@ -166,6 +166,22 @@ In RCC, after we increase the number of concurrent instances to 4, which has ove
     <em>Figure 5. Effect of Concurrent Consensus on RCC
     </em>
 </p>
+
+
+#### Experiment 4 - Larger Transaction Size
+
+In this experiment, we tests and records the throughput and outgoing bandwidth of RCC and PBFT, adopting transactions with different sizes but the same execution time. We tests systems with 64 and 96 replicas, 1x, 8x, 16x, 24x, 32x transaction size. We set the batchsize to be 100.
+
+As we can see from the figure, as the transaction size increases, limited by outgoing bandwidth, PBFT throughput decreases 
+greatly. RCC also shows a throughput performance, but the throughput ratio between RCC and PBFT grows. We can safely draw the conclusion that RCC has throughput advantage when processing transactions with large size.
+
+<p>
+    <img src="{{ site.baseurl }}/assets/images/rcc/exp4.png" alt="Cover photo" style="width: 90%"/>
+    <br>
+    <em>Figure 6. Performance of RCC and PBFT with Larger Transaction Size
+    </em>
+</p>
+
 
 ### References
 

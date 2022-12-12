@@ -8,7 +8,7 @@ Blog themes and syntax highlighters can be configured in `_sass/skins/` and sele
 To build locally do the following:
 
 ```bash
-bundle exec jekyll serve
+sudo bundle exec jekyll serve
 ```
 
 In your browser visit [http://127.0.0.1:4000/blog/](http://127.0.0.1:4000/blog/) to view local changes.
