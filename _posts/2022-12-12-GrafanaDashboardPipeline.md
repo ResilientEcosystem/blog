@@ -60,7 +60,7 @@ Go though this [google sheet](https://docs.google.com/spreadsheets/d/1a-OGYYoTHM
 Currently, the Grafana dashboard integrated in nesres.github.io is using http connection. This is a temporality solution that put http connection in https page is a not a secure method. We need to solve this problem in future interation.
 
 ### Integrate dashboard into Nexres node manager
-While Nexres Node Manager is finished, combine the function cloud deployment install with node manager.
+While Nexres Node Manager is finished, combine the functionality of cloud deployment installer with node manager.
 
 ### Deploy Prometheus configuration by endpoint setup
 This improvement also related to node manager. The current Prometheus configuration file only support 4 nexres replicas. If this number increase in the future, the configuration file and Grafana need to adject according to replica number.
