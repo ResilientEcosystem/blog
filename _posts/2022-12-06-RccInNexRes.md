@@ -154,7 +154,7 @@ Experiment results show that increasing batch size benefits PBFT and RCC through
     </em>
 </p>
 
-#### Experiment 3 - Concurrent Consensus
+<!-- #### Experiment 3 - Concurrent Consensus
 
 This experiment tests and records the throughput and outgoing bandwidth of RCC with 64 or 96 replicas with different numbers of instances. The batch size is set to 400 and 800.
 
@@ -165,10 +165,10 @@ In RCC, after we increase the number of concurrent instances to 4, which has ove
     <br>
     <em>Figure 5. Effect of Concurrent Consensus on RCC
     </em>
-</p>
+</p> -->
 
 
-#### Experiment 4 - Larger Transaction Size
+#### Experiment 3 - Larger Transaction Size
 
 In this experiment, we tests and records the throughput and outgoing bandwidth of RCC and PBFT, adopting transactions with different sizes but the same execution time. We tests systems with 64 and 96 replicas, 1x, 8x, 16x, 24x, 32x transaction size. We set the batchsize to be 100.
 
@@ -178,10 +178,24 @@ greatly. RCC also shows a throughput performance, but the throughput ratio betwe
 <p>
     <img src="{{ site.baseurl }}/assets/images/rcc/exp4.png" alt="Cover photo" style="width: 90%"/>
     <br>
-    <em>Figure 6. Performance of RCC and PBFT with Larger Transaction Size
+    <em>Figure 5. Performance of RCC and PBFT with Larger Transaction Size
     </em>
 </p>
 
+
+#### Experiment 4 - Concurrent Consensus
+
+This experiment tests and records the throughput and outgoing bandwidth of RCC with 64 or 96 replicas with different numbers of instances. The batch size is set to 100 and we adopt 32x transaction size.
+
+In RCC, when there are 1, 2 or 4 instances, system performace is bottlenecked by primaries' outgoing bandwidth. As the number of instances increases, throughput increases linearly. The more instances RCC has, the more primaries share the overhead of broadcasting client trasanctions. With at least 8 instances, the primaries's outgoing bandwidth is not 
+saturated and the system throughput increases slightly with instance number.
+
+<p>
+    <img src="{{ site.baseurl }}/assets/images/rcc/exp5.png" alt="Cover photo" style="width: 90%"/>
+    <br>
+    <em>Figure 6. Effect of Concurrent Consensus on RCC
+    </em>
+</p>
 
 ### References
 
