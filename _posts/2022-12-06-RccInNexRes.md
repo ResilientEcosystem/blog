@@ -11,7 +11,7 @@ article_header:
   background_color: '#000000'
   background_image:
     gradient: 'linear-gradient(135deg, rgba(0, 204, 154 , .2), rgba(51, 154, 154, .2))'
-    src: /assets/images/resdb-gettingstarted/diving-start.jpg
+    src: /assets/images/resdb-gettingstarted/blockchain.jpeg
 
 ---
 
