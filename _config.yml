@@ -18,8 +18,8 @@
 ##############################
 text_skin: expolab # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
 highlight_theme: tomorrow-night-eighties # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
-url     : https://resilientdb.com # the base hostname & protocol for your site e.g. https://www.someone.com
-baseurl : /blog # does not include hostname
+url     : https://blog.resilientdb.com # the base hostname & protocol for your site e.g. https://www.someone.com
+baseurl : / # does not include hostname
 title   : ExpoBlog
 description: > # this means to ignore newlines until "Language & timezone"
   Documentation for the high-throughput yielding distributed ledger built upon scale-centric design principles to democratize and decentralize computation.
