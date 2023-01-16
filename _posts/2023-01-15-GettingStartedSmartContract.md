@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Running NexRes With KV Server 
+title: Getting Started with Smart Contract on Nexres
 author: Junchao Chen
 tags: NexRes
 aside:
