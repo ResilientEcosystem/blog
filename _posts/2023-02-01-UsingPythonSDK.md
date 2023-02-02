@@ -55,5 +55,18 @@ Make sure the Python virtual environment is activated if it is not already. You 
 Start the KV servers with the example script. This script uses the example/kv_config.config file.
   > sh example/start_kv_server.sh
 
+# Running Crow Service
+We use Crow, a C++ framework for creating HTTP or Websocket web services to build endpoints to connect our SDK to NexRes.
+
+In another terminal shell after starting KV Server build the crow service: 
+  > bazel build sdk_client/crow_service_main
+
+Run the binary to start the service:
+  > bazel-bin/sdk_client/crow_service_main example/kv_client_config.config sdk_client/server_config.config
+
+You will see this if success: 
+  > (2022-12-19 06:12:02) [INFO    ] Crow/master server is running at http://0.0.0.0:18000 using 16 threads
+  > (2022-12-19 06:12:02) [INFO    ] Call `app.loglevel(crow::LogLevel::Warning)` to hide Info level logs
+
 # Validation
 todo
