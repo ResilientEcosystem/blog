@@ -65,8 +65,10 @@ Run the binary to start the service:
   > bazel-bin/sdk_client/crow_service_main example/kv_client_config.config sdk_client/server_config.config
 
 You will see this if success: 
-     (2022-12-19 06:12:02) [INFO    ] Crow/master server is running at http://0.0.0.0:18000 using 16 threads
-     (2022-12-19 06:12:02) [INFO    ] Call `app.loglevel(crow::LogLevel::Warning)` to hide Info level logs
+  ```
+  (2022-12-19 06:12:02) [INFO    ] Crow/master server is running at http://0.0.0.0:18000 using 16 threads
+  (2022-12-19 06:12:02) [INFO    ] Call `app.loglevel(crow::LogLevel::Warning)` to hide Info level logs
+  ```
 
 # Validation
 todo
