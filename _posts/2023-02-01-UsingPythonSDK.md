@@ -30,10 +30,30 @@ Then install the Python dependencies
 
   > pip install -r sdk_validator/requirements.txt
 
-# Running Servers
-todo
+If you wish to deactivate the virtual environment you can enter
+  > deactivate
 
-kv_config.config
+# Running Servers
+To enable the Python validation, go to example/kv_config.config and set the flag require_txn_validation to true. The file should look something like:
+
+    {
+      region : {
+        ...
+      },
+      self_region_id:1,
+      rocksdb_info : {
+        ...
+      },
+      leveldb_info : {
+        ...
+      },
+      require_txn_validation:true,
+    }
+Make sure the Python virtual environment is activated if it is not already. You will see a (venv) on the left of your command line if it is active.
+  > source venv/bin/activate
+
+Start the KV servers with the example script. This script uses the example/kv_config.config file.
+  > sh example/start_kv_server.sh
 
 # Validation
 todo
