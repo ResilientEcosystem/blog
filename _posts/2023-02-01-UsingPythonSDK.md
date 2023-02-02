@@ -33,8 +33,8 @@ Then install the Python dependencies
 If you wish to deactivate the virtual environment you can enter
   > deactivate
 
-# Running Servers
-To enable the Python validation, go to example/kv_config.config and set the flag require_txn_validation to true. The file should look something like:
+# Running NexRes KV Servers
+NexRes needs to be running first for the SDK endpoints to connect to. To enable the Python transaction validation, go to example/kv_config.config and set the flag require_txn_validation to true. The file should look something like:
 
     {
       region : {
