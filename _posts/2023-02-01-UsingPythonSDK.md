@@ -17,7 +17,23 @@ article_header:
 
 
 # Install
-Please check the [install tutorial](https://blog.resilientdb.com/2022/09/28/GettingStartedNexRes.html) for Nexres to install.
+Please check the [install tutorial](https://blog.resilientdb.com/2022/09/28/GettingStartedNexRes.html) to install NexRes.
+
+After this you will need some additional steps for [pybind11](https://github.com/pybind/pybind11) to work, as we are embedding the Python interpreter in the C++ code.
+
+Make sure your Python version is 3.9+. Check the version with
+  > python3 --version
+
+In the .bazelrc file in your nexres directory, have the PYTHON_BIN_PATH reference the location of your python executable. For example, if you have Python installed at /home/ubuntu/.linuxbrew/bin/python3, then it will look like
+  > build --action_env=PYTHON_BIN_PATH="/home/ubuntu/.linuxbrew/bin/python3"
+
+Then install the Python dev library for your corresponding Python version. These are used when the C++ binary is run.
+  > sudo apt-get install python3.10-dev
+
+If apt cannot find the dev library, you might not have deadsnakes added as a source. You can use the following commands to check your sources and add if needed:
+  > ls /etc/apt/sources.list.d
+
+  > sudo add-apt-repository ppa:deadsnakes/ppa
 
 # Setting Up Virtual Environment
 It is heavily advised to set up a virtual Python environment so you do not disturb your system's Python settings.
@@ -71,4 +87,5 @@ You will see this if successful:
   ```
 
 # Validation
-todo
+
+The code for validating transactions is written in Python so that we can use the cryptoconditions library, which provides functionalities not available in any widely distributed C++ libraries currently.
