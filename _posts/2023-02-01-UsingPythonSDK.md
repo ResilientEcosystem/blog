@@ -56,7 +56,7 @@ Start the KV servers with the example script. This script uses the example/kv_co
   > sh example/start_kv_server.sh
 
 # Running Crow Service
-We use Crow, a C++ framework for creating HTTP or Websocket web services to connect our SDK to NexRes.
+We use [Crow](https://github.com/CrowCpp/Crow), a C++ framework for creating HTTP or Websocket web services to connect our SDK to NexRes.
 
 In another terminal shell after starting KV Server, build the crow service: 
   > bazel build sdk_client/crow_service_main
@@ -64,7 +64,7 @@ In another terminal shell after starting KV Server, build the crow service:
 Run the binary to start the service:
   > bazel-bin/sdk_client/crow_service_main example/kv_client_config.config sdk_client/server_config.config
 
-You will see this if success: 
+You will see this if successful: 
   ```
   (2022-12-19 06:12:02) [INFO    ] Crow/master server is running at http://0.0.0.0:18000 using 16 threads
   (2022-12-19 06:12:02) [INFO    ] Call `app.loglevel(crow::LogLevel::Warning)` to hide Info level logs
