@@ -95,14 +95,14 @@ The SDK is another repository outside NexRes and can be run on another machine i
 
 If your Python version number is too low you may encounter type hinting issues when attempting to run the code
 
-## Installing dependencies
+## Installing Dependencies
 `$ python3 -m venv venv`
 
 `$ source venv/bin/activate`
 
 `$ pip install -r requirements.txt`
 
-## Running the driver
+## Running the Driver
 
 Examples of using the driver can be seen in test_driver.py
 
