@@ -25,7 +25,7 @@ In traditional primary-backup protocols like PBFT[^1], a single primary broadcas
 <p>
     <img src="{{ site.baseurl }}/assets/images/rcc/ratio.png" alt="Cover photo" style="width: 70%"/>
     <br>
-    <em>Figure 1. Unbalanced Overhead Bewteen Primary and Backup Replicas
+    <em>Figure 1. Unbalanced Overhead Between Primary and Backup Replicas
     </em>
 </p>
 
@@ -38,7 +38,7 @@ RCC runs multiple primary-backup consensus instances concurrently, distributing 
 <p>
     <img src="{{ site.baseurl }}/assets/images/rcc/theory.png" alt="Cover photo" style="width: 90%"/>
     <br>
-    <em>Figure 2. Promise of Concurrent Consensus
+    <em>Figure 2. The Promise of Concurrent Consensus
     </em>
 </p>
 
@@ -131,7 +131,7 @@ The experiments used up to 96 replicas and 4 clients.
 
 The first experiment is designed to compare the best-case throughput and outgoing bandwidth of RCC and PBFT of different replicas. The throughput and outgoing bandwidth of RCC and PBFT with different numbers of replicas are recorded. The replica number is set to 4, 16, 32, 64, and 96. The batch size is set to 400 and 800. 
 
-We denote RCC with batchsize B by RCC-B, so does PBFT. As the system scales, throughput decreases. RCC-800 outperforms RCC-400, PBFT-800 and PBFT-400, when there are 96 replicas. From the right figure, we can see that PBFT-400 and PBFT-800 are bottlenecked by outgoing bandwidth. And the reason why RCC-400 has a lower performance than RCC-800 is that RCC-400 processes a double number of consensus messages. Though RCC-400 gets rid of the bandwidth bottleneck, we've found RCC-400 happens to be bottlenecked by computing capability when there are 96 replicas by monitoring its CPU utilization, which is close to the maximal value 800%.
+We denote RCC with batchsize B by RCC-B, and so does PBFT. As the system scales, throughput decreases. RCC-800 outperforms RCC-400, PBFT-800 and PBFT-400, when there are 96 replicas. From the right figure, we can see that PBFT-400 and PBFT-800 are bottlenecked by outgoing bandwidth. And the reason why RCC-400 has a lower performance than RCC-800 is that RCC-400 processes double number of consensus messages. Though RCC-400 gets rid of the bandwidth bottleneck, we've found RCC-400 happens to be bottlenecked by computing capability when there are 96 replicas by monitoring its CPU utilization, which is close to the maximal value i.e., 800%.
 
 <p>
     <img src="{{ site.baseurl }}/assets/images/rcc/exp1.png" alt="Cover photo" style="width: 90%"/>
@@ -170,10 +170,10 @@ In RCC, after we increase the number of concurrent instances to 4, which has ove
 
 #### Experiment 3 - Larger Transaction Size
 
-In this experiment, we tests and records the throughput and outgoing bandwidth of RCC and PBFT, adopting transactions with different sizes but the same execution time. We tests systems with 64 and 96 replicas, 1x, 8x, 16x, 24x, 32x transaction size. We set the batchsize to be 100.
+In this experiment, we test and record the throughput and outgoing bandwidth of RCC and PBFT, adopting transactions with different sizes but the same execution time. We test systems with 64 and 96 replicas, 1x, 8x, 16x, 24x, and 32x transaction sizes. We set the batchsize to 100.
 
 As we can see from the figure, as the transaction size increases, limited by outgoing bandwidth, PBFT throughput decreases 
-greatly. RCC also shows a throughput performance, but the throughput ratio between RCC and PBFT grows. We can safely draw the conclusion that RCC has throughput advantage when processing transactions with large size.
+greatly. RCC also shows a throughput performance, but the throughput ratio between RCC and PBFT grows. We can safely draw the conclusion that RCC has a throughput advantage when processing transactions with large sizes.
 
 <p>
     <img src="{{ site.baseurl }}/assets/images/rcc/exp4.png" alt="Cover photo" style="width: 90%"/>
@@ -185,10 +185,10 @@ greatly. RCC also shows a throughput performance, but the throughput ratio betwe
 
 #### Experiment 4 - Concurrent Consensus
 
-This experiment tests and records the throughput and outgoing bandwidth of RCC with 64 or 96 replicas with different numbers of instances. The batch size is set to 100 and we adopt 32x transaction size.
+This experiment tests and records the throughput and outgoing bandwidth of RCC with 64 or 96 replicas with different numbers of instances. The batch size is set to 100 and we adopt a 32x transaction size.
 
-In RCC, when there are 1, 2 or 4 instances, system performace is bottlenecked by primaries' outgoing bandwidth. As the number of instances increases, throughput increases linearly. The more instances RCC has, the more primaries share the overhead of broadcasting client trasanctions. With at least 8 instances, the primaries's outgoing bandwidth is not 
-saturated and the system throughput increases slightly with instance number.
+In RCC, when there are 1, 2, or 4 instances, system performance is bottlenecked by the primaries' outgoing bandwidth. As the number of instances increases, throughput increases linearly. The more instances RCC has, the more primaries share the overhead of broadcasting client transactions. With at least 8 instances, the primaries' outgoing bandwidth is not 
+saturated and the system throughput increases slightly with the instance number.
 
 <p>
     <img src="{{ site.baseurl }}/assets/images/rcc/exp5.png" alt="Cover photo" style="width: 90%"/>
