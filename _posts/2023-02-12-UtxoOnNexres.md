@@ -43,8 +43,8 @@ Therefore, it should guarantee that each transaction can only be spent once.
 
 ## System Architecture
 ![utxo_nexres](/assets/images/nexres/utxo_nexres.jpg)
-UTXO is running on NexRes and managed by its local UTXO Manager. Each transaction will go through the consensus protocol 
-by NexRes and is saved locally.
+UTXO is running on NexRes and managed by its local UTXO Manager. Transactions will be included into a transaction block (tx block) and go through the consensus protocol 
+by NexRes, then are saved locally into a transaction queue.
 
 UTXO Manager iteratively fetches the transactions and executes the UTXO data in each transaction.
 All the valid UTXO data will be calculated as coins and saved into the user wallets so that they can view their accounts.
