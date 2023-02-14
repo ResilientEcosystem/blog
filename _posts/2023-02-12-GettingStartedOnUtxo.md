@@ -16,9 +16,9 @@ article_header:
 excerpt: Using UTXO on NexRes.
 ---
 
-## Create Wallet
+## Create a Wallet
 
-Begining using UTXO transactions on NexRes, we need to create a wallet by generating a private key, a public key, 
+Beginning using UTXO transactions on NexRes, we need to create a wallet by generating a private key, a public key, 
 and an address corresponding to your wallet.
 Wallet addresses are encoded by bech32 which is also used for Bitcoin.
 
@@ -26,7 +26,7 @@ These are some steps to build your private-public keys and your address:
 
 1. Go to the source folder which contains the WORKSPACE file.
 
-   Make sure  bech32 has been installed which used for the addresses encoding. 
+   Make sure  bech32 has been installed which is used for the address encoding. 
    > pip install bech32
 
 2. Create your own private key. It will return a private key and a public key, encoded by ECDSA.
@@ -56,13 +56,13 @@ These are some steps to build your private-public keys and your address:
 
 ## Start UTXO Service
 
-Before start the service, you need to assign a genesis coin to some addresses.
+Before starting the service, you need to assign a genesis coin to some addresses.
 
-Modify the utxo config to add coins.
+Modify the UTXO config to add coins.
 
 > application/utxo/server/config/utxo_config.config
 
-the field 'out' indicates the output of a utxo. 
+the field 'out' indicates the output of a UTXO. 
 
 ```
 {
@@ -78,13 +78,13 @@ the field 'out' indicates the output of a utxo.
 }
 ``` 
 
-Once you added the genesis coins, start the utxo service.
+Once you added the genesis coins, start the UTXO service.
 > ./application/utxo/server/start_contract_server.sh
 
 
 ## Transfer your coins
 
-First we need build the tools
+First, we need to build the tools
 
 > bazel build application/utxo/wallet_tool/cpp/utxo_client_tools
 
@@ -108,7 +108,7 @@ Then, run the tools to transfer the coins
 
 ## Get the transaction list
 
-Obtain the transaction list from one of the replica node. The server config is different from the one used in transfer, which uses the client one.
+Obtain the transaction list from one of the replica nodes. The server config is different from the one used in the transfer, which uses the client one.
 
 > bazel-bin/application/utxo/wallet_tool/cpp/utxo_client_tools -c application/utxo/wallet_tool/cpp/server_config0.config -m list -e -1 -n 5
 
