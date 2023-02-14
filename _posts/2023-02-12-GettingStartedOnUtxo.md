@@ -1,6 +1,6 @@
 ---
 layout: article
-title: GettingStartedOnUtxo
+title: Getting Started On UTXO
 author: Junchao Chen
 tags: NexRes
 aside:
@@ -13,6 +13,7 @@ article_header:
     gradient: 'linear-gradient(135deg, rgba(0, 204, 154 , .2), rgba(51, 154, 154, .2))'
     src: /assets/images/nexres/coin.jpg
 
+excerpt: Using UTXO on Nexres.
 ---
 
 ## Create Wallet
