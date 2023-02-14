@@ -13,12 +13,12 @@ article_header:
     gradient: 'linear-gradient(135deg, rgba(0, 204, 154 , .2), rgba(51, 154, 154, .2))'
     src: /assets/images/nexres/coin.jpg
 
-excerpt: Using UTXO on Nexres.
+excerpt: Using UTXO on NexRes.
 ---
 
 ## Create Wallet
 
-Begining using UTXO transactions on Nexres, we need to create a wallet by generating a private key, a public key, 
+Begining using UTXO transactions on NexRes, we need to create a wallet by generating a private key, a public key, 
 and an address corresponding to your wallet.
 Wallet addresses are encoded by bech32 which is also used for Bitcoin.
 
