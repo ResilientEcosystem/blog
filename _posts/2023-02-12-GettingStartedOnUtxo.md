@@ -125,6 +125,10 @@ Obtain the transaction list from one of the replica nodes. The server config is 
 ## Get the wallet value
 > bazel-bin/application/utxo/wallet_tool/cpp/utxo_client_tools -c application/utxo/wallet_tool/cpp/server_config0.config -m wallet -t bc1qd5ftrxa3vlsff5dl04nxg06ku6p4w6enk0cna9
 
+  | -c | server config points to the server node |
+  | -m | function |
+  | -t | wallet address to be fetched |
+
   ```
   E20230214 18:02:26.936648 41575 utxo_client_tools.cpp:76] address:bc1qd5ftrxa3vlsff5dl04nxg06ku6p4w6enk0cna9 get wallet value:100
   ```
