@@ -15,10 +15,10 @@ article_header:
 
 ---
 
-Here we illustrate how to write application using NexRes. We use our KV Server as an example to provide steps by steps tutorial. More details can be seen from the code base [kv_client](https://github.com/resilientdb/resilientdb/tree/nexres/kv_client), [kv_server](https://github.com/resilientdb/resilientdb/tree/nexres/kv_server), [proto](https://github.com/resilientdb/resilientdb/blob/nexres/proto/kv_server.proto), and [client sdk](https://github.com/resilientdb/resilientdb/blob/nexres/example/kv_server_tools.cpp).
+Here we illustrate how to write applications using NexRes. We use our KV Server as an example to provide steps by steps tutorial. More details can be seen from the code base [kv_client](https://github.com/resilientdb/resilientdb/tree/nexres/kv_client), [kv_server](https://github.com/resilientdb/resilientdb/tree/nexres/kv_server), [proto](https://github.com/resilientdb/resilientdb/blob/nexres/proto/kv_server.proto), and [client sdk](https://github.com/resilientdb/resilientdb/blob/nexres/example/kv_server_tools.cpp).
 
 ### Write our own proto messages
-First step is to define the proto messages of your application. It includes what kind of interfaces you are going to provide and what the requests and responses are. Here we define two interfaces: Set and Get.For the request, we only need a key and a value which is used for Set request. We write the messages in [kv_server.proto](https://github.com/resilientdb/resilientdb/blob/nexres/proto/kv_server.proto).
+The first step is to define the proto messages of your application. It includes what kind of interfaces you are going to provide and what the requests and responses are. Here we define two interfaces: Set and Get. For the request, we only need a key and a value that is used for Set request. We write the messages in [kv_server.proto](https://github.com/resilientdb/resilientdb/blob/nexres/proto/kv_server.proto).
 
 ```
 syntax = "proto3";
@@ -92,8 +92,8 @@ class KVServerExecutor : public TransactionExecutorImpl {
 
 Inside ExecuteData, the first thing is to deserialize the input data into our own request message.
 Once we get the request message, we will be able to identify the request by its cmd type: Set or Get.
-Depending on the request type, we will call different execution function. Once we get the result if
-the we get a Get request, we set the value into KVResponse and serialize it into a string then 
+Depending on the request type, we will call different execution functions. Once we get the result if
+we get a Get request, we set the value into KVResponse and serialize it into a string then 
 return it. For the Set request, because we don't need to return a response, we return a nullptr instead.
 
 [Code](https://github.com/resilientdb/resilientdb/blob/nexres/kv_server/kv_server_executor.cpp).
@@ -146,7 +146,7 @@ std::string KVServerExecutor::Get(const std::string& key) {
 }
 ```
 
-Next write a [BUILD file](https://github.com/resilientdb/resilientdb/blob/nexres/kv_server/BUILD#L4) to compile the code. Inside the BUILD file, we need to add the transaction_executor_impl dependency.
+Next, write a [BUILD file](https://github.com/resilientdb/resilientdb/blob/nexres/kv_server/BUILD#L4) to compile the code. Inside the BUILD file, we need to add the transaction_executor_impl dependency.
 Because we use the proto message, we need to add the dependency as well.
 
 ```
@@ -163,7 +163,7 @@ cc_library(
 
 ### Build the Server
 Now the final step is to write the server main function. In the main function, we need to provide the server configuration,
-the node's private key and its certificate to create ResDBConfig. Then generate the server by passing our execution 
+the node's private key, and its certificate to create ResDBConfig. Then generate the server by passing our execution 
 implementations. Finally, Run the server. Code can be seen from [here](https://github.com/resilientdb/resilientdb/blob/nexres/kv_server/kv_server.cpp).
 ```
 int main(int argc, char** argv) {
@@ -188,7 +188,7 @@ int main(int argc, char** argv) {
 }
 ```
 
-Then write the [BUILD file](https://github.com/resilientdb/resilientdb/blob/nexres/kv_server/BUILD#L27) to compile the binary. We put the server implemation in the same folder where the KVServerExecutor is.
+Then write the [BUILD file](https://github.com/resilientdb/resilientdb/blob/nexres/kv_server/BUILD#L27) to compile the binary. We put the server implementation in the same folder where the KVServerExecutor is.
 ```
 cc_binary(
     name = "kv_server",
@@ -307,3 +307,6 @@ cc_binary(
 ```
 
 Then we can test it by following the steps [here](/blog/2022/09/28/GettingStartedNexRes.html#running-kv-server).
+
+
+
