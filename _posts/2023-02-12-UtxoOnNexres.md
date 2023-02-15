@@ -12,7 +12,6 @@ article_header:
   background_image:
     gradient: 'linear-gradient(135deg, rgba(0, 204, 154 , .2), rgba(51, 154, 154, .2))'
     src: /assets/images/nexres/coin.jpg
-excerpt: UTXO implementation using NexRes.
 ---
 
 An unspent transaction output ([UTXO](https://en.wikipedia.org/wiki/Unspent_transaction_output)) model helps us to make crypto transactions more efficient and it is a crucial core part in Bitcoin.
@@ -35,7 +34,9 @@ All these input transactions are the available input of the current transaction,
 and the outputs indicate how to deliver these coins from these transactions. It contains the addresses of the delivered users, how many coins are to be delivered, and their public keys.
 The sum of the inputs should be larger than the sum of the outputs. The delta can be used as the gas fee.
 
+<div style="text-align: center">
 <img src="/assets/images/nexres/utxo.jpg"  style="zoom: 60%;" />
+</div>
 
 ## Security
 Each transaction will be signed by the address of the owner and the signatures can be verified by the public key inside its input transactions. Plus, the addresses of the input transactions should be the same as the address of the issue transaction.
