@@ -49,10 +49,12 @@ Clone the repo from github and go to its folder:
   > cd resilientdb/
 
 If you are using MacOS with arm64 processor (CPU) architecture, like MacOS M1, using INSTALL_MAC.sh to install the environment:
-  > sh INSTALL_MAC.sh
+  > chmod +x INSTALL_MAC.sh
+  > ./INSTALL_MAC.sh
 
 Otherwise, use INSTALL.sh:
-  > sh INSTALL.sh
+  > chmod +x ./INSTALL.sh
+  > ./INSTALL.sh
 
 INSTALL.sh or INSTALL_MAC.sh will install some necessary software, like Bazel and Protobuf Buffer.
 
@@ -60,7 +62,8 @@ INSTALL.sh or INSTALL_MAC.sh will install some necessary software, like Bazel an
 Once the installation is done, everything is ready. Now let's start our KV Server with 4 nodes locally.
 
 Running the script in the example folder:
-  > sh example/start_kv_server.sh
+  > chmod +x ./example/start_kv_server.sh
+  > ./example/start_kv_server.sh
 
 When the script is done, you will see that 4 applications called kv_server have been launched locally. Now build the client sdk using Bazel:
   > bazel build example/kv_server_tools
@@ -69,13 +72,17 @@ Now everything is ready. It is time to test the kv server. First, get a key with
   > bazel-bin/example/kv_server_tools example/kv_client_config.config get test
 
 It should return an empty value for the key "test":
-  > test = 
+  ```
+  test = 
+  ```
 
 Next, we set a value to the key "test":
   > bazel-bin/example/kv_server_tools example/kv_client_config.config set test value
 
 Now it should return a value "value":
-  > test = value
+  ```
+  test = value
+  ```
 
 
 ### Behind the script example/start_kv_server.sh
