@@ -163,6 +163,7 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     | 5 | 172.31.80.182 | 10001 | client |
 
     > bazel-bin/tools/certificate_tools cert/ cert/admin.key.pri cert/admin.key.pub cert/node_1.key.pub 1 172.31.88.5 10001 replica
+    Get the resulting certificate:
     ```
     info:admin_public_key {
       key: "u>\215\254,\352\314\311\315Nb+R\345m\235\341\366\303.\343\004dQ|;V;\335\205\013\006"
@@ -187,6 +188,7 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     ```
 
     > bazel-bin/tools/certificate_tools cert/ cert/admin.key.pri cert/admin.key.pub cert/node_2.key.pub 2 172.31.91.225 10001 replica
+    Get the resulting certificate:
     ```
     info:admin_public_key {
       key: "u>\215\254,\352\314\311\315Nb+R\345m\235\341\366\303.\343\004dQ|;V;\335\205\013\006"
@@ -211,6 +213,7 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     ```
 
     > bazel-bin/tools/certificate_tools cert/ cert/admin.key.pri cert/admin.key.pub cert/node_3.key.pub 3 172.31.95.13 10001 replica
+    Get the resulting certificate:
     ```
     info:admin_public_key {
       key: "u>\215\254,\352\314\311\315Nb+R\345m\235\341\366\303.\343\004dQ|;V;\335\205\013\006"
@@ -235,6 +238,7 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     ```
 
     > bazel-bin/tools/certificate_tools cert/ cert/admin.key.pri cert/admin.key.pub cert/node_4.key.pub 4 172.31.85.139 10001 replica
+    Get the resulting certificate:
     ```
     info:admin_public_key {
       key: "u>\215\254,\352\314\311\315Nb+R\345m\235\341\366\303.\343\004dQ|;V;\335\205\013\006"
@@ -259,6 +263,7 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     ```
 
     > bazel-bin/tools/certificate_tools cert/ cert/admin.key.pri cert/admin.key.pub cert/node_5.key.pub 5 172.31.80.182 10001 client
+    Get the resulting certificate:
     ```
     info:admin_public_key {
       key: "u>\215\254,\352\314\311\315Nb+R\345m\235\341\366\303.\343\004dQ|;V;\335\205\013\006"
