@@ -99,7 +99,7 @@ We do a couple of things in this [script](https://github.com/resilientdb/resilie
 In NexRes, each server should be assigned a certificate by its own private key. This certificate includes some node information, such as its node ip/port, its node type: server or client. If you are using the wrong certificate or running in the wrong node, the server could not be started. 
 
 ### Run nodes remotely
-Before running more nodes, certificates have to be generated. Each certificate contains the information of the replica and is signed by the administor. 
+Before running more nodes, certificates have to be generated. Each certificate contains the information about the replica and is signed by the administrator. 
 
 1. Go to the main folder where the WORKSPACE locates.
 
@@ -107,7 +107,7 @@ Before running more nodes, certificates have to be generated. Each certificate c
   >  bazel build tools:key_generator_tools <br>
   >  bazel-bin/tools/key_generator_tools cert/node_X AES
 
-    key_generator_tools will generate a private public key pair into cert and name them as node_X.key.pri and node_X.key.pub.
+    key_generator_tools will generate a private-public key pair into cert and name them as node_X.key.pri and node_X.key.pub.
 We support severial types : **RSA**, **AES**, and **ED25519**. You can select your favorite one.
 
     For example, we generate 5 keys with AES format and all keys will be put into cert/.
@@ -141,19 +141,19 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
   >  bazel build tools:certificate_tools <br>
   >  bazel-bin/tools/certificate_tools save_path admin_private_key admin_public_key replica_pub_key node_index ip port replica_type
 
-    | save_path | the path to put the result certificate |
-    | admin_private_key | the private key from the administor |
-    | admin_public_key | the public key from the administor |
+    | save_path | the path to put the resulting certificate |
+    | admin_private_key | the private key from the administrator |
+    | admin_public_key | the public key from the administrator |
     | replica_public_key | the public key for the replica |
     | idx | unique node id |
-    | ip | node ip |
-    | port |  node port |
+    | ip | replica ip |
+    | port |  replica port |
     | replica_type | node type (replica, client) |
 
-    The certificate is assigned by the administor so we need to provide the private and public key of it. We have generated the key pair of administor and put them in [cert folder](https://github.com/resilientdb/resilientdb/tree/nexres/cert).
+    The certificate is assigned by the administrator so we need to provide its private and public keys of it. We have generated the key pair of the administrator and put them in [cert folder](https://github.com/resilientdb/resilientdb/tree/nexres/cert).
     Once it is done, you will see cert_X.cert inside the cert folder.
 
-    For example, we create 4 replicas and 1 client using the keys above, and put the results under cert/.
+    For example, we create 4 replicas and 1 client using the keys above and put the results under cert/.
 
     | id | ip | port | type |
     | 1 | 172.31.88.5 | 10001 | replica |
@@ -319,7 +319,7 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     > bazel build kv_server/kv_server
 
 6. Upload the server stuff
-    We create a upload script to upload our stuff to each node list above, including the client node.
+    We create an upload script to upload our stuff to each node listed above, including the client node.
     ``` 
     #upload.sh
 
@@ -347,7 +347,7 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     > ./upload.sh
 
 7. Start the KV service
-    We create a start script to start the kv service remotely.
+    We create a start script to start the KV service remotely.
     ```
     # start_service.sh
 
