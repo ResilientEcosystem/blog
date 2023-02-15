@@ -13,8 +13,10 @@ article_header:
     gradient: 'linear-gradient(135deg, rgba(0, 204, 154 , .2), rgba(51, 154, 154, .2))'
     src: /assets/images/nexres/coin.jpg
 
-excerpt: Using UTXO on NexRes.
 ---
+
+Here we illustrate how to run the UTXO service on NexRes. We provide steps by steps tutorial to set up the UTXO service locally with 4 nodes and 1 client. We also provide tools to access the UTXO transactions and the user wallets.
+
 
 ## Create a Wallet
 
