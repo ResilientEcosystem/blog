@@ -15,18 +15,18 @@ article_header:
 
 ---
 
-Here we illustrate how to run NexRes with its builtin application: KV Server. We provide steps by steps tutorial to set up NexRes locally with 4 nodes and use the builtin KV Server to set and get a key-value pair.
+In this blog post, we lay down steps to run ReslientDB's NexRes version with its built-in Key Value (KV) service. We also state steps to add and retrieve values from the KV store.
 
 # Before you begin
-NexRes is only able to be run in Ubuntu 20.04 with the ubuntu host. Please make sure you installed the right version.
+At present, we support only Ubuntu 20.04 and require root access. Please make sure you have installed the correct version.
 
 ### Linux
 If you are using Linux, please install Ubuntu 20.04. The default user will be ubuntu.
 
 ### MaxOS
-If you are using MacOS, please install a docker with Ubuntu 20.04. If you are not familiar with docker, we provide a docker file to help, see [here](https://github.com/resilientdb/resilientdb/tree/nexres/docker).
+If you are using MacOS, please install a docker with Ubuntu 20.04. If you are not familiar with docker, we provide a docker file to help you get started: [here](https://github.com/resilientdb/resilientdb/tree/nexres/docker).
 
-Install the docker image from the docker file named by nexres:
+Install the docker image from the docker file named as nexres:
   > docker build . -f DockerfileForMac -t=nexres
 
 Run the docker image with bash command:
@@ -35,7 +35,7 @@ Run the docker image with bash command:
 Get your container **ID**:
   > docker ps -a (find your container id ID)
 
-If the container is not started, start the container:
+If the container is not running, start the container:
   > docker start **ID**
 
 Login to the container and swith to the ubuntu user:
@@ -43,12 +43,12 @@ Login to the container and swith to the ubuntu user:
   > su - ubuntu
 
 # Installation
-Now it is time to install NexRes.
-Clone the repo from github and go to its folder:
+Next, we install NexRes.
+Clone the repo from github:
   > git clone https://github.com/resilientdb/resilientdb.git
   > cd resilientdb/
 
-If you are using MacOS with arm64 processor (CPU) architecture, like MacOS M1, using INSTALL_MAC.sh to install the environment:
+If you are using a MacOS with an arm64 processor (CPU) architecture (ex. MacOS M1) run INSTALL_MAC.sh to install the environment:
   > chmod +x INSTALL_MAC.sh
   > ./INSTALL_MAC.sh
 
@@ -56,19 +56,19 @@ Otherwise, use INSTALL.sh:
   > chmod +x ./INSTALL.sh
   > ./INSTALL.sh
 
-INSTALL.sh or INSTALL_MAC.sh will install some necessary software, like Bazel and Protobuf Buffer.
+INSTALL.sh or INSTALL_MAC.sh will install necessary dependencies, such as Bazel and Protobuf Buffer.
 
 # Running KV Server
-Once the installation is done, everything is ready. Now let's start our KV Server with 4 nodes locally.
+Once the installation is complete, we will start the KV Service on 4 replicas (servers). All of these replicas will be deployed locally.
 
-Running the script in the example folder:
+Run the script in the example folder:
   > chmod +x ./example/start_kv_server.sh
   > ./example/start_kv_server.sh
 
-When the script is done, you will see that 4 applications called kv_server have been launched locally. Now build the client sdk using Bazel:
+Post this, you will observe that 4 replicas called kv_server have been launched locally. Next, we build the client sdk using Bazel:
   > bazel build example/kv_server_tools
 
-Now everything is ready. It is time to test the kv server. First, get a key with an empty value:
+Now, our system is set! It is time to test the KV service. First, let us try to access a key called "test". As we have not entered any key in our KV service, this access should return an empty value:
   > bazel-bin/example/kv_server_tools example/kv_client_config.config get test
 
 It should return an empty value for the key "test":
@@ -76,29 +76,29 @@ It should return an empty value for the key "test":
   test = 
   ```
 
-Next, we set a value to the key "test":
-  > bazel-bin/example/kv_server_tools example/kv_client_config.config set test value
+Now, let us try to add a key called "test" with value "val" to our KV service:
+  > bazel-bin/example/kv_server_tools example/kv_client_config.config set test val
 
-Now it should return a value "value":
+This command should output the following:
   ```
   test = value
   ```
 
 
-### Behind the script example/start_kv_server.sh
+### Behind the scenes of script start_kv_server.sh
 We do a couple of things in this [script](https://github.com/resilientdb/resilientdb/blob/nexres/example/start_kv_server.sh).
-1. Build the kv server under the kv_server folder:
+1. Build the KV service in the directory kv_server:
   > bazel build kv_server:kv_server
 
-2. Run 4 kv servers and write its screen output to a local log file in the background:
+2. Run 4 replicas and flush their outputs to a local log file in the background:
   > nohup bazel-bin/kv_server/kv_server example/kv_config.config cert/nodeX.key.pri cert/cert_X.cert > serverX.log &
 
-3. Run a client-server to receive the client requests:
+3. Run a client node that sends client requests:
   > nohup bazel-bin/kv_server/kv_server example/kv_config.config cert/node5.key.pri cert/cert_5.cert > client.log &
 
-In NexRes, each server should be assigned a certificate by its own private key. This certificate includes some node information, such as its node ip/port, its node type: server or client. If you are using the wrong certificate or running in the wrong node, the server could not be started. 
+In ResilientDB, each server is assigned a certificate from its own private key. This certificate includes replica information, such as its node ip/port, its node type: server or client. If a server has access to an incorrect certificate, it will not start. 
 
-### Run nodes remotely
+### Deploying replicas and clients on distinct machines
 Before running more nodes, certificates have to be generated. Each certificate contains the information about the replica and is signed by the administrator. 
 
 1. Go to the main folder where the WORKSPACE locates.
