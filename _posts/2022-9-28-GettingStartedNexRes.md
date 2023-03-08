@@ -45,15 +45,15 @@ Login to the container and swith to the ubuntu user:
 # Installation
 Next, we install NexRes.
 Clone the repo from github:
-  > git clone https://github.com/resilientdb/resilientdb.git
+  > git clone https://github.com/resilientdb/resilientdb.git <br>
   > cd resilientdb/
 
 If you are using a MacOS with an arm64 processor (CPU) architecture (ex. MacOS M1) run INSTALL_MAC.sh to install the environment:
-  > chmod +x INSTALL_MAC.sh
+  > chmod +x INSTALL_MAC.sh <br>
   > ./INSTALL_MAC.sh
 
 Otherwise, use INSTALL.sh:
-  > chmod +x ./INSTALL.sh
+  > chmod +x INSTALL.sh <br>
   > ./INSTALL.sh
 
 INSTALL.sh or INSTALL_MAC.sh will install necessary dependencies, such as Bazel and Protobuf Buffer.
@@ -62,7 +62,7 @@ INSTALL.sh or INSTALL_MAC.sh will install necessary dependencies, such as Bazel 
 Once the installation is complete, we will start the KV Service on 4 replicas (servers). All of these replicas will be deployed locally.
 
 Run the script in the example folder:
-  > chmod +x ./example/start_kv_server.sh
+  > chmod +x example/start_kv_server.sh <br>
   > ./example/start_kv_server.sh
 
 Post this, you will observe that 4 replicas called kv_server have been launched locally. Next, we build the client sdk using Bazel:
@@ -81,7 +81,7 @@ Now, let us try to add a key called "test" with value "val" to our KV service:
 
 This command should output the following:
   ```
-  test = value
+  client set ret = 0
   ```
 
 
@@ -93,54 +93,54 @@ We do a couple of things in this [script](https://github.com/resilientdb/resilie
 2. Run 4 replicas and flush their outputs to a local log file in the background:
   > nohup bazel-bin/kv_server/kv_server example/kv_config.config cert/nodeX.key.pri cert/cert_X.cert > serverX.log &
 
-3. Run a client node that sends client requests:
+3. Run a client proxy node that sends client requests:
   > nohup bazel-bin/kv_server/kv_server example/kv_config.config cert/node5.key.pri cert/cert_5.cert > client.log &
 
 In ResilientDB, each server is assigned a certificate from its own private key. This certificate includes replica information, such as its node ip/port, its node type: server or client. If a server has access to an incorrect certificate, it will not start. 
 
 ### Deploying replicas and clients on distinct machines
-Before running more nodes, certificates have to be generated. Each certificate contains the information about the replica and is signed by the administrator. 
+Next, we deploy 4 replicas and a client proxy on distinct machines. To do so, we first need to generate certificates. Each certificate contains the information about the replica/proxy and is signed by the administrator. 
 
-1. Go to the main folder where the WORKSPACE locates.
+1. Go to the directory which includes WORKSPACE locates.
+  > cd resilientdb
 
-2. Generate the private/public key of AES type:
+2. Generate the private/public key of AES type. The key_generator_tools will generate a public-private key pair into the directory cert and will name these as node_X.key.pri and node_X.key.pub. We support following types of cryptographic schemes: **RSA**, **AES**, and **ED25519**. You can select any sheme of your choice.
   >  bazel build tools:key_generator_tools <br>
   >  bazel-bin/tools/key_generator_tools cert/node_X AES
 
-    key_generator_tools will generate a private-public key pair into cert and name them as node_X.key.pri and node_X.key.pub.
-We support severial types : **RSA**, **AES**, and **ED25519**. You can select your favorite one.
+For example, we generate 5 keys using AES scheme and all of these keys will be placed inside cert/.
+  >  bazel-bin/tools/key_generator_tools cert/node_1 AES <br>
+  ```
+  save key to path cert/node_1.key.pri
+  save key to path cert/node_1.key.pub
+  ```
+  > bazel-bin/tools/key_generator_tools cert/node_2 AES
+  ```
+  save key to path cert/node_2.key.pri
+  save key to path cert/node_2.key.pub
+  ```
+  > bazel-bin/tools/key_generator_tools cert/node_3 AES
+  ```
+  save key to path cert/node_3.key.pri
+  save key to path cert/node_3.key.pub
+  ```
+  > bazel-bin/tools/key_generator_tools cert/node_4 AES
+  ```
+  save key to path cert/node_4.key.pri
+  save key to path cert/node_4.key.pub
+  ```
+  > bazel-bin/tools/key_generator_tools cert/node_5 AES
+  ```
+  save key to path cert/node_5.key.pri
+  save key to path cert/node_5.key.pub
+  ```
 
-    For example, we generate 5 keys with AES format and all keys will be put into cert/.
-    >  bazel-bin/tools/key_generator_tools cert/node_1 AES
-    ```
-    save key to path cert/node_1.key.pri
-    save key to path cert/node_1.key.pub
-    ```
-    > bazel-bin/tools/key_generator_tools cert/node_2 AES
-    ```
-    save key to path cert/node_2.key.pri
-    save key to path cert/node_2.key.pub
-    ```
-    > bazel-bin/tools/key_generator_tools cert/node_3 AES
-    ```
-    save key to path cert/node_3.key.pri
-    save key to path cert/node_3.key.pub
-    ```
-    > bazel-bin/tools/key_generator_tools cert/node_4 AES
-    ```
-    save key to path cert/node_4.key.pri
-    save key to path cert/node_4.key.pub
-    ```
-    > bazel-bin/tools/key_generator_tools cert/node_5 AES
-    ```
-    save key to path cert/node_5.key.pri
-    save key to path cert/node_5.key.pub
-    ```
-
-3. Generate the certificate for a server:
+3. Next, we generate a certificate for each server:
   >  bazel build tools:certificate_tools <br>
   >  bazel-bin/tools/certificate_tools save_path admin_private_key admin_public_key replica_pub_key node_index ip port replica_type
 
+    Following is the description for each of these fields.
+  
     | save_path | the path to put the resulting certificate |
     | admin_private_key | the private key from the administrator |
     | admin_public_key | the public key from the administrator |
@@ -150,10 +150,10 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     | port |  replica port |
     | replica_type | node type (replica, client) |
 
-    The certificate is assigned by the administrator so we need to provide its private and public keys of it. We have generated the key pair of the administrator and put them in [cert folder](https://github.com/resilientdb/resilientdb/tree/nexres/cert).
-    Once it is done, you will see cert_X.cert inside the cert folder.
+    Each certificate is assigned by the administrator, so we need to provide the private and public keys of each node. Note: we had generated the key pairs and placed them in [cert folder](https://github.com/resilientdb/resilientdb/tree/nexres/cert).
+    Post this step, you will observe cert_X.cert inside the cert directory.
 
-    For example, we create 4 replicas and 1 client using the keys above and put the results under cert/.
+    For example, assume following are the IP addresses and ports for the 4 replicas and 1 client. Using this, we create the certificate next and put them under cert.
 
     | id | ip | port | type |
     | 1 | 172.31.88.5 | 10001 | replica |
@@ -292,9 +292,9 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     node_id: 5
     save key to path cert//cert_5.cert
     ```
-4. Create a server config including the replica information above.
+4. Next, we need to create a configuration file for the servers, which will include the information above.
 
-    Here is the example of **kv_config.config** including the 4 replicas.
+    Let us call this configuration file **kv_config.config**. It should include the following information.
     ```
     {
       region : {
@@ -325,11 +325,11 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     
     ```
 
-5. Build the Key-Value(KV) Service
+5. Now, we will build the Key-Value (KV) service
     > bazel build kv_server/kv_server
 
-6. Upload the server stuff
-    We create an upload script to upload our stuff to each node listed above, including the client node.
+6. Next, we need to upload the necessary files to the servers and client proxy. 
+    Following is an example upload script. We suggest that you create a similar file.
     ``` 
     #upload.sh
 
@@ -356,8 +356,8 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     ```
     > ./upload.sh
 
-7. Start the KV service
-    We create a start script to start the KV service remotely.
+7. It is time to start the KV service. To do so, we need to create another script.
+    Following is an example start script to start the KV service remotely.
     ```
     # start_service.sh
 
@@ -393,16 +393,16 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
 
     > ./start_service.sh
 
-7. Check the initial state of each replica
+8. Let us now check the initial state of each replica.
 
-    Login to your replica and check the server log.
+    Login to a replica and check its server log.
       > ssh -i ${your_ssh_key} ubuntu@172.31.91.225
       >
       > cat server_2.log
 
-    Once you see the following records in the server_*.log, the server is ready.
+    Once you see the following records in the server_*.log, it implies that your server is ready!
 
-    In the log below, *public size:5* means the replica has received 5 public keys from others so it can be able to verify each message sent from others..
+    In the log below, *public size:5* means that the replica has received 5 public keys from others so it is able to verify the messages it received from other servers.
 
     ```
     E20230215 22:35:18.262069  6288 consensus_service.cpp:271] ============ Server 2 is ready =====================
@@ -412,18 +412,18 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     I20230215 22:35:19.273571  6307 consensus_service.cpp:218] receive public size:5 primary:1 version:1 from region:1
     I20230215 22:35:19.275673  6288 consensus_service.cpp:218] receive public size:5 primary:1 version:1 from region:1
     ```
-8. Access the KV service
+9. At this point, we can try to access the KV service.
     
-    Build the KV service tool.
+    First, build the KV service tool.
     > bazel build example/kv_server_tools
 
-    Create a client config
+    Next, create a configuration file for the client. This file will allow the client to access the client proxy. Note: in our ongoing example, the machine from where you are running all these scripts is going to act as a client.
     ```
     # kv_client.config
     5 172.31.80.182 10001
     ```
 
-    Run the tool to set a key-value pair value
+    Run the tool to add a key-value pair to the KV service. In the following example, the key is "test" and value is "123".
     > bazel-bin/example/kv_server_tools kv_client.config set test 123
 
     You will see the following result if successful:
@@ -431,7 +431,7 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     client set ret = 0
     ```
 
-    Run the tool to get back a key-value pair value
+    Run the tool to access the key-value pair from the KV service.
     > bazel-bin/example/kv_server_tools kv_client.config get test
 
     You will see the following result if successful:

@@ -145,3 +145,217 @@ Note: The first two rules prevent double spending.
 
 #### The input.fulfillment Rule
 Regardless of whether the transaction is a CREATE or TRANSFER transaction: For all inputs, input.fulfillment must be valid.
+
+# Transactions
+
+Transaction structure:
+
+```bash
+{
+    "id": id,
+    "version": version,
+    "inputs": inputs,
+    "outputs": outputs,
+    "operation": operation,
+    "asset": asset,
+    "metadata": metadata
+}
+```
+
+- Tx ID: The ID of a transaction is the SHA3-256 hash of the transaction, loosely speaking. It’s a string. An example is:
+
+`"0e7a9a9047fdf39eb5ead7170ec412c6bffdbe8d7888966584b4014863e03518"`
+
+- Version: 2.0 (TODO: remove)
+- Inputs
+    
+    _List_ of tx inputs
+    
+    - Each tx input spends a previous tx output
+    - a CREATE tx must have exactly one input
+    - a TRANSFER tx should have at least one input
+    
+    - Transaction inputs and outputs are the mechanism by which control or ownership of an asset
+    - Amounts of an asset are encoded in the outputs of a transaction, and each output may be spent separately
+    - To spend an output, the output’s condition must be met by an input that provides a corresponding fulfillment
+    - Each output may be spent at most once, by a single input
+    
+    Example of a structure of an element in the input list
+    ```bash
+    {
+        "fulfills": {
+            "transaction_id": transaction_id,
+            "output_index": output_index
+        },
+        "owners_before": [public_key_1, public_key_2, etc.],
+        "fulfillment": fulfillment
+    }
+    ```
+    
+    > For create tx, the value for fulfills is `None`
+    
+    - Owners_before: public keys 
+    
+    fulfillment: a str as per crypto conditions spec
+    
+    - The basic steps to compute a fulfillment string are:
+    
+      1. Construct the fulfillment as per the crypto-conditions spec.
+      2. Encode the fulfillment to bytes using the [ASN.1 Distinguished Encoding Rules (DER)](http://www.itu.int/ITU-T/recommendations/rec.aspx?rec=12483&lang=en)
+      3. Encode the resulting bytes using “base64url” (*not* typical base64) as per [RFC 4648, Section 5](https://tools.ietf.org/html/rfc4648#section-5)
+  
+- Outputs
+    
+    list of Tx outputs 
+    
+    Each output indicates the crypto-conditions which must be satisfied by anyone wishing to spend/transfer that output. It also indicates the number of shares of the asset tied to that output.
+    
+    output eg:
+    
+    ```bash
+    {
+        "condition": condition,
+        "public_keys": [public_key_1, public_key_2, etc.],
+        "amount": amount
+    }
+    ```
+    
+    Condition:  its a list or array 
+    
+    ```bash
+    {
+        "details": subcondition,
+        "uri": uri
+    }
+    ```
+    
+    subconditions:
+    
+    1. ED25519-SHA-256 (We only care about this for NFTs!) 
+    2. THRESHOLD-SHA-256
+    
+    ```bash
+    {
+        "type": "ed25519-sha-256",
+        "public_key": "HFp773FH21sPFrn4y8wX3Ddrkzhqy4La4cQLfePT2vz7"
+    }
+    ```
+    
+    uri: [cost](https://datatracker.ietf.org/doc/html/draft-thomas-crypto-conditions-03#section-7.2.2)
+    
+    ```bash
+    "uri": "ni:///sha-256;at0MY6Ye8yvidsgL9FrnKmsVzX0XrNNXFmuAPF4bQeU?fpt=ed25519-sha-256&cost=131072"
+    ```
+    
+    Code to compute the uri
+    
+    ```bash
+    import base58
+    from cryptoconditions import Ed25519Sha256
+    
+    pubkey = 'HFp773FH21sPFrn4y8wX3Ddrkzhqy4La4cQLfePT2vz7'
+    
+    # Convert pubkey to a bytes representation (a Python 3 bytes object)
+    pubkey_bytes = base58.b58decode(pubkey)
+    
+    # Construct the condition object
+    ed25519 = Ed25519Sha256(public_key=pubkey_bytes)
+    
+    # Compute the condition uri (string)
+    uri = ed25519.condition_uri
+    # uri should be:
+    # 'ni:///sha-256;at0MY6Ye8yvidsgL9FrnKmsVzX0XrNNXFmuAPF4bQeU?fpt=ed25519-sha-256&cost=131072'
+    ```
+    
+- Asset
+    
+    For a CREATE Tx
+    
+    ```bash
+    {
+        "data": {
+            "desc": "Laundromat Fantastique",
+            "address": "461B Grand Palace Road",
+            "international_laundromat_identifier": "bx45-am-333",
+            "known_issues": "No known issues. It's fantastique!"
+        }
+    }
+    ```
+    
+    it should just have the `data` key
+    
+    For TRANSFER tx 
+    
+    the asset key will have: The id of the tx which has the asset
+    
+    ```bash
+    {
+        "id": "38100137cea87fb9bd751e2372abb2c73e7d5bcf39d940a5516a324d9c7fb88d"
+    }
+    ```
+    
+- metadata
+    
+    Bust be any valid associative array or dict (in python) or Null.
+    
+    ```bash
+    {
+        "timestamp": "1510850314",
+        "weather_conditions": "So hot that our crayons melted.",
+        "location": {
+            "name": "Death Valley, California",
+            "latitude": "36.457N",
+            "longitude": "116.865W"
+        }
+    }
+    ```
+
+> **_NOTE:_**  We use the bigchainDB transaction spec v2.
+
+## Constructing a Transaction
+
+1. Set a variable named `version` to a [valid version value](#). (We need to remove this) 
+2. Set a variable named `operation` to a [valid operation value](#).
+3. Set a variable named `asset` to a [valid asset value](#).
+4. Set a variable named `metadata` to a [valid metadata value](#).
+5. Generate or get all the required [public keys](#) 
+6. Construct a [list](#) named `outputs` of all the [outputs](#) that should be in the transaction. (Note: Each output includes a [condition](https://github.com/bigchaindb/BEPs/tree/master/13#transaction-components-conditions).)
+7. Construct a [list](#) named `unfulfilled_inputs` of all the [inputs](#) that should be in the transaction. All *fulfillment* strings should be set to  `None`  (We’re building an “unfulfilled transaction” first.)
+8. Construct an [associative array](#)  (dict) named `unfulfilled_tx` of the form:
+    
+    `{
+        "id": null,
+        "version": version,
+        "inputs": unfulfilled_inputs,
+        "outputs": outputs,
+        "operation": operation,
+        "asset": asset,
+        "metadata": metadata
+    }`
+    
+    Note how `unfulfilled_tx` includes a key-value pair for the `"id"` key. The value must be your [ctnull](#) (e.g. `None` in Python).
+    
+9. Convert unfulfilled_tx to a serialized json named `utx_json`.
+    1. unicode, sorted keys
+    
+    ```bash
+    import rapidjson
+    
+    # input_dict is a dictionary
+    json_str = rapidjson.dumps(input_dict,
+                                skipkeys=False,
+                                ensure_ascii=False,
+                                sort_keys=True)
+    ```
+    
+10. Create `inputs` as a deep copy of `unfulfilled_inputs`.
+11. For each input in `inputs`:
+    1. If `fulfills` is `None` (because this is a CREATE transaction, for example), then let `string1 = utx_json`, otherwise let `string1 = utx_json + output_tx_id + output_index` where `output_tx_id` is the transaction ID of the output that this input fulfills and `+` means concatenate the strings.
+    2. [Convert string1 to bytes](#) and call the result `bytes1`.
+    3. [Compute the SHA3-256 hash](#) of `bytes1` and leave the result as bytes (i.e. don’t convert to a hex string). Call the result `bytes_to_sign`.
+    4. fulfill the associated crypto-condition [using an implementation of crypto-conditions](https://github.com/rfcs/crypto-conditions#implementations). You will need `bytes_to_sign` and one or more private keys (which are used to sign `bytes_to_sign`). The end result is usually some kind of fulfilled condition object. Compute the fulfillment string of that fulfilled condition object, and put that as the value of `"fulfillment"` for the input in question.
+12. Construct a new [associative array](#) `tx` by making a deep copy of `unfulfilled_tx`.
+13. In `tx`, change the value of `"inputs"` to the just-computed `inputs` (an array of fulfilled inputs).
+14. [Compute the transaction ID of tx](#). Call it `id`.
+
+The final result (`tx`) is a valid fulfilled transaction (in the form of an associative array). To put it in the body of an HTTP POST request, you’ll have to [convert it to a JSON string](#).
