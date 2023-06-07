@@ -62,14 +62,13 @@ INSTALL.sh or INSTALL_MAC.sh will install some necessary software, like Bazel an
 Once the installation is done, everything is ready. Now let's start our KV Server with 4 nodes locally.
 
 Running the script in the example folder:
-  > chmod +x ./example/start_kv_server.sh
-  > ./example/start_kv_server.sh
+  > ./service/tools/kv/server_tools/start_kv_service.sh
 
 When the script is done, you will see that 4 applications called kv_server have been launched locally. Now build the client sdk using Bazel:
-  > bazel build example/kv_server_tools
+  > bazel build service/tools/kv/api_tools/kv_service_tools
 
 Now everything is ready. It is time to test the kv server. First, get a key with an empty value:
-  > bazel-bin/example/kv_server_tools example/kv_client_config.config get test
+  > bazel-bin/service/tools/kv/api_tools/kv_service_tools service/tools/config/interface/service.config     get test 
 
 It should return an empty value for the key "test":
   ```
@@ -77,7 +76,7 @@ It should return an empty value for the key "test":
   ```
 
 Next, we set a value to the key "test":
-  > bazel-bin/example/kv_server_tools example/kv_client_config.config set test value
+  > bazel-bin/service/tools/kv/api_tools/kv_service_tools service/tools/config/interface/service.config     set test  value
 
 Now it should return a value "value":
   ```
@@ -86,19 +85,26 @@ Now it should return a value "value":
 
 
 ### Behind the script example/start_kv_server.sh
-We do a couple of things in this [script](https://github.com/resilientdb/resilientdb/blob/nexres/example/start_kv_server.sh).
+We do a couple of things in this [script](https://github.com/resilientdb/resilientdb/blob/master/service/tools/kv/server_tools/start_kv_service.sh).
 1. Build the kv server under the kv_server folder:
-  > bazel build kv_server:kv_server
+  > bazel build //service/kv:kv_service
 
 2. Run 4 kv servers and write its screen output to a local log file in the background:
-  > nohup bazel-bin/kv_server/kv_server example/kv_config.config cert/nodeX.key.pri cert/cert_X.cert > serverX.log &
+  > nohup bazel-bin/service/kv/kv_service service/tools/config/server/server.config service/tools/data/cert/nodeX.key.pri service/tools/data/cert/cert_X.cert > serverX.log &
 
 3. Run a client-server to receive the client requests:
-  > nohup bazel-bin/kv_server/kv_server example/kv_config.config cert/node5.key.pri cert/cert_5.cert > client.log &
+  > nohup bazel-bin/service/kv/kv_service service/tools/config/server/server.config service/tools/data/cert/node5.key.pri service/tools/data/cert/cert_5.cert > client.log &
 
 In NexRes, each server should be assigned a certificate by its own private key. This certificate includes some node information, such as its node ip/port, its node type: server or client. If you are using the wrong certificate or running in the wrong node, the server could not be started. 
 
 ### Run nodes remotely
+We provide a script to help deploy nodes remotes in scripts/deploy
+  > cd scripts/deploy
+
+Put your node IPs and you ssh key in config/kv_server.conf and run the script:
+  > ./script/deploy.sh ./config/kv_server.conf
+
+### Run nodes remotely manually
 Before running more nodes, certificates have to be generated. Each certificate contains the information about the replica and is signed by the administrator. 
 
 1. Go to the main folder where the WORKSPACE locates.
@@ -326,7 +332,7 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     ```
 
 5. Build the Key-Value(KV) Service
-    > bazel build kv_server/kv_server
+    > bazel build //service/kv:kv_service
 
 6. Upload the server stuff
     We create an upload script to upload our stuff to each node listed above, including the client node.
@@ -393,7 +399,7 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
 
     > ./start_service.sh
 
-7. Check the initial state of each replica
+8. Check the initial state of each replica
 
     Login to your replica and check the server log.
       > ssh -i ${your_ssh_key} ubuntu@172.31.91.225
@@ -412,10 +418,10 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     I20230215 22:35:19.273571  6307 consensus_service.cpp:218] receive public size:5 primary:1 version:1 from region:1
     I20230215 22:35:19.275673  6288 consensus_service.cpp:218] receive public size:5 primary:1 version:1 from region:1
     ```
-8. Access the KV service
+9. Access the KV service
     
     Build the KV service tool.
-    > bazel build example/kv_server_tools
+    > bazel build service/tools/kv/api_tools/kv_service_tools
 
     Create a client config
     ```
@@ -424,7 +430,7 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     ```
 
     Run the tool to set a key-value pair value
-    > bazel-bin/example/kv_server_tools kv_client.config set test 123
+    > bazel-bin/service/tools/kv/api_tools/kv_service_tools service/tools/config/interface/service.config set test 123
 
     You will see the following result if successful:
     ```
@@ -432,7 +438,7 @@ We support severial types : **RSA**, **AES**, and **ED25519**. You can select yo
     ```
 
     Run the tool to get back a key-value pair value
-    > bazel-bin/example/kv_server_tools kv_client.config get test
+    > bazel-bin/service/tools/kv/api_tools/kv_service_tools service/tools/config/interface/service.config get test
 
     You will see the following result if successful:
     ```
