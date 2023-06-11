@@ -25,8 +25,11 @@ Go to our [install tutorial](https://blog.resilientdb.com/2022/09/28/GettingStar
 You will need to clone three repos to get started: [resilientdb](https://github.com/resilientdb/resilientdb.github.io.git), [nexres_sdk](https://github.com/msadoghi/nexres_sdk.git), and [resilientdb.github.io](https://github.com/resilientdb/resilientdb.github.io.git). 
 
 ### resilientdb
+Install dependencies.
+  > ./INSTALL.sh
+
 Start the KV servers with the example script. This script uses the example/kv_config.config file.
-  > sh example/start_kv_server.sh
+  > ./service/tools/kv_service/service_tools/start_kv_service.sh
 
 You will observe that four kv_server replicas have locally launched. 
 
