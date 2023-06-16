@@ -53,6 +53,7 @@ In another terminal open the resilientdb.github.io repo and follow the steps bel
 
 Switch to nexres branch (where the updated website is located)
   > git fetch
+
   > git checkout nexres
 
 Project Setup
