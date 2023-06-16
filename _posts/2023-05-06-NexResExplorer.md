@@ -33,10 +33,10 @@ Start the KV servers with the example script. This script uses the example/kv_co
 
 You will observe that four kv_server replicas have locally launched. 
 
-### nexres_sdk
+### sdk
 We use [Crow](https://github.com/CrowCpp/Crow), a C++ framework for creating HTTP or Websocket web services to connect NexRes to the Explorer.
 
-In another terminal shell after starting KV Server, build the crow service from the nexres_sdk repo: 
+In another terminal shell after starting KV Server, build the crow service from the sdk repo: 
   > bazel build service/http_server/crow_service_main
 
 Run the binary to start the service:
