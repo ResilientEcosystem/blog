@@ -87,3 +87,10 @@ Once you have set and get some transactions you will be able to see the blocks a
 There are currently two options for how the blocks table refreshes. The method that is used on the nexres branch
 uses a websocket and fetches the updated list of blocks whenever a new transaction is committed through the HTTP
 endpoints. The second option, which is available on the [explorer-alternate-refresh branch](https://github.com/resilientdb/resilientdb.github.io/tree/explorer-alternate-refresh), polls an updated list of blocks every five seconds. You may use whichever one suits your needs better.
+
+## Video Demo
+
+Here is a video demo showing how to run and use the Explorer. The video assumes
+that all the dependencies have already been installed.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QbzbFF2v51I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
