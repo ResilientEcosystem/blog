@@ -1,6 +1,6 @@
 ---
 layout: article
-title: PBFT ViewChange Protocol and CheckPoint Algorithm in NexRes
+title: Recovery and Checkpoint Protocols in NexRes
 author: Dakai Kang
 tags: NexRes PBFT ViewChange CheckPoint Recovery
 aside:
