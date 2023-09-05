@@ -24,7 +24,7 @@ A unique promising outlook for everyone at ExpoLab is rooted in creativity, curi
 <div class="item">
   <a href="https://faculty.engineering.ucdavis.edu/sadoghi/">
     <div class="item__image">
-      <img class="image card card--clickable image--lg" src="https://resilientdb.com/img/team_img/mo.jpeg"/>
+      <img class="image card card--clickable image--lg" src="https://resilientdb.com/assets/mo.c030a0a4.jpeg"/>
     </div>
   </a>
   <div class="item__content">
