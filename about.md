@@ -50,14 +50,14 @@ A unique promising outlook for everyone at ExpoLab is rooted in creativity, curi
   </div>
    <a href="https://gupta-suyash.github.io/">
       <div class="item__image">
-        <img class="image card card--clickable image--lg" src="https://resilientdb.com/img/team_img/suyash.jpeg"/>
+        <img class="image card card--clickable image--lg" src="https://resilientdb.com/assets/suyash.6ee5d9ff.jpeg"/>
       </div>
     </a>
 </div>
 <div class="item">
      <a href="https://sajjadrahnama.com/">
       <div class="item__image">
-        <img class="image card card--clickable image--lg" src="https://resilientdb.com/img/team_img/sajjad.jpeg"/>
+        <img class="image card card--clickable image--lg" src="https://resilientdb.com/assets/sajjad.5fadc8ec.jpeg"/>
       </div>
     </a>
   <div class="item__content">
@@ -88,7 +88,7 @@ A unique promising outlook for everyone at ExpoLab is rooted in creativity, curi
 <div class="item">
    <a href="https://thamir.qadah.com/"> 
       <div class="item__image">
-        <img class="image card card--clickable image--lg" src="https://resilientdb.com/img/team_img/tq.jpeg"/>
+        <img class="image card card--clickable image--lg" src="https://resilientdb.com/assets/tq.f2c2da33.jpeg"/>
       </div>
     </a>
   <div class="item__content">
@@ -124,7 +124,7 @@ Since 2015, He has been serving the research community as a reviewer for top-tie
 <div class="item">
      <a href="https://www.linkedin.com/in/priyaholani/">
       <div class="item__image">
-        <img class="image card card--clickable image--lg" src="https://resilientdb.com/img/team_img/priya.jpeg"/>
+        <img class="image card card--clickable image--lg" src="https://resilientdb.com/assets/priya.028ecedf.jpeg"/>
       </div>
     </a>
   <div class="item__content">
@@ -148,7 +148,7 @@ Since 2015, He has been serving the research community as a reviewer for top-tie
   </div>
   <a href="https://www.linkedin.com/in/dhruvkrishnan/">
       <div class="item__image">
-        <img class="image card card--clickable image--lg" src="https://resilientdb.com/img/team_img/dhruv.jpeg"/>
+        <img class="image card card--clickable image--lg" src="https://resilientdb.com/assets/dhruv.a8f53e30.jpeg"/>
       </div>
     </a>
 </div>
@@ -156,7 +156,7 @@ Since 2015, He has been serving the research community as a reviewer for top-tie
 <div class="item">
      <a href="https://www.linkedin.com/in/p-shubham1996/">
       <div class="item__image">
-        <img class="image card card--clickable image--lg" src="https://media-exp1.licdn.com/dms/image/C5603AQFDuN7w1xhnTA/profile-displayphoto-shrink_400_400/0/1626093381293?e=1638403200&v=beta&t=vqmmbwect2fb-NI7MFzOLLc9JdU5bK08CxnzQTvfXXM"/>
+        <img class="image card card--clickable image--lg" src="https://resilientdb.com/assets/shubham.0a7f43ba.jpeg"/>
       </div>
     </a>
   <div class="item__content">
@@ -180,7 +180,7 @@ Since 2015, He has been serving the research community as a reviewer for top-tie
   </div>
   <a href="https://www.linkedin.com/in/haojun-zhu-89ab9419b/">
       <div class="item__image">
-        <img class="image card card--clickable image--lg" src="https://resilientdb.com/img/team_img/howard.png"/>
+        <img class="image card card--clickable image--lg" src="https://resilientdb.com/assets/howard.6b286cac.png"/>
       </div>
     </a>
 </div>
@@ -188,7 +188,7 @@ Since 2015, He has been serving the research community as a reviewer for top-tie
 <div class="item">
      <a href="https://alejandroarmas.github.io/">
       <div class="item__image">
-        <img class="image card card--clickable image--lg" src="https://resilientdb.com/img/team_img/alejandro.JPG"/>
+        <img class="image card card--clickable image--lg" src="https://resilientdb.com/assets/alejandro.492f0273.jpg"/>
       </div>
     </a>
   <div class="item__content">
@@ -212,7 +212,7 @@ Since 2015, He has been serving the research community as a reviewer for top-tie
   </div>  
   <a href="https://jhellings.nl/">
       <div class="item__image">
-        <img class="image card card--clickable image--lg" src="https://resilientdb.com/img/team_img/dakai.jpg"/>
+        <img class="image card card--clickable image--lg" src="https://resilientdb.com/assets/dakai.065a41c2.jpg"/>
       </div>
     </a>
 </div>
