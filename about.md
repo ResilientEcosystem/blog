@@ -39,6 +39,39 @@ A unique promising outlook for everyone at ExpoLab is rooted in creativity, curi
 
 # Team
 
+
+<div class="item">
+  <div class="item__content">
+    <div class="item__header">
+      <h4>Junchao Chen</h4> 
+    </div>
+    <div class="item__description">
+      <p>Junchao Chen is a second-year Ph.D. student at University of California, Davis. His research interest is BFT protocols. Currently, he is working on smart contract concurrency.</p>
+    </div>
+  </div>  
+  <a href="https://cjchen.github.io/">
+      <div class="item__image">
+        <img class="image card card--clickable image--lg" src="https://resilientdb.com/assets/JunchaoChen.442c5f1d.png"/>
+      </div>
+    </a>
+</div>
+
+<div class="item">
+  <a href="https://dakaikang.github.io/">
+      <div class="item__image">
+        <img class="image card card--clickable image--lg" src="https://resilientdb.com/assets/dakai.065a41c2.jpg"/>
+      </div>
+  </a>
+  <div class="item__content">
+    <div class="item__header">
+      <h4>Dakai Kang</h4> 
+    </div>
+    <div class="item__description">
+      <p>Dakai Kang is a second-year Ph.D. student at University of California, Davis. His research interest is BFT protocols. His last work was a novel high-performance BFT protocol with a Rapid View Synchronization mechanism. Currently, he is working on Ordering Fairness in BFT protocols. In NexRes, he implemented the recovery and checkpoint algorithm.</p>
+    </div>
+  </div>
+</div>
+
 <div class="item">
   <div class="item__content">
     <div class="item__header">
@@ -199,20 +232,4 @@ Since 2015, He has been serving the research community as a reviewer for top-tie
       <p>As a NSF LSAMP/CAMP and AvenueE/VIP Research Scholar, Alejandro is a B.Sc. Candidate at the University of California, Davis. Previously an intern at both the MIT Summer Research Program and Interdisciplinary and Quantitative Biology REU at the Universidad de Puerto Rico, Rio Piedras; he now is leading effort to make ResilientDB, our blockchain fabric, more accessible and consumable for students, practitioners, and researchers at UCD and beyond by extending its toolkit and developing core documentation. He is interested in distributed systems and their corresponding architecture and has passion for performant systems and optimization. When he is not studying, he does weight-training at the Davis' ARC. </p>
     </div>
   </div>
-</div>
-
-<div class="item">
-  <div class="item__content">
-    <div class="item__header">
-      <h4>Kang Dakai</h4> 
-    </div>
-    <div class="item__description">
-      <p>Kang Dakai is an undergraduate student of the Department of Computer Science of Zhejiang University. He participated the Global Research Experience In Advanced Technology (GREAT Program) of the University of California, Davis. He has successfully ported Resilient Concurrent Consensus (RCC) from ExpoDB-BC to ResilientDB. Now, he is working on View-change-less protocols, trying to implement Hotstuff and a derived protocol in ResilientDB.</p>
-    </div>
-  </div>  
-  <a href="https://jhellings.nl/">
-      <div class="item__image">
-        <img class="image card card--clickable image--lg" src="https://resilientdb.com/assets/dakai.065a41c2.jpg"/>
-      </div>
-    </a>
 </div>
