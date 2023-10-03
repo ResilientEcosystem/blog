@@ -17,8 +17,8 @@ article_header:
 
 We provide a Python SDK for committing transactions to create and transfer assets. Despite NexRes being written in C++, the code for validating transactions is written in Python so that we can use the cryptoconditions library, which provides functionalities not available in any widely distributed C++ libraries currently.
 
-# Install
-Please check the [install tutorial](https://blog.resilientdb.com/2022/09/28/GettingStartedNexRes.html) to install NexRes.
+# Install NexRes and Python3.9+
+Please check the [install tutorial](https://blog.resilientdb.com/2022/09/28/GettingStartedNexRes.html) to install [NexRes](https://github.com/resilientdb/resilientdb).
 
 After this you will need some additional steps for [pybind11](https://github.com/pybind/pybind11) to work, as we are embedding the Python interpreter in the C++ code.
 
@@ -39,6 +39,8 @@ If apt cannot find the dev library, you might not have deadsnakes added as a sou
 # Setting Up Virtual Environment
 It is heavily advised to set up a virtual Python environment so you do not disturb your system's Python settings.
 
+  > sudo apt-get install python3.10-venv
+
   > python3 -m venv venv
 
   > source venv/bin/activate
@@ -51,7 +53,8 @@ If you wish to deactivate the virtual environment you can enter
   > deactivate
 
 # Running NexRes KV Servers
-NexRes needs to be running first for the SDK endpoints to connect to. To enable the Python transaction validation, go to example/kv_config.config and set the flag require_txn_validation to true. The file should look something like:
+NexRes needs to be running first for the SDK endpoints to connect to. Go to the resilientdb folder you have downloaded from the [resilientdb](https://github.com/resilientdb/resilientdb) repository. 
+<!-- To enable the Python transaction validation, go to example/kv_config.config and set the flag require_txn_validation to true. The file should look something like:
 
     {
       region : {
@@ -65,20 +68,23 @@ NexRes needs to be running first for the SDK endpoints to connect to. To enable 
         ...
       },
       require_txn_validation:true,
-    }
-Make sure the Python virtual environment is activated if it is not already. You will see a (venv) on the left of your command line if it is active.
-  > source venv/bin/activate
+    } -->
 
-Start the KV servers with the example script. This script uses the example/kv_config.config file.
-  > sh example/start_kv_server.sh
+<!-- Make sure the Python virtual environment is activated if it is not already. You will see a (venv) on the left of your command line if it is active.
+  > source venv/bin/activate -->
+
+Start the KV servers with the example script.
+  > ./service/tools/kv/server_tools/start_kv_service.sh
 
 # Running Crow Service
 We use [Crow](https://github.com/CrowCpp/Crow), a C++ framework for creating HTTP or Websocket web services to connect our SDK to NexRes.
 
-In another terminal shell after starting KV Server, build the crow service: 
-  > bazel build sdk_client/crow_service_main
+In another terminal shell after starting KV Server, go to the ResilientDB-GraphQL folder that you have downloaded from the [ResilientDB-GraphQL](https://github.com/ResilientApp/ResilientDB-GraphQL) repository, build the crow service: 
+
+  > bazel build service/http_server:crow_service_main
 
 Run the binary to start the service:
+
   > bazel-bin/sdk_client/crow_service_main example/kv_client_config.config sdk_client/server_config.config
 
 You will see this if successful: 
@@ -88,34 +94,33 @@ You will see this if successful:
   ```
 
 # Running the SDK
-The SDK is another repository outside NexRes and can be run on another machine if you wish. To get started:
 
-## Check Python is up-to-date (3.9+)
-`$ python3 --version`
+## Check your Python is up-to-date (3.9+)
+  
+  > python3 --version`
 
 If your Python version number is too low you may encounter type hinting issues when attempting to run the code
 
-## Installing Dependencies
-`$ python3 -m venv venv`
+## Activating virtual environment and Installing dependencies
 
-`$ source venv/bin/activate`
+  > source venv/bin/activate
 
-`$ pip install -r requirements.txt`
+  > pip install -r requirements.txt
 
 ## Running the Driver
 
-Examples of using the driver can be seen in test_driver.py
-
-Replace the db_root_url with the url of the NexRes SDK endpoints e.g `127.0.0.1:18000`
-
+Examples of using the driver can be seen in *test_sdk.py*. You will see the output *'The retrieved txn is successfully validated'* if successful.
 
 # Validation
+
+You have successfully run an SDK example script. Below is the detailed design of the SDK.
+
 ## Entrypoint
 `validator.py`
     call the `is_valid_tx(tx_dict)` function with the transaction json (tx_dict) as the argument.
 
 ## Transaction Validation Rules
-A transaction is said to be valid if it satisfies certain condtions or rules.
+A transaction is said to be valid if it satisfies certain conditions or rules.
 
 We employ a simpler version of the transaction spec and validation rules specified by [BigchainDB](https://github.com/bigchaindb/BEPs/tree/master/13#transaction-validation)
 
