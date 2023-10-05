@@ -59,7 +59,10 @@ Otherwise, use INSTALL.sh:
 INSTALL.sh or INSTALL_MAC.sh will install necessary dependencies, such as Bazel and Protobuf Buffer.
 
 # Running KV Server
-Once the installation is complete, we will start the KV Service on 4 replicas (servers). All of these replicas will be deployed locally.
+
+### Start a KV service locally. 
+
+Once the installation is complete, let's try to start a KV Service on 4 replicas (servers) locally.
 
 Run the script in the example folder:
   > ./service/tools/kv/server_tools/start_kv_service.sh
@@ -67,12 +70,12 @@ Run the script in the example folder:
 Post this, you will observe that 4 replicas called kv_server have been launched locally. Next, we build the client sdk using Bazel:
   > bazel build service/tools/kv/api_tools/kv_service_tools
 
-Now, our system is set! It is time to test the KV service. First, let us try to access a key called "test". As we have not entered any key in our KV service, this access should return an empty value:
+Now, our system is set! It is time to test the KV service. First, let‘s try to access a key called "test". As we have not entered any key in our KV service, this access should return an empty value:
   > bazel-bin/service/tools/kv/api_tools/kv_service_tools service/tools/config/interface/service.config     get test 
 
 It should return an empty value for the key "test":
   ```
-  test = 
+  client get test = 
   ```
 
 Now, let us try to add a key called "test" with value "val" to our KV service:
@@ -82,7 +85,14 @@ This command should output the following:
   ```
   client set ret = 0
   ```
+Now, try to access the key test" again.
+  > bazel-bin/service/tools/kv/api_tools/kv_service_tools service/tools/config/interface/service.config     get test 
 
+
+As we have not entered it in our KV service, this access should return:
+  ```
+  client get test = value
+  ```
 
 ### Behind the scenes of script start_kv_server.sh
 We do a couple of things in this [script](https://github.com/resilientdb/resilientdb/blob/nexres/example/start_kv_server.sh).
@@ -97,13 +107,17 @@ We do a couple of things in this [script](https://github.com/resilientdb/resilie
 
 In ResilientDB, each server is assigned a certificate from its own private key. This certificate includes replica information, such as its node ip/port, its node type: server or client. If a server has access to an incorrect certificate, it will not start. 
 
-### Deploying replicas and clients on distinct machines
+
+### Deploying replicas and clients on distinct machines using provided scripts
+
+In the real world, replicas and clients are deployed on distinct machines. Thus, it is necessary to deploy replicas on distinct machines if you want to makes contributions to the consensus layer or network layer of NexRes and evaluate its performance. **If you only want to build applications based on the service provided by NexRes, it is unnecessary for you to learn how to deploy replicas and clients on distinct machines.**
+
 Next, we deploy 4 replicas and a client proxy on distinct machines. To do so, we first need to generate certificates. Each certificate contains the information about the replica/proxy and is signed by the administrator. 
 
-We provide a script to help deploy nodes remotes in scripts/deploy
+We provide a script to help deploy nodes remotes in `scripts/deploy`
   > cd scripts/deploy
 
-Put your node IPs and you ssh key in config/kv_server.conf and run the script:
+Put your node private IPs and you ssh key in `config/kv_server.conf` and run the script:
   > ./script/deploy.sh ./config/kv_server.conf
 
 ### Deploying replicas and clients on distinct machines manually
@@ -418,9 +432,10 @@ For example, we generate 5 keys using AES scheme and all of these keys will be p
     I20230215 22:35:19.273571  6307 consensus_service.cpp:218] receive public size:5 primary:1 version:1 from region:1
     I20230215 22:35:19.275673  6288 consensus_service.cpp:218] receive public size:5 primary:1 version:1 from region:1
     ```
-9. At this point, we can try to access the KV service.
+### Access the KV service deployed on distinct machines.
     
     First, build the KV service tool.
+
     > bazel build service/tools/kv/api_tools/kv_service_tools
 
     Next, create a configuration file for the client. This file will allow the client to access the client proxy. Note: in our ongoing example, the machine from where you are running all these scripts is going to act as a client.

@@ -23,7 +23,7 @@ Please check the [install tutorial](https://blog.resilientdb.com/2022/09/28/Gett
 After this you will need some additional steps for [pybind11](https://github.com/pybind/pybind11) to work, as we are embedding the Python interpreter in the C++ code.
 
 Make sure your Python version is 3.9+. Check the version with
-  > python3 --version
+  > python3 \-\-version
 
 In the .bazelrc file in your nexres directory, have the PYTHON_BIN_PATH reference the location of your python executable. For example, if you have Python installed at /home/ubuntu/.linuxbrew/bin/python3, then it will look like
   > build --action_env=PYTHON_BIN_PATH="/home/ubuntu/.linuxbrew/bin/python3"
@@ -47,39 +47,21 @@ It is heavily advised to set up a virtual Python environment so you do not distu
 
 Then install the Python dependencies
 
-  > pip install -r sdk_validator/requirements.txt
+  > pip install -r requirements.txt
 
 If you wish to deactivate the virtual environment you can enter
   > deactivate
 
-# Running NexRes KV Servers
-NexRes needs to be running first for the SDK endpoints to connect to. Go to the resilientdb folder you have downloaded from the [resilientdb](https://github.com/resilientdb/resilientdb) repository. 
-<!-- To enable the Python transaction validation, go to example/kv_config.config and set the flag require_txn_validation to true. The file should look something like:
+# Running NexRes KV Service
+NexRes needs to be running first for the SDK endpoints to connect to. Go to the **resilientdb** folder you have downloaded from the [resilientdb](https://github.com/resilientdb/resilientdb) repository. 
 
-    {
-      region : {
-        ...
-      },
-      self_region_id:1,
-      rocksdb_info : {
-        ...
-      },
-      leveldb_info : {
-        ...
-      },
-      require_txn_validation:true,
-    } -->
-
-<!-- Make sure the Python virtual environment is activated if it is not already. You will see a (venv) on the left of your command line if it is active.
-  > source venv/bin/activate -->
-
-Start the KV servers with the example script.
+Start the KV Service with the example script.
   > ./service/tools/kv/server_tools/start_kv_service.sh
 
 # Running Crow Service
 We use [Crow](https://github.com/CrowCpp/Crow), a C++ framework for creating HTTP or Websocket web services to connect our SDK to NexRes.
 
-In another terminal shell after starting KV Server, go to the ResilientDB-GraphQL folder that you have downloaded from the [ResilientDB-GraphQL](https://github.com/ResilientApp/ResilientDB-GraphQL) repository, build the crow service: 
+In another terminal shell after starting KV Server, go to the **ResilientDB-GraphQL** folder that you have downloaded from the [ResilientDB-GraphQL](https://github.com/ResilientApp/ResilientDB-GraphQL) repository, build the crow service: 
 
   > bazel build service/http_server:crow_service_main
 
@@ -97,23 +79,27 @@ You will see this if successful:
 
 ## Check your Python is up-to-date (3.9+)
   
-  > python3 --version`
+  > python3 \-\-version
 
 If your Python version number is too low you may encounter type hinting issues when attempting to run the code
 
-## Activating virtual environment and Installing dependencies
+## Activating virtual environment
 
   > source venv/bin/activate
 
-  > pip install -r requirements.txt
-
 ## Running the Driver
 
-Examples of using the driver can be seen in *test_sdk.py*. You will see the output *'The retrieved txn is successfully validated'* if successful.
+Examples of using the driver can be seen in *test_sdk.py*. 
+
+  > python3 test_sdk.py
+
+You will see the output *'The retrieved txn is successfully validated'* if successful.
+
+***Now you are set with the Python SDK***. 
+Below are the design details of the Python SDK.
+
 
 # Validation
-
-You have successfully run an SDK example script. Below is the detailed design of the SDK.
 
 ## Entrypoint
 `validator.py`
