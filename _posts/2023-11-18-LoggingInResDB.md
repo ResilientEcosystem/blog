@@ -32,7 +32,7 @@ No matter from which point to redo the requests, as long as it is the logging po
 since all the Set requests will overwrite the previous records and only the last set will be kept. 
 
 
-[logging overview](/assets/images/nexres/logging_files.png)
+[logging overview](/assets/images/nexres/logging%20files.png)
 
 
 ## Checkpoint Files
