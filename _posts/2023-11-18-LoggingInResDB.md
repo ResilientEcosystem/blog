@@ -15,7 +15,7 @@ article_header:
 ---
 
 ## Overview
-[logging overview](/assets/images/nexres/logging.png)
+![logging overview](/assets/images/nexres/logging.png)
 
 Logging is used to help ResilientDB to recover its local state after restarting. The state can be the one before it is shut down or the state from other replics.
 When ResilientDB receives a request related to the consensus logic, it will be written to a logging file by appending to the tail to guarantee written order.
@@ -32,7 +32,7 @@ No matter from which point to redo the requests, as long as it is the logging po
 since all the Set requests will overwrite the previous records and only the last set will be kept. 
 
 
-[logging overview](/assets/images/nexres/logging%20files.png)
+![logging overview](/assets/images/nexres/logging%20files.png)
 
 
 ## Checkpoint Files
