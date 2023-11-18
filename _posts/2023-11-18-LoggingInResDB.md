@@ -54,6 +54,7 @@ checkpoint generation and the storage execution are isolated.
 To solve this problem, we switch to a new file only if the storage has executed all the requests whose sequences are less than the smallest stable checkpoint in the file.
 That means, in one logging file, there will be many stable checkpoints. We only consider the smallest one.
 In other words, we guarantee that when we finish logging file A whose minimum stable checkpoint is X, all the requests with sequence numbers less than X have been committed.
+
 So it is safe to redo the requests starting from A. However, because some requests will fall into the files before A, we need to find the starting logging file using the maximum 
 sequence number discussed above.
 
