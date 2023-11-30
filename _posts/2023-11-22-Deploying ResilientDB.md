@@ -219,3 +219,54 @@ server {
   > sudo systemctl restart nginx
 
 Now, you can navigate to the different subdomains via your web browser and view the different services. 
+
+### Using Docker Compose for ResilientDB and Python SDK
+
+Utilize Docker images from the Docker Hub registry to effortlessly create instances of ResDB and the Python SDK.
+
+Below is the docker-compose.yaml file. Switch `amd64` to `arm64` if you are on an Mac Silicon system.
+
+```yaml
+version: "3"
+
+services:
+
+  resilientdb:
+    image: expolab/resdb:amd64
+    ports:
+      - "10005:10005"
+
+  sdk:
+    image: expolab/sdk:amd64
+    depends_on:
+      - resilientdb
+```
+
+Execute the following command to launch ResilientDB and the SDK:
+
+```bash
+> docker-compose up
+```
+
+Once the command completes, access the SDK container and modify the URL within the `test_driver.py` file to connect to the created ResDB server.
+
+- Accessing the SDK container:
+
+Use the following commands to identify the container ID and access the SDK container:
+
+```
+> docker ps -a
+
+CONTAINER ID   IMAGE                 COMMAND             CREATED      STATUS                             PORTS                      NAMES
+2a9251b89b6c   expolab/sdk:arm64     "./entrypoint.sh"   7 days ago   Up 23 seconds (health: starting)   18000/tcp                  sdk-sdk-1
+e6ffad8d591c   expolab/resdb:arm64   "./entrypoint.sh"   8 days ago   Up 23 seconds                      0.0.0.0:10005->10005/tcp   sdk-resilientdb-1
+
+> docker exec -it 2a9251b89b6c bash
+```
+
+- Edit test_driver.py and replace db_root_url from `http://127.0.0.1:18000` to `http://resilientdb:10005`:
+```
+> sed -i 's/db_root_url = "http:\/\/127.0.0.1:18000"/db_root_url = "http:\/\/resilientdb:10005"/' test_driver.py
+```
+
+This ensures that the SDK communicates correctly with the ResilientDB server.
