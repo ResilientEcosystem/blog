@@ -321,6 +321,6 @@ println!("Hashed Data: {}", hashed_data);
 
 This guide provides a glimpse into the powerful features our ResilientDB Rust SDK offers for seamless integration into your Rust projects. Explore the full potential of ResilientDB, experiment with different APIs, and leverage the SDK's capabilities to build robust and secure applications.
 
-For more in-depth information and advanced features, refer to the official [ResilientDB Rust SDK documentation](https://docs.rs/resilientdb_rust_sdk/0.1.1/resilientdb_rust_sdk/).
+For more in-depth information and advanced features, refer to the official [ResilientDB Rust SDK documentation](https://docs.rs/resilientdb_rust_sdk/0.1.2/resilientdb_rust_sdk/).
 
 Happy coding with ResilientDB and Rust!
