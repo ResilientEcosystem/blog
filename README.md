@@ -11,7 +11,7 @@ To build locally do the following:
 sudo bundle exec jekyll serve
 ```
 
-In your browser visit [http://127.0.0.1:4000/blog/](http://127.0.0.1:4000/blog/) to view local changes.
+In your browser visit [](http://127.0.0.1:4000/blog/) to view local changes.
 
 #### License
 
