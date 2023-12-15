@@ -17,7 +17,7 @@ article_header:
 
 # What is the ResilientDB Blockchain Analyzer?
 
-The ResilientDB Blockchain Analyzer offers a comprehensive visualization tool for transactions on the ResilientDB blockchain, similarly to Etherscan's role for Ethereum. The two main features that the program offers are displaying all wallets connected to the ResilientDB blockchain, along with their respective transaction histories and offering a chronological visual representation of transactions, enabling easy tracking of transaction volume over time. It can also be used to help track the movement of illegally obtained funds or just to help see what transactions have been made on the blockchain. Currently the analyzer is already running live on the main instance of ResilientDB and can be viewed at http://104.198.198.56/ResDB-Chain-Analyzer/.
+The ResilientDB Blockchain Analyzer offers a comprehensive visualization tool for transactions on the ResilientDB blockchain, similarly to Etherscan's role for Ethereum. The two main features that the program offers are displaying all wallets connected to the ResilientDB blockchain, along with their respective transaction histories and offering a chronological visual representation of transactions, enabling easy tracking of transaction volume over time. It can also be used to help track the movement of illegally obtained funds or just to help see what transactions have been made on the blockchain. Currently the analyzer is already running live on the main instance of ResilientDB and can be viewed at http://104.198.198.56:8000/.
 
 ## Interfacing with ResilientDB
 
@@ -96,6 +96,11 @@ First you need to install apache2 using:
 ```bash
 sudo apt install apache2
 ```
+You will also need to install gunicorn using:
+```bash
+sudo pip install gunicorn
+```
+
 Then navigate to where your index.html folder is located, for google cloud it is under:
 ```bash
 /var/www/http/
@@ -114,7 +119,11 @@ IP_ADDRESS_TO_HOSTING_SITE = 'URL/Domain Name of hosting site'
 #### Finally we need to run the flask script that will update transactions.json when a user visits the website:
 Run this command from /var/www/http/ResDB-Chain-Analyzer:
 ```bash
-git clone https://github.com/ResilientApp/ResilientDB-GraphQL
+sudo gunicorn -w 4 -b 0.0.0.0 app:app
+```
+If any changes need to be made by the user to the app.py file then you must first end the gunicorn task with:
+```bash
+sudo pkill gunicorn
 ```
 
 ## Setting up the website frontend
