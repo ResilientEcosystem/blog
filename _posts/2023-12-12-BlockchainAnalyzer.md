@@ -89,7 +89,7 @@ Before running the ResilientDB Blockchain Analyzer website, you need to start kv
     }
 }
 ```
-If your json structure does not follow this format go to [Setting up the website frontend](###changing-the-default-json-formatting)
+If your json structure does not follow this format go to [Setting up the website frontend](#changing-the-default-json-formatting)
 
 ## Setting up the python backend
 First you need to install apache2 using:
