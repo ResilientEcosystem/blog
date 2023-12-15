@@ -38,7 +38,19 @@ For tree.html the data is collected when the javascript code (tree.js) runs. Thi
 
 There are two graphs to display the data from the json file: <br>
 * First we have a simple line griph that displays the transactions made within the last year with the month on the x-axis and the amount of transactions on the y-axis. 
+<p>
+    <img src="/assets/images/resdb-visualizer/Year-Graph.png" alt="Year Graph photo" style="width: 50%"/>
+    <br>
+    <em>Figure 1. Image of the Transactions Graph.
+    </em>
+</p>
 * The second way is the tree that was described above. You can track the transaction history coming from a single user's wallet ID and follow the subsequent transactions.
+<p>
+    <img src="/assets/images/resdb-visualizer/Tree-Graph.png" alt="Tree Graph photo" style="width: 50%"/>
+    <br>
+    <em>Figure 2. Image of the Tree of Transactions.
+    </em>
+</p>
 
 ## Demo Video
 
