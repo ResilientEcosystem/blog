@@ -21,11 +21,11 @@ The ResilientDB Blockchain Analyzer offers a comprehensive visualization tool fo
 
 ## Interfacing with ResilientDB
 
-When the website is first accessed it will run the command CURL and then save all of the transactions made on the blockchain as a single json file. The ResilientDB blockchain visualizer then displays transactions in the form of a tree. At the top of the tree will be a single node containing the original wallet ID and then below that will be nodes displaying all of the transactions made by that specific wallet ID. If you click on any of those transactions you can see all the subsequent transactions made by the recipient of the selected transaction. If no subsequent transaction had been made then the transaction will not show up as being clicked.
+When the website is first accessed it will read the response from https://crow.resilientdb.com/v1/transactions and then save all of the transactions made on the blockchain as a single json file. The ResilientDB blockchain visualizer then displays transactions in the form of a tree. At the top of the tree will be a single node containing the original wallet ID and then below that will be nodes displaying all of the transactions made by that specific wallet ID. If you click on any of those transactions you can see all the subsequent transactions made by the recipient of the selected transaction. If no subsequent transaction had been made then the transaction will not show up as being clicked.
 
 ## Data Collection
 ### Data collection for homepage
-If you run the python backend for the blockchain then each time the webpage is accessed, the flask script will download the blockchain's json data and will store it under <br>
+If you run the python backend for the blockchain, then each time the webpage is accessed the flask script will download the blockchain's json data and will store it under <br>
 ```bash
 ./Finecharts/js/settings/transactions.json
 ```
