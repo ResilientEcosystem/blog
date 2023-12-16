@@ -17,7 +17,7 @@ article_header:
 
 # What is the ResilientDB Blockchain Analyzer?
 
-The ResilientDB Blockchain Analyzer offers a comprehensive visualization tool for transactions on the ResilientDB blockchain, similarly to Etherscan's role for Ethereum. The two main features that the program offers are displaying all wallets connected to the ResilientDB blockchain, along with their respective transaction histories and offering a chronological visual representation of transactions, enabling easy tracking of transaction volume over time. It can also be used to help track the movement of illegally obtained funds or just to help see what transactions have been made on the blockchain. Currently the analyzer is already running live on the main instance of ResilientDB and can be viewed at http://104.198.198.56:8000/.
+The ResilientDB Blockchain Analyzer offers a comprehensive visualization tool for transactions on the ResilientDB blockchain, similarly to Etherscan's role for Ethereum. The two main features that the program offers are displaying all wallets connected to the ResilientDB blockchain, along with their respective transaction histories and offering a chronological visual representation of transactions, enabling easy tracking of transaction volume over time. It can also be used to help track the movement of illegally obtained funds or just to help see what transactions have been made on the blockchain. Currently the analyzer is already running live on the main instance of ResilientDB and can be viewed at http://34.31.61.19:8000/.
 
 ## Interfacing with ResilientDB
 
