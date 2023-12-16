@@ -17,15 +17,15 @@ article_header:
 
 # What is the ResilientDB Blockchain Analyzer?
 
-The ResilientDB Blockchain Analyzer offers a comprehensive visualization tool for transactions on the ResilientDB blockchain, similarly to Etherscan's role for Ethereum. The two main features that the program offers are displaying all wallets connected to the ResilientDB blockchain, along with their respective transaction histories and offering a chronological visual representation of transactions, enabling easy tracking of transaction volume over time. It can also be used to help track the movement of illegally obtained funds or just to help see what transactions have been made on the blockchain. Currently the analyzer is already running live on the main instance of ResilientDB and can be viewed at http://34.31.61.19:8000/.
+The ResilientDB Blockchain Analyzer offers a comprehensive visualization tool for transactions on the ResilientDB blockchain, similarly to Etherscan's role for Ethereum. The two main features that the program offers are displaying all wallets connected to the ResilientDB blockchain, along with their respective transaction histories and offering a chronological visual representation of transactions, enabling easy tracking of transaction volume over time. It can also be used to help track the movement of illegally obtained funds or just to help see what transactions have been made on the blockchain. Currently the analyzer is already running live on the main instance of ResilientDB and can be viewed [here](http://34.31.61.19:8000/).
 
 ## Interfacing with ResilientDB
 
-When the website is first accessed it will read the response from https://crow.resilientdb.com/v1/transactions and then save all of the transactions made on the blockchain as a single json file. The ResilientDB blockchain visualizer then displays transactions in the form of a tree. At the top of the tree will be a single node containing the original wallet ID and then below that will be nodes displaying all of the transactions made by that specific wallet ID. If you click on any of those transactions you can see all the subsequent transactions made by the recipient of the selected transaction. If no subsequent transaction had been made then the transaction will not show up as being clicked.
+When the website is first accessed it will read the response from [https://crow.resilientdb.com/v1/transactions](https://crow.resilientdb.com/v1/transactions) and then save all of the transactions made on the blockchain as a single json file. The ResilientDB blockchain visualizer then displays transactions in the form of a tree. At the top of the tree will be a single node containing the original wallet ID and then below that will be nodes displaying all of the transactions made by that specific wallet ID. If you click on any of those transactions you can see all the subsequent transactions made by the recipient of the selected transaction. If no subsequent transaction had been made then the transaction will not show up as being clicked.
 
 ## Data Collection
 ### Data collection for homepage
-If you run the python backend for the blockchain, then each time the webpage is accessed the flask script will download the blockchain's json data and will store it under <br>
+If you run the python backend for the blockchain, then each time the webpage is accessed the flask script will download the blockchain's json data and will store it under
 ```bash
 ./Finecharts/js/settings/transactions.json
 ```
@@ -36,7 +36,7 @@ For tree.html the data is collected when the javascript code (tree.js) runs. Thi
 
 ## Viewing the Data
 
-#### There are two graphs to display the data from the json file: <br>
+#### There are two graphs to display the data from the json file:
 First we have a simple line griph that displays the transactions made within the last year with the month on the x-axis and the amount of transactions on the y-axis. 
 <p>
     <img src="/assets/images/resdb-visualizer/Year-Graph.png" alt="Year Graph photo" style="width: 75%"/>
@@ -150,9 +150,9 @@ get_time(jsonObj) : return the time of the transaction
 ```
 
 ### Source Code Repositories:
-https://github.com/Richard-Voragen/ResDB-Chain-Analyzer
+[https://github.com/Richard-Voragen/ResDB-Chain-Analyzer](https://github.com/Richard-Voragen/ResDB-Chain-Analyzer)
 <br>
-https://github.com/ResilientApp/ResilientDB-GraphQL
+[https://github.com/ResilientApp/ResilientDB-GraphQL](https://github.com/Richard-Voragen/ResDB-Chain-Analyzer)
 
 ### Contributions:
 Voragen: Designed chronological tree visualization of tree data and javascript background. Created main code for parsing and handling of the chain transaction history on the JSON file.
