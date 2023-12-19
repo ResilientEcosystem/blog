@@ -40,7 +40,7 @@ In another terminal shell after starting KV Server, build the crow service from 
   > bazel build service/http_server/crow_service_main
 
 Run the binary to start the service:
-  > bazel-bin/service/http_server/crow_service_main service/tools/config/interface/service.config service/http_server/server_config.config
+  > bazel-bin/service/http_server/crow_service_main service/tools/config/interface/client.config service/http_server/server_config.config
 
 You will see this if successful: 
   ```
@@ -51,10 +51,10 @@ You will see this if successful:
 ### resilientdb.github.io
 In another terminal open the resilientdb.github.io repo and follow the steps below.
 
-Switch to nexres branch (where the updated website is located)
+Switch to explorer branch
   > git fetch
 
-  > git checkout nexres
+  > git checkout explorer
 
 Project Setup
   > npm install
