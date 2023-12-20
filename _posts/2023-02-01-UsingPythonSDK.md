@@ -67,7 +67,7 @@ In another terminal shell after starting KV Server, go to the **ResilientDB-Grap
 
 Run the binary to start the service:
 
-  > bazel-bin/sdk_client/crow_service_main example/kv_client_config.config sdk_client/server_config.config
+  > bazel-bin/service/http_server/crow_service_main service/tools/config/interface/client.config service/http_server/server_config.config
 
 You will see this if successful: 
   ```
