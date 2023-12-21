@@ -26,7 +26,7 @@ article_header:
 
 ## Connecting to Resilient DB
 
-There are a host of ways we can connect to the Resilient DB decentralized system, including
+There are a host of ways we can connect to the Resilient DB decentralized system:
 
 - Crow HTTP server
 - Python SDK
