@@ -1,8 +1,8 @@
 ---
 layout: article
-title: Using the ResilientDB TypeScript SDK
-author: Christopher Chen, Jamie Hsi, Samuel Li, Shrey Gupta, Tyler Beer
-tags: SDK ResilientDBGraphQL TypeScript Installation
+title: Using the ResilientDB Desktop Wallet
+author: Harman Hothi, Tong Miao, Vikram Karmarkar, Benjamin Tang, Yugandhar Retharekar
+tags: ResilientDB Wallet 
 aside:
     toc: true
 article_header:
