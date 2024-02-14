@@ -15,30 +15,30 @@ article_header:
 
 ---
 
-Here we illustrate how to run a smart contract on Nexres locally. We provide steps by steps tutorials to set up locally with 4 nodes and use the builtin smart contract service.
+Here we illustrate how to run a smart contract on Nexres locally. We provide step-by-step tutorials to set up locally with 4 nodes and use the built-in smart contract service.
 
 # Install
 Please check the [install tutorial](https://blog.resilientdb.com/2022/09/28/GettingStartedNexRes.html) for Nexres to install.
 
 # Running Contract Service Locally
 Running the setup script to start the server:
-  > sh application/contract/server/start_contract_server.sh
+  > ./service/tools/contract/service_tools/start_contract_service.sh
 
 When the script is done, you will see that 4 applications called contract_server have been launched locally. Now build the contract tool to help you access the server:
-  > bazel build application/contract/tools/contract_tools
+  > bazel build service/tools/contract/api_tools/contract_tools
 
 # Smart Contract Account
 
-You have to provide an account address when you deploy a contract or execute your contract.
+You must provide an account address when you deploy or execute a contract.
 Using the contract tools to create an account first:
-  > bazel-bin/application/contract/tools/contract_tools create -c application/contract/tools/client_config.config
+  > bazel-bin/service/tools/contract/api_tools/contract_tools create -c service/tools/config/interface/service.config
 
 # Contract
 Nexres only handles the JSON description of the contract source code. We use solc, a tool from Solidity, to obtain the JSON file.
-We provide [token.sol](https://github.com/msadoghi/nexres/blob/master/application/contract/tools/example_contract/token.sol) as an example below:
+We provide [token.sol](service/tools/contract/api_tools/example_contract/token.sol) as an example below:
   > solc --evm-version homestead --combined-json bin,hashes --pretty-json --optimize token.sol > token.json
 
-Once get your [json contract](https://github.com/msadoghi/nexres/blob/master/application/contract/tools/example_contract/token.json), you can find the contract name("token.sol:Token") and its function hashes under the contract name section in the file.
+Once get your [json contract](service/tools/contract/api_tools/example_contract/token.json), you can find the contract name("token.sol:Token") and its function hashes under the contract name section in the file.
 
 token.sol：
 ```
@@ -94,7 +94,7 @@ token.json
 
 # Deploy Contract
 Once you obtain the JSON contract and its contract name, deploy the contract using contract_tools.
-  > bazel-bin/application/contract/tools/contract_tools deploy -c application/contract/tools/client_config.config -p application/contract/client/test_data/token.json -n token.sol:Token -a 1000 -m 0x67c6697351ff4aec29cdbaabf2fbe3467cc254f8
+  > bazel-bin/service/tools/contract/api_tools/contract_tools deploy -c service/tools/config/interface/service.config -p service/tools/contract/api_tools/example_contract/token.json -n token.sol:Token -a 1000 -m 0x67c6697351ff4aec29cdbaabf2fbe3467cc254f8
 
 Some parameters:
   > -c the client configuration path  
@@ -118,7 +118,7 @@ Once it is done, you will see the output including the contract address which yo
 When executing the contract functions, you need to provide the caller address, contract address, function name and its parameters.
 Running Create Account to get more addresses if needed.
 The following command runs a transfer function to transfer 100 tokens to an account with the address "0x1be8e78d765a2e63339fc99a663".
-> bazel-bin/application/contract/tools/contract_tools ecute -c application/contract/tools/client_config.config -m 0x67c6697351ff4aec29cdbaabf2fbe3467cc254f8 -s 0xfc08e5bfebdcf7bb4cf5aafc29be03c1d53898f1 -f "transfer(address,uint256)" -a 0x1be8e78d765a2e63339fc99a66320db73158a35a,100
+> bazel-bin/service/tools/contract/api_tools/contract_tools execute -c service/tools/config/interface/service.config -m 0x67c6697351ff4aec29cdbaabf2fbe3467cc254f8 -s 0xfc08e5bfebdcf7bb4cf5aafc29be03c1d53898f1 -f "transfer(address,uint256)" -a 0x1be8e78d765a2e63339fc99a66320db73158a35a,100
 
 Once it is done, you will see the result:
 > 0x0000000000000000000000000000000000000000000000000000000000000001
