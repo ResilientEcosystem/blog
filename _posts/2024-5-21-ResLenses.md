@@ -15,17 +15,17 @@ article_header:
 ---
 
 ## Project Overview: 
-The Res-Lenses page is an in browser UTXO heatmap visualization of the Resilient DB network and the Ethereum network. 
+The Res-Lenses page is an in browser UTXO heatmap visualization of the ResilientDB network and the Ethereum network. 
 It utilizes the three.js 3D graphics library for the browser to visualize transaction activity across all possible pairs of addresses collected, allowing for the viewing of transaction activity in various configurations to best find patterns in UTXO movement.
 
 ##### Browsers this is known to work in (others may have difficulty): Microsoft Edge and Google Chrome
 
-[Link to Site](https://res-lenses.resilientdb.com)
+You may access the ResLenses app [here](https://res-lenses.resilientdb.com) and view the demo [here](https://www.youtube.com/watch?v=IzGxG4_WkDQ).
 
 ## Front End Overview
 
 ### Getting Started on Page Launch
-Opening the page up, you will initially view the top left corner of a very large grid representing transactions on the Resilient DB network. As you mouse around, you will notice green and blue lines pinpointing the block you are hovering. That block represents the transaction activity between two address as shown on the top left tab. As you will also notice, addresses implicity line the X and Y axis of the grid, and each block represents activity of the intersecting addresses. If the activity between two addresses is non-grey, then there is some activity, and double clicking on that block will pull up a tab on the left. In that tab, you can see all UTXO sent from one address to the other in a *From* and *To* relationship.
+Opening the page up, you will initially view the top left corner of a very large grid representing transactions on the ResilientDB network. As you mouse around, you will notice green and blue lines pinpointing the block you are hovering. That block represents the transaction activity between two address as shown on the top left tab. As you will also notice, addresses implicity line the X and Y axis of the grid, and each block represents activity of the intersecting addresses. If the activity between two addresses is non-grey, then there is some activity, and double clicking on that block will pull up a tab on the left. In that tab, you can see all UTXO sent from one address to the other in a *From* and *To* relationship.
 
 ![defaultview](/assets/images/res-lenses/reslenses default getting started.png)
 
@@ -43,7 +43,7 @@ Double clicking a block will focus and highlight it and open a tab to the left t
 
 ### Bottom Bar Buttons
 
-At the bottom of the page is a bar with five buttons. These allow for various configurations for visualizing the same data. Though the data can also be swapped between Resilient DB and the Ethereum Mainnet. Aside from the data selection button, all configurations are computer client side.
+At the bottom of the page is a bar with five buttons. These allow for various configurations for visualizing the same data. Though the data can also be swapped between ResilientDB and the Ethereum Mainnet. Aside from the data selection button, all configurations are computer client side.
 
 ![bottombar](/assets/images/res-lenses/reslenses_bottom_bar.png)
 
@@ -52,7 +52,7 @@ Reset the position of the camera to the top left corner. If view mode is in *bar
 
 **Data:** 
 Selects the source of the data to view. Default is *ResDB*.
-- `ResDB`: Resilient DB data. All transactions that have occurred on the Resilient DB network with amounts involved.
+- `ResDB`: ResilientDB data. All transactions that have occurred on the ResilientDB network with amounts involved.
 - `Ethereum`: Sampled data collected on the ethereum network. A sample of 48,000 transactions from the last 24 hours and all the addresses involved. Typically will have more addresses than transactions. Note that this will take a second to load.
 
 Note: With Ethereum, there are typically more addresses than transactions, resulting in very sparse looking data. It is recommnded that this data is viewed with the *Largest Transaction* sorting scheme and or with the *Symmetry* setting set to `true` to bring forth more activity to the top left.
@@ -82,7 +82,7 @@ Toggle for whether or not to combine transactions sent out and transactions reci
 - `False`: Transactions as asymmetrical, the transactions sent from and to and address are distinct.
 - `True`: Transactions are symmetrical, as in there is no distinction between transactions sent from or to an address, they are the same and just considered transactions between addresses.
 
-Here is how the Resilient DB data looks with *Sort by Largest Transaction* with *Symmetry* set to `false`
+Here is how the ResilientDB data looks with *Sort by Largest Transaction* with *Symmetry* set to `false`
 ![asym](/assets/images/res-lenses/reslenses_asymmetric.png)
 
 Here is the same configuration except with *Symmetry* set to `true`. Notice how seemingly more activity shows up as transactions sent to and transactions recieved from addresses are compounded together to form the blocks. This is an alternative way to reduce visual sparsity in the data as it increases the value of many blocks while also giving new blocks to addresses that only receive transactions.
@@ -91,20 +91,20 @@ Here is the same configuration except with *Symmetry* set to `true`. Notice how 
 ## Back End Overview
 
 ### Server
-The backend is a Node.js Express app that runs on the ResilientDB cloud. It procures data from the Resilient DB and Ethereum Mainnet networks at regular intervals, processes and stores the data on the server, and provides endpoints for Res-Leneses to access that processed data.
+The backend is a Node.js Express app that runs on the ResilientDB cloud. It procures data from the ResilientDB and Ethereum Mainnet networks at regular intervals, processes and stores the data on the server, and provides endpoints for Res-Leneses to access that processed data.
 
 ### Data collection
 
-**Resilient DB:**
+**ResilientDB:**
 Data is collected at a one hour interval from the `https://crow.resilientdb.com/v1/transactions` endpoint. This contains all transactions that have ever occurred on the ResilientDB network and is then processed for only From/To transactions with UTXO amounts. Processing cleans out the data of invalid JSON and bad transactions down to a set of addresses and transactions. A single file holds the processed ResilientDB data.
 
 **Ethereum Mainnet:**
 Data is collected at a 30 minute inverval using the [Bit Query API](https://bitquery.io). Using this, the server collects 1000 transactions at a time per interval containing only transactions from that interval. Each interval correlates to a file holding transactions for that interval. Transactions 24 hours old are discarded every interval. This leaves the newest 48,000 transactions available at all times. Due to API limitations, this is the most data that can be collected per day. Processing is very simple with some naming tweaks as the API already provides relatively clean data.
 
 ### Endpoints
-There are two endpoints provided by the backend which the Res-Lenese front end utilizes, each to supply data for the Resilient DB network and the Ethereum Mainnet. The format of the data is listed as a list of all addresses involved and then all transactions. All configuration and reorganization of data is done client side on the front end.
+There are two endpoints provided by the backend which the Res-Lenese front end utilizes, each to supply data for the ResilientDB network and the Ethereum Mainnet. The format of the data is listed as a list of all addresses involved and then all transactions. All configuration and reorganization of data is done client side on the front end.
 
-- `https://res-lenses-backend.resilientdb.com/getData_RESDB`: This provides the processed Resilient DB file containing all transactions with transactions times set as DateTime numbers.
+- `https://res-lenses-backend.resilientdb.com/getData_RESDB`: This provides the processed ResilientDB file containing all transactions with transactions times set as DateTime numbers.
 - `https://res-lenses-backend.resilientdb.com/getData_ETH`: This compiles all the data from all the Ethereum data files and send them. Transaction times are set as DateTime strings.
 
 Transaction data is relatively simple, they contain the following:
