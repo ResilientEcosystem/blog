@@ -1,0 +1,51 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:3.1.2-node-browsers
+    steps:
+      - checkout
+
+      - run:
+          name: Install Dependencies
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y build-essential
+            gem install bundler
+            bundle install
+
+      - run:
+          name: Build Jekyll Site
+          command: bundle exec jekyll build
+
+      - run:
+          name: Configure Git
+          command: |
+            git config --global user.email "ci-bot@resilientdb.com"
+            git config --global user.name "CI Bot"
+
+      - run:
+          name: Clone asf-site Repository
+          command: |
+            git clone https://x-access-token:${GITHUB_TOKEN}@github.com/apache/incubator-resilientdb-site.git
+            cd incubator-resilientdb-site
+            git checkout asf-site
+            # Ensure the /blog directory exists
+            mkdir -p blog
+            # Copy the generated site to /blog
+            cp -R ../_site/* blog/
+            # Add changes
+            git add blog
+            # Commit if there are changes
+            if ! git diff --cached --exit-code; then
+              git commit -m "Deploy Jekyll blog via CircleCI [skip ci]"
+              git push origin asf-site
+            else
+              echo "No changes to commit"
+            fi
+
+workflows:
+  build_and_deploy:
+    jobs:
+      - build
