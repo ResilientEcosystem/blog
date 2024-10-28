@@ -1,0 +1,66 @@
+name: Build and Deploy Jekyll Blog
+
+on:
+  push:
+    branches:
+      - test-ci
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Ensure full history for accurate diffs
+
+      # Set up Ruby environment
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'  # Specify your Ruby version
+          cache-bundle: true
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      # Build Jekyll site
+      - name: Build Jekyll Site
+        run: bundle exec jekyll build
+
+      # Deploy to asf-site repository
+      - name: Deploy to asf-site
+        env:
+          GITHUB_TOKEN: ${{ secrets.ASF_SITE_TOKEN }}
+        run: |
+          # Clone the asf-site repository
+          git clone https://x-access-token:${GITHUB_TOKEN}@github.com/apache/incubator-resilientdb-site.git
+          cd incubator-resilientdb-site
+          
+          # Checkout the asf-site branch
+          git checkout asf-site
+
+          # Create or clean the blog directory
+          rm -rf blog/*
+          mkdir -p blog
+
+          # Copy the built Jekyll site to /blog
+          cp -R ../_site/* blog/
+
+          # Add changes to git
+          git add blog
+
+          # Commit and push if there are changes
+          if ! git diff --cached --exit-code; then
+            git config --global user.email "ci-bot@apache.org"
+            git config --global user.name "CI Bot"
+            git commit -m "Deploy Jekyll blog via GitHub Actions [skip ci]"
+            git push origin asf-site
+          else
+            echo "No changes to commit"
+          fi
