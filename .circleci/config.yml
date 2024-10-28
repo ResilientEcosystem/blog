@@ -1,0 +1,40 @@
+version: 2.1
+
+jobs:
+  build-and-deploy-jekyll:
+    docker:
+      - image: jekyll/builder:latest
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: |
+            bundle install
+      - run:
+          name: Build Jekyll site
+          command: |
+            JEKYLL_ENV=production bundle exec jekyll build -d _site
+      - run:
+          name: Clone asf-site branch
+          command: |
+            git clone --branch asf-site https://github.com/apache/incubator-resilientdb-site.git asf-site
+      - run:
+          name: Move blog to /blog
+          command: |
+            rm -rf asf-site/blog
+            mv _site asf-site/blog
+      - run:
+          name: Push changes to asf-site branch
+          command: |
+            cd asf-site
+            git config --global user.email "apratimshukla6@gmail.com"
+            git config --global user.name "Apratim Shukla"
+            git add blog
+            git commit -m "Automated Jekyll blog update"
+            git push origin asf-site
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - build-and-deploy-jekyll
