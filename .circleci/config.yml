@@ -1,40 +1,51 @@
 version: 2.1
 
 jobs:
-  build-and-deploy-jekyll:
+  build:
     docker:
-      - image: jekyll/builder:latest
+      - image: circleci/ruby:3.1.2-node-browsers
     steps:
       - checkout
+
       - run:
-          name: Install dependencies
+          name: Install Dependencies
           command: |
+            sudo apt-get update
+            sudo apt-get install -y build-essential
+            gem install bundler
             bundle install
+
       - run:
-          name: Build Jekyll site
-          command: |
-            JEKYLL_ENV=production bundle exec jekyll build -d _site
+          name: Build Jekyll Site
+          command: bundle exec jekyll build
+
       - run:
-          name: Clone asf-site branch
+          name: Configure Git
           command: |
-            git clone --branch asf-site https://github.com/apache/incubator-resilientdb-site.git asf-site
+            git config --global user.email "ci-bot@resilientdb.com"
+            git config --global user.name "CI Bot"
+
       - run:
-          name: Move blog to /blog
+          name: Clone asf-site Repository
           command: |
-            rm -rf asf-site/blog
-            mv _site asf-site/blog
-      - run:
-          name: Push changes to asf-site branch
-          command: |
-            cd asf-site
-            git config --global user.email "apratimshukla6@gmail.com"
-            git config --global user.name "Apratim Shukla"
+            git clone https://x-access-token:${GITHUB_TOKEN}@github.com/apache/incubator-resilientdb-site.git
+            cd incubator-resilientdb-site
+            git checkout asf-site
+            # Ensure the /blog directory exists
+            mkdir -p blog
+            # Copy the generated site to /blog
+            cp -R ../_site/* blog/
+            # Add changes
             git add blog
-            git commit -m "Automated Jekyll blog update"
-            git push origin asf-site
+            # Commit if there are changes
+            if ! git diff --cached --exit-code; then
+              git commit -m "Deploy Jekyll blog via CircleCI [skip ci]"
+              git push origin asf-site
+            else
+              echo "No changes to commit"
+            fi
 
 workflows:
-  version: 2
-  deploy:
+  build_and_deploy:
     jobs:
-      - build-and-deploy-jekyll
+      - build
