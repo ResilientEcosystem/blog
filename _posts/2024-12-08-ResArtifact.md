@@ -175,7 +175,7 @@ To solve this problem we use blockchain technology, which has already been succe
 ### Demo Video
 <p align="center">
     <a href="https://drive.google.com/file/d/132lPbKemscHogvfnuNQIpsq9pLJg3BRZ/view?usp=sharing" target="_blank">
-        <img src="/assets/images/resartifact/demo_ppt.png" alt="Logo"/>
+        <img src="/assets/images/resartifact/demo_ppt.png" alt="Logo" width="300"/>
     </a>
     <br>
 </p>
