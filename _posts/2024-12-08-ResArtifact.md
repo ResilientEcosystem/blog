@@ -30,6 +30,7 @@ Since each transaction is important in proving an artifact's validity, we must e
 ### Useful Links
 - Code Repository - [https://github.com/ResilientApp/ResArtifact](https://github.com/ResilientApp/ResArtifact)
 - Presentation Slides - [https://docs.google.com/presentation/d/1SRIOvvB1Q6AJXESoSLsloJ1OOTNwrJiL6jXSrmAEMBg/edit?usp=sharing](https://docs.google.com/presentation/d/1SRIOvvB1Q6AJXESoSLsloJ1OOTNwrJiL6jXSrmAEMBg/edit?usp=sharing)
+- Demo Video: [https://drive.google.com/file/d/132lPbKemscHogvfnuNQIpsq9pLJg3BRZ/view?usp=sharing](https://drive.google.com/file/d/132lPbKemscHogvfnuNQIpsq9pLJg3BRZ/view?usp=sharing)
 
 
 ### Problem Identified
@@ -170,7 +171,9 @@ To solve this problem we use blockchain technology, which has already been succe
     <em> Figure 15. Artifact Transaction History
     </em>
 </p>
+
 ### Demo Video
+https://drive.google.com/file/d/132lPbKemscHogvfnuNQIpsq9pLJg3BRZ/view?usp=sharing
 
 
 ### Steps to run the system
