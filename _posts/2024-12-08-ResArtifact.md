@@ -173,7 +173,13 @@ To solve this problem we use blockchain technology, which has already been succe
 </p>
 
 ### Demo Video
-https://drive.google.com/file/d/132lPbKemscHogvfnuNQIpsq9pLJg3BRZ/view?usp=sharing
+<p align="center">
+    <a href="https://drive.google.com/file/d/132lPbKemscHogvfnuNQIpsq9pLJg3BRZ/view?usp=sharing" target="_blank">
+        <img src="/assets/images/resartifact/demo_ppt.png" alt="Logo"/>
+    </a>
+    <br>
+</p>
+
 
 
 ### Steps to run the system
