@@ -294,5 +294,7 @@ Check if MongoDB is Running using :
 
 ### Contributions:
 
-The team members of this project are Alyssa Yee, Amy Vu, Alexander Gao, Zijin Chui, Guransh Anand. Alyssa Yee is the leader of our project and has handled submitting all assignments and backend transactions. Amy is working on frontend development and connecting the frontend application to the backend. Alexander is supporting frontend development and strategic planning for features of the application. Guransh is managing backend development which includes setting up transactions and making custom transactions required for this application and testing the functionality on a sample frontend. Zijin Qui is gathering and organizing reference materials needed for this project.
+The team members of this project are Alyssa Yee, Amy Vu, Alexander Gao, Zijin Cui, Guransh
+Anand. Alyssa Yee is the leader of our project and has handled submitting all assignments and has supported backend transactions. Amy led the frontend development and connected the frontend application to the backend. Alexander supported the frontend development and strategic planning for features of the application. Guransh managed the backend development, which includes setting up transactions, making custom transactions required for this application, and testing the functionality on a sample frontend. Zijin Cui is gathering and organizing reference materials needed for this project.
+
 
