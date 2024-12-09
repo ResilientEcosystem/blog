@@ -1,7 +1,7 @@
 ---
 layout: article 
 title: ResArtifact - Resilient based Artifact Repository
-author: Guransh
+author: Alyssa Yee,Guransh Anand Amy Vu, Alexander Gao, Zijin Cui
 tags: ResilientDb Full-Stack ResArtifact
 aside:
     toc: true
