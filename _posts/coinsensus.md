@@ -89,6 +89,8 @@ View a summary of recent financial transactions for quick updates.
 
 Save the transaction, which updates the blockchain ledger in real time.
 
+
+
 ### 6. Account Settings
 
 * **Edit Profile**: Update user information like name and avatar.
@@ -124,6 +126,8 @@ A short project video demo showcasing the implementation of **Coinsensus**:
  <iframe src="https://medium.com/media/6bdcdfdd687b804bc403f3b52a12294f" frameborder=0></iframe>
 
 ### Conclusion
+
+<iframe src="[https://medium.com/media/6bdcdfdd687b804bc403f3b52a12294f](https://drive.google.com/file/d/1TXsNhkY_3_9bn-Zddv1HF1uEecSqdYJP/view?usp=sharing)" frameborder=0></iframe>
 
 Coinsensus demonstrates the power of blockchain technology in finance and expense management. By combining decentralization, automation, and an intuitive interface, the platform resolves inefficiencies and builds trust among users. This project sets the stage for more resilient, secure, and transparent financial management solutions, offering a significant step forward in financial technology.
 
