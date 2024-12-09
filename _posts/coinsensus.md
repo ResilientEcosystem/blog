@@ -1,5 +1,5 @@
 
-## **Coincensus: Split Bills and Track Balances**Powered by ResilientDB
+## **Coincensus: Split Bills and Track Balances**, Powered by ResilientDB
 
 ![Photo by [**GoMoney](https://gomoney.global/blog/worry-less-about-the-bill-when-you-split-it-with-gomoney/)**](https://cdn-images-1.medium.com/max/14396/1*j7LPyKLoHwY-u9iHAuyhdA.png)
 
