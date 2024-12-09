@@ -2,7 +2,7 @@
 layout: article
 title: ResIdentity Document Signer
 excerpt_separator: "<!-- excerpt end -->"
-Author: Sachin Balasubramanyam, Kiranpal Singh, Ananya Pandey, Anish Kataria, Shyam Varahagiri
+Author: Sachin Shankar Balasubramanyam, Ananya Pandey, Anish Kataria, Shyam Varahagiri, Kiransingh Pal
 tags: ResilientDB ResIdentity
 aside:
    toc: true
@@ -15,34 +15,44 @@ article_header:
     src: /assets/images/residentity/banner.gif
 ---
 
-**Powered by the robust ResilientDB fabric, ResIdentity secures critical files with a tamper-proof signing process, ensuring heightened protection and verifiable integrity for crucial documents.**<!-- excerpt end -->
+**Powered by the robust ResilientDB fabric, ResIdentity secures crucial documents with a tamper-proof signing process that ensures verifiable integrity and heightened protection.**<!-- excerpt end -->
 
 # Project Overview
 ## Background
 **What ResIdentity Does** \
-ResIdentity is a document signing application that allows users to securely login and upload PDF documents for signing. Once a document is signed, the application stores the hash of the signed PDF on the secure, blockchain-based ResilientDB fabric ensuring that each document's signature is verifiable and cannot be altered. Users can then download their signed PDFs. By directly recording each signature's details on the blockchain, ResIdentity provides a tamper-proof ledger of transactions, which enhances the verifiability and reliability of document signing.
+ResIdentity is a document signing application that allows users to securely log in and upload PDFs for signing. The digests of these signed PDFs are committed to the ResilientDB blockchain, which ensures that each document’s signature remains unaltered. Users can then download their signed PDFs as needed.
 
+Additionally, ResIdentity enables users to upload previously signed PDFs for verification. During this process, the application checks the ResilientDB blockchain for a matching digest of the signed document to verify its authenticity.
+
+You can view our application [here](residentity.resilientdb.com) and our demo [here](google.com)
 ## Motivation
-**Why Did We Build ResIdentity?** \
-Centralized document signing platforms are vulnerable to cyber-attacks, with hackers targeting central servers to steal or alter sensitive documents and credentials. Additionally, any failure in the central server can cause significant service disruptions and downtime. Such platforms also raise privacy concerns as they limit users' control over their own data, with all management and security protocols handled by the service provider.
+**Why We Built ResIdentity** \
+The need for secure and reliable document signing cannot be overstated. Traditional platforms, while prevalent, often fail to meet the necessary standards for handling sensitive documents like insurance contracts, loan paperwork, employment offers, etc. These platforms typically rely on centralized servers, which, if compromised, can expose personal information at the risk of theft or alteration. Such centralized systems are vulnerable to service disruptions owing to a single point of failure. This can impact the availability of critical services when they are most needed, causing operational delays, user frustration and reduced trust. Furthermore, privacy is another concern with conventional document signing solutions. Users must entrust their sensitive information to third-party providers, who manage and control all aspects of data security, leaving them withwith little control over their own data.
+
+ResIdentity was built to address these vulnerabilities by leveraging the power of blockchain technology.
 
 ## What Sets Us Apart
-ResIdentity utilizes ResilientDB to store document hashes on a blockchain, making each signature tamper-proof and verifiable. This decentralized approach eliminates single points of failure, enhancing reliability and reducing risks of data manipulation. Blockchain's inherent transparency allows for secure, auditable records without compromising privacy, providing a dependable and user-empowered alternative to centralized document signing.
+By using the ResilientDB blockchain to store document digests, ResIdentity ensures that each document's signature is immutable and verifiable. This decentralized approach eliminates single points of failure, enhances data security, and gives users full control over their documents. The blockchain's inherent transparency also means that every transaction is auditable, providing a layer of accountability and trust that traditional platforms cannot match.
+
+Through ResIdentity, we aim to restore confidence in digital transactions and empower users with a tool that upholds the integrity and privacy of their documents, redefining the standards for document security in the digital world.
 
 # Feature Set
-## User Registration and Login
-Faciliates simple and secure user onboarding and sign-in.
+## Sign Up
+A user's interaction with ResIdentity begins at Sign Up, which features a straightforward interface that requires only an email address and a secure password for registration. 
+
+## Login
+Returning users can quickly enter their email address and password to continue their secure journey on our platform.
 
 ## Upload, Sign and Download PDFs
-In just a few clicks, users can easily upload PDFs, apply their digital signatures and download signed PDFs.
+With just a few clicks, users can upload PDFs, securely add their signatures, and download the signed documents.
 
 ## Verify Signed PDFs
-Users can verify whether a particular signed PDF was signed via the ResIdentity application by matching the uploaded file hash with a corresponding signing record on the underlying ResilientDB blockchain.
+Users can quickly verify the authenticity of signed PDFs with by simply uploading their signed documents to ensure that they are genuine and unaltered.
 
 # User Guide
 ## Setup
 **Dependencies:**
-[Docker](https://docs.docker.com/compose/install/), [ResilientDB]()
+[Docker](https://docs.docker.com/compose/install/), [ResilientDB](https://resilientdb.incubator.apache.org/)
 
 - To build, run:
 ```
@@ -67,8 +77,9 @@ curl 127.0.0.1:18000/v1/transactions/key1
 Visit ```http://localhost:8000/api``` to verify the API.
 
 ## Usage
-### Uploading and Signing PDFs
-### Verifying PDFs
+### Uploading, Signing and Downloading PDFs
+### Viewing the Signature
+### Verifying Signature Authenticity
 
 # Tech Specs
 ## Technology Stack
@@ -81,9 +92,10 @@ ResilientDB, Docker, Python FastAPI, MongoDB, AWS S3
 ![defaultview](/assets/images/residentity/architecture.png)
 
 ## Sequence Diagrams
-### User Login
+### Sign Up
 ### PDF Upload, Signing and Download
-### Signed PDF Verification
+### Signature Verification
+![defaultview](/assets/images/residentity/Signature Verification.png)
 
 # About The Developers
 - **Sachin Shankar Balasubramanyam:** A first-year MSCS student at UC Davis, Sachin earned his Computer Science degree from PES University, Bengaluru, in 2023. He was the lead engineer at a VC-funded AI startup, with expertise in software architecture, Python, and web development, essential for ResIdentity's client application.
