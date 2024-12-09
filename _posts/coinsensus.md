@@ -54,9 +54,11 @@ Coinsensus combines modern front-end frameworks, efficient backend solutions, an
 ### 1. User Registration and Login
 
 * **New Users**: Register an account by providing personal details, then proceed to the landing page after successful registration.
-![New User](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Yk5TACIHGSSonrrnzOmK2w.png)
+![Signup](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Yk5TACIHGSSonrrnzOmK2w.png)
 
 * **Existing Users**: Log in with credentials to directly access the home page.
+
+![Login](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*PbktXcCIfWSMoqFfnjfOBA.png)
 
 ### 2. Landing/ Home Page and Navigation
 
