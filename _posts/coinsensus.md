@@ -153,11 +153,11 @@ Coinsensus demonstrates the power of blockchain technology in finance and expens
 ### Credits
 
 Designed and Developed by:
-Sankalp Kashyap | [sankashyap@ucdavis.edu](mailto:sankashyap@ucdavis.edu) 
-Rajaram Manohar Joshi | [rmjoshi@ucdavis.edu](mailto:rmjoshi@ucdavis.edu)
-Vijeth Kumbarahally Lakshminarayana | [kumbara@ucdavis.edu](mailto:kumbara@ucdavis.edu)
-Sanchit Kaul | [skkaul@ucdavis.edu](mailto:skkaul@ucdavis.edu)
-Shaik Haseeb Ur Rahman | [hrahman@ucdavis.edu](mailto:hrahman@ucdavis.edu)
+Sankalp Kashyap | [sankashyap@ucdavis.edu](mailto:sankashyap@ucdavis.edu) |
+Rajaram Manohar Joshi | [rmjoshi@ucdavis.edu](mailto:rmjoshi@ucdavis.edu) |
+Vijeth Kumbarahally Lakshminarayana | [kumbara@ucdavis.edu](mailto:kumbara@ucdavis.edu) |
+Sanchit Kaul | [skkaul@ucdavis.edu](mailto:skkaul@ucdavis.edu) |
+Shaik Haseeb Ur Rahman | [hrahman@ucdavis.edu](mailto:hrahman@ucdavis.edu) |
 ***University of California, Davis | Fall ’24***
 >  **Go through the detailed code, [@coinsensus-frontend](https://github.com/joshirajaram/coinsensus-frontend) & [@coinsensus-backend](https://github.com/joshirajaram/coinsensus-backend)**
 
