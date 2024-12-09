@@ -66,10 +66,13 @@ After the authentication procedure, the application redirects to the landing pag
 * **Friends**: Add new friends and view balances related to friends.
 
 * **Account**: Customize user settings like theme preferences and currency.
+![**Landing page**](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*c4QZ2J2kWervSXkrrOr45w.png)
 
 ### 3. Activity Section
 
 View a summary of recent financial transactions for quick updates.
+
+![**Activities**](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*YzZ5ettDPiFnafQ55XbxpQ.png)
 
 ### 4. Friend Management
 
@@ -78,7 +81,9 @@ View a summary of recent financial transactions for quick updates.
 * **View Balance for Friends**: Monitor individual balances with friends
 
 * **Settle Up**: If a user decides to settle balances, process the payment directly. After payment, update the ledger.
+![**Friend Management**](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*TwKPh3eb2tKfd3dT9pUmoQ.png)
 
+![**Settle Balances**](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*AB7iUp6fnjdXC1BNucynBQ.png)
 ### 5. Adding and Splitting Expenses
 
 * **Select Expense Type**: Choose a group for shared costs or choose specific friends for one-on-one expenses.
@@ -99,7 +104,7 @@ Save the transaction, which updates the blockchain ledger in real time.
 * **Light/Dark Theme**: Toggle between themes for a personalized interface.
 
 * **Currency Settings**: Customize currency preferences based on user location.
-
+![**Account Settings**](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*AQO7pNzZvOOGMP5YuVwZGQ.png)
 ### 7. Transaction Processing
 
 * Every action, such as adding an expense or settling balances, updates the tamper-proof blockchain ledger using ResilientDB. This ensures real-time synchronization and transparency. Each transaction is saved securely on the blockchain, ensuring an immutable and auditable history.
