@@ -89,7 +89,7 @@ View a summary of recent financial transactions for quick updates.
 
 Save the transaction, which updates the blockchain ledger in real time.
 
-
+![**Coincensus: Architecture Overview**](https://drive.google.com/file/d/1TXsNhkY_3_9bn-Zddv1HF1uEecSqdYJP/view?usp=sharing)
 
 ### 6. Account Settings
 
