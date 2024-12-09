@@ -20,11 +20,11 @@ article_header:
 # Project Overview
 ## Background
 **What ResIdentity Does** \
-ResIdentity is a document signing application that allows users to securely log in and upload PDFs for signing. The digests of these signed PDFs are committed to the ResilientDB blockchain, which ensures that each document’s signature remains unaltered. Users can then download their signed PDFs as needed.
+ResIdentity is a document signing application that allows users to securely authenticate and upload PDFs for signing. The digests of these signed PDFs are committed to the ResilientDB blockchain, which ensures that each document’s signature remains unaltered. Users can then download their signed PDFs as needed.
 
 Additionally, ResIdentity enables users to upload previously signed PDFs for verification. During this process, the application checks the ResilientDB blockchain for a matching digest of the signed document to verify its authenticity.
 
-You can view our application [here](residentity.resilientdb.com) and our demo [here](google.com)
+You can view our application [here](https://residentity.resilientdb.com/) and our demo [here](https://residentity.resilientdb.com/)
 ## Motivation
 **Why We Built ResIdentity** \
 The need for secure and reliable document signing cannot be overstated. Traditional platforms, while prevalent, often fail to meet the necessary standards for handling sensitive documents like insurance contracts, loan paperwork, employment offers, etc. These platforms typically rely on centralized servers, which, if compromised, can expose personal information at the risk of theft or alteration. Such centralized systems are vulnerable to service disruptions owing to a single point of failure. This can impact the availability of critical services when they are most needed, causing operational delays, user frustration and reduced trust. Furthermore, privacy is another concern with conventional document signing solutions. Users must entrust their sensitive information to third-party providers, who manage and control all aspects of data security, leaving them withwith little control over their own data.
