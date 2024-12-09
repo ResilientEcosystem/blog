@@ -5,7 +5,7 @@
 
 Managing group expenses and financial transactions is often tedious, error-prone, and vulnerable to privacy breaches with traditional methods. Centralized platforms lack transparency, risk data breaches, and fail to provide secure, real-time updates. This creates a need for a decentralized, transparent, and user-friendly solution to ensure trust, automate calculations, and securely manage group expenses. Coinsensus addresses these challenges with blockchain technology and a seamless interface, redefining expense management.
 
-### What is Coincesus?
+### What is Coincensus?
 
 Coinsensus, a blockchain-based bill management platform powered by ResilientDB, is designed to create a trustless and transparent system for expense tracking among friends and groups. By leveraging blockchain technology's decentralized and tamper-resistant nature, the project ensures secure and reliable monitoring of debts and lending without relying on a central authority.
 
