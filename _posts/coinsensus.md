@@ -101,7 +101,11 @@ Save the transaction, which updates the blockchain ledger in real time.
 
 * Every action, such as adding an expense or settling balances, updates the tamper-proof blockchain ledger using ResilientDB. This ensures real-time synchronization and transparency. Each transaction is saved securely on the blockchain, ensuring an immutable and auditable history.
 
-### 8. Error Handling and Validation
+### 8. Caching
+
+* Using lightweight fast access SQLite DB to cache frequently queried data to decrease latency.
+
+### 9. Error Handling and Validation
 
 * Include mechanisms to validate user input and resolve errors (e.g., insufficient funds or incorrect splits).
 
