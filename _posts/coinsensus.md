@@ -132,7 +132,7 @@ Save the transaction, which updates the blockchain ledger in real time.
 
 A short project video demo showcasing the implementation of **Coinsensus**:
 
- <iframe src="https://medium.com/media/6bdcdfdd687b804bc403f3b52a12294f" frameborder=0></iframe>
+ <iframe src="https://www.youtube.com/watch?v=v90TqlpvpYs&feature=youtu.be" frameborder=0></iframe>
 
 ### Conclusion
 
