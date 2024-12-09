@@ -63,8 +63,6 @@ After the authentication procedure, the application redirects to the landing pag
 
 * **Activity**: View recent transactions.
 
-* **Groups**: Manage group-related expenses.
-
 * **Friends**: Add new friends and view balances related to friends.
 
 * **Account**: Customize user settings like theme preferences and currency.
@@ -73,11 +71,7 @@ After the authentication procedure, the application redirects to the landing pag
 
 View a summary of recent financial transactions for quick updates.
 
-### 4. Group Management
-
-Access an overview of all expenses over a group.
-
-### 5. Friend Management
+### 4. Friend Management
 
 * **Add Friends**: Add friends to enable expense tracking and settlement.
 
@@ -85,7 +79,7 @@ Access an overview of all expenses over a group.
 
 * **Settle Up**: If a user decides to settle balances, process the payment directly. After payment, update the ledger.
 
-### 6. Adding and Splitting Expenses
+### 5. Adding and Splitting Expenses
 
 * **Select Expense Type**: Choose a group for shared costs or choose specific friends for one-on-one expenses.
 
@@ -95,7 +89,7 @@ Access an overview of all expenses over a group.
 
 Save the transaction, which updates the blockchain ledger in real time.
 
-### 7. Account Settings
+### 6. Account Settings
 
 * **Edit Profile**: Update user information like name and avatar.
 
@@ -103,11 +97,11 @@ Save the transaction, which updates the blockchain ledger in real time.
 
 * **Currency Settings**: Customize currency preferences based on user location.
 
-### 8. Transaction Processing
+### 7. Transaction Processing
 
 * Every action, such as adding an expense or settling balances, updates the tamper-proof blockchain ledger using ResilientDB. This ensures real-time synchronization and transparency. Each transaction is saved securely on the blockchain, ensuring an immutable and auditable history.
 
-### 9. Error Handling and Validation
+### 8. Error Handling and Validation
 
 * Include mechanisms to validate user input and resolve errors (e.g., insufficient funds or incorrect splits).
 
