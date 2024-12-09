@@ -89,7 +89,6 @@ View a summary of recent financial transactions for quick updates.
 
 Save the transaction, which updates the blockchain ledger in real time.
 
-<iframe src="https://drive.google.com/file/d/1TXsNhkY_3_9bn-Zddv1HF1uEecSqdYJP/preview" width="640" height="480" allow="autoplay"></iframe>
 
 ### 6. Account Settings
 
