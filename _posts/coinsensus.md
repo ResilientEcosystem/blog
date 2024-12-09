@@ -90,7 +90,7 @@ View a summary of recent financial transactions for quick updates.
 Save the transaction, which updates the blockchain ledger in real time.
 
 
-![**Add Expense**]([https://cdn-images-1.medium.com/max/2560/1*pxPYzDZbXl0Fwc3wjW1mRQ.jpeg](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*-yi7cm55G-qu0xn8oJW5ww.png))
+![**Add Expense**](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*-yi7cm55G-qu0xn8oJW5ww.png)
 
 ### 6. Account Settings
 
