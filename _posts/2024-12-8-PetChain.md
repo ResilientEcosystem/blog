@@ -30,6 +30,8 @@ The pet industry, valued at around $150 billion in the U.S. alone, faces critica
 
 ## Feature Set
 ### User and Pet Registration
+The registration and login workflow in PetChain uses JWT tokens for secure authentication and role-based access control. Passwords are hashed using bcrypt and stored securely in the database. A tamper-proof ownership hash, created using the owner's custom ID and unique petId with SHA-256, is stored in ResDB for blockchain traceability, while pet details are saved in MongoDB for quick retrieval. Owners can retrieve pet details via the getPetDetails API, ensuring a secure and efficient process for pet registration and ownership validation.
+
 Pet registration event logged in ResDB:
 ```
 (2024-12-09 11:05:19) [INFO    ] Request: 127.0.0.1:45068 0x7fccdc002870 HTTP/1.1 POST /v1/transactions/commit
@@ -37,52 +39,30 @@ I20241209 03:05:19.347833 652360 crow_service.cpp:158] body: {"id":"OWNER_173374
 I20241209 03:05:19.349356 652360 crow_service.cpp:180] Set OWNER_1733742092244 to {"id":"OWNER_1733742092244","value":{"pet_id":"PET_1733742319324","ownershipHash":"a44f3f6cb0c0efc4671f254ffe1eeb28a09ae7dfc820f5be21e85c38c2eef74c","timeStamp":"2024-12-09T11:05:19.326Z","status":"active","event":"register pet"}}
 ```
 ### Lost and Found
-Lost Pet event stored in ResDB:
+<p align="center">
+    <img src="/assets/images/petchain/LostFoundSequence.png" alt="Logo" width="800"/>
+    <br>
+    <em> Figure 1. Sequence Diagram for Lost and Found Service
+    </em>
+</p>
+When a pet goes missing, the owner can report it by clicking the "Lost" button in the user interface, triggering a POST request to the petLostandFound() API. This API updates the pet’s status in MongoDB and generates a unique LostHash using the pet ID, owner ID, and event details, which is then securely stored in ResDB.
 ```
 (2024-12-09 11:05:19) [INFO    ] Response: 0x7fccdc002870 /v1/transactions/commit 201 0
 (2024-12-09 11:06:38) [INFO    ] Request: 127.0.0.1:39276 0x7fccdc000c20 HTTP/1.1 POST /v1/transactions/commit
 I20241209 03:06:38.358037 652359 crow_service.cpp:158] body: {"id":"OWNER_1733742092244","value":{"pet_id":"PET_1733742319324","lostHash":"0d753f137b9725f0bc7b8e29d376f4ff9ae67ff946a8fea7a301695dae293de9","timeStamp":"2024-12-09T11:06:38.354Z","status":"active","event":"lost pet"}}
 I20241209 03:06:38.358719 652359 crow_service.cpp:180] Set OWNER_1733742092244 to {"id":"OWNER_1733742092244","value":{"pet_id":"PET_1733742319324","lostHash":"0d753f137b9725f0bc7b8e29d376f4ff9ae67ff946a8fea7a301695dae293de9","timeStamp":"2024-12-09T11:06:38.354Z","status":"active","event":"lost pet"}}
 ```
-Found Pet event stored in ResDB:
+When the pet is found by someone, they can submit the pet's details via the "Found" feature in the UI, prompting the searchLostPet() API to generate a FoundHash.  The system then retrieves the LostHash from ResDB, performs validation and updates the pet’s status to "found," completing the process of reuniting the pets with its owner.
 ```
 (2024-12-09 11:08:41) [INFO    ] Request: 127.0.0.1:35466 0x7fccdc002870 HTTP/1.1 POST /v1/transactions/commit
 I20241209 03:08:41.755368 652360 crow_service.cpp:158] body: {"id":"OWNER_1733742092244","value":{"pet_id":"PET_1733742319324","foundHash":"8c85e9e98417656cdbc5172bfac80aa7bde53deda0fd44f8d8d519646cfeb240","timeStamp":"2024-12-09T11:08:41.752Z","status":"active","event":"found pet"}}
 I20241209 03:08:41.755961 652360 crow_service.cpp:180] Set OWNER_1733742092244 to {"id":"OWNER_1733742092244","value":{"pet_id":"PET_1733742319324","foundHash":"8c85e9e98417656cdbc5172bfac80aa7bde53deda0fd44f8d8d519646cfeb240","timeStamp":"2024-12-09T11:08:41.752Z","status":"active","event":"found pet"}}
 ```
+
 ### Pet-Health Management
+Health Record Management: Owners can record vaccination history, allergies, minor illnesses, and past treatments for their pets.
+Veterinarian Access: A dedicated Veterinarian Profile interface allows vets to view pet health records by entering the pet ID.
 ### Ownership Transfer
-Ownership Transfer event logged in ResDB:
-```
-(2024-12-09 11:25:14) [INFO    ] Request: 127.0.0.1:38158 0x7fccdc002870 HTTP/1.1 POST /v1/transactions/commit
-I20241209 03:25:14.258247 652360 crow_service.cpp:158] body: {"id":"OWNER_1733743246179","value":{"pet_id":"PET_1733742319324","ownershipTransfer":{"oldOwnerId":"OWNER_1733742092244","newOwnerId":"OWNER_1733743246179"},"transferHash":"0e3da49f70790cc3d2a761319c8e2432507d36c312f390ef0850f8803701ff99","timeStamp":"2024-12-09T11:25:14.255Z","status":"completed","event":"ownership transfer"}}
-I20241209 03:25:14.258463 652360 crow_service.cpp:180] Set OWNER_1733743246179 to {"id":"OWNER_1733743246179","value":{"pet_id":"PET_1733742319324","ownershipTransfer":{"oldOwnerId":"OWNER_1733742092244","newOwnerId":"OWNER_1733743246179"},"transferHash":"0e3da49f70790cc3d2a761319c8e2432507d36c312f390ef0850f8803701ff99","timeStamp":"2024-12-09T11:25:14.255Z","status":"completed","event":"ownership transfer"}}
-```
-### Smart Contract Based Insurance Processing
-
-## Technical Specifications
-### System Architecture
-<p align="center">
-    <img src="/assets/images/petchain/System-Architecture.jpg" alt="Logo"/>
-    <br>
-    <em> Figure 1. Architecture Diagram
-    </em>
-</p>
-
-### Technology Stack
-- Frontend: React, MaterialUI
-- Backend: Node.js, Express.js, HardHat, ethers.js, Solidity, Nodemailer
-- Databases: ResilientDB, MongoDB
-
-
-### WorkFlow and Sequence Diagrams
-The sequence diagrams below outline the key workflows for Lost and Found Service, Ownership Transfer, and Insurance Processing, illustrating the interactions between system components and the triggers for each process. These visualizations provide a clear understanding of the underlying mechanisms that ensure secure and efficient operations within the PetChain system.
-<p align="center">
-    <img src="/assets/images/petchain/LostFoundSequence.png" alt="Logo" width="800"/>
-    <br>
-    <em> Figure 2. Sequence Diagram for Lost and Service
-    </em>
-</p>
 
 <p align="center">
     <img src="/assets/images/petchain/OwnerTransferSequence.png" alt="Logo" width="800"/>
@@ -90,13 +70,34 @@ The sequence diagrams below outline the key workflows for Lost and Found Service
     <em> Figure 3. Sequence Diagram for Ownership Transfer
     </em>
 </p>
+Ownership Transfer event logged in ResDB:
+```
+(2024-12-09 11:25:14) [INFO    ] Request: 127.0.0.1:38158 0x7fccdc002870 HTTP/1.1 POST /v1/transactions/commit
+I20241209 03:25:14.258247 652360 crow_service.cpp:158] body: {"id":"OWNER_1733743246179","value":{"pet_id":"PET_1733742319324","ownershipTransfer":{"oldOwnerId":"OWNER_1733742092244","newOwnerId":"OWNER_1733743246179"},"transferHash":"0e3da49f70790cc3d2a761319c8e2432507d36c312f390ef0850f8803701ff99","timeStamp":"2024-12-09T11:25:14.255Z","status":"completed","event":"ownership transfer"}}
+I20241209 03:25:14.258463 652360 crow_service.cpp:180] Set OWNER_1733743246179 to {"id":"OWNER_1733743246179","value":{"pet_id":"PET_1733742319324","ownershipTransfer":{"oldOwnerId":"OWNER_1733742092244","newOwnerId":"OWNER_1733743246179"},"transferHash":"0e3da49f70790cc3d2a761319c8e2432507d36c312f390ef0850f8803701ff99","timeStamp":"2024-12-09T11:25:14.255Z","status":"completed","event":"ownership transfer"}}
+```
 
+### Smart Contract Based Insurance Processing
 <p align="center">
     <img src="/assets/images/petchain/InsuranceSequence.png" alt="Logo" width="800"/>
     <br>
-    <em> Figure 4. Sequence Diagram for Insurance Processing
+    <em> Figure 3. Sequence Diagram for Insurance Processing
     </em>
 </p>
+
+## Technical Specifications
+### System Architecture
+<p align="center">
+    <img src="/assets/images/petchain/System-Architecture.jpg" alt="Logo"/>
+    <br>
+    <em> Figure 4. Architecture Diagram
+    </em>
+</p>
+
+### Technology Stack
+- Frontend: React, MaterialUI
+- Backend: Node.js, Express.js, HardHat, ethers.js, Solidity, Nodemailer
+- Databases: ResilientDB, MongoDB
 
 ### Steps to Run the System
 #### Prerequisites
